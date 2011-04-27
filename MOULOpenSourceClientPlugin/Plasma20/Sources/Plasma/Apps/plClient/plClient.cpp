@@ -1619,7 +1619,7 @@ void plClient::ShutdownDLLs()
 
 hsBool plClient::MainLoop()
 {
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 	if (PythonInterface::UsePythonDebugger())
 	{
 		PythonInterface::PythonDebugger()->Update();
