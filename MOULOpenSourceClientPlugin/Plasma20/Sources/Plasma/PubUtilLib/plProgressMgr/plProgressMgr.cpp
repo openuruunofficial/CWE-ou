@@ -71,9 +71,9 @@ plProgressMgr	*plProgressMgr::fManager = nil;
 
 char* plProgressMgr::fImageRotation[LOADING_RES_COUNT];
 
-int plProgressMgr::fStaticTextIDs[] = {
-	0,
-	IDR_LOADING_UPDATETEXT,
+char* plProgressMgr::fStaticTextIDs[] = {
+	"xLoading_Linking_Text.png",
+	"xLoading_Updating_Text.png"
 };
 
 //// Constructor & Destructor ////////////////////////////////////////////////
@@ -250,7 +250,7 @@ char*	plProgressMgr::GetLoadingFrameID(int index)
 		return fImageRotation[0];
 }
 
-int		plProgressMgr::GetStaticTextID(StaticText staticTextType)
+char*	plProgressMgr::GetStaticTextID(StaticText staticTextType)
 {
 	return fStaticTextIDs[staticTextType];
 }
