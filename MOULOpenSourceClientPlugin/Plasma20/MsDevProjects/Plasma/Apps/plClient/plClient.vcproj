@@ -364,82 +364,13 @@ xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\PhysXLoader.dll ..\..\.
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\banner.bmp">
 			</File>
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap1.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap2.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap3.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00001.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00002.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00003.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00004.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00005.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\book.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_cli.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_hig.bmp">
-			</File>
-			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cnsl1.bin">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_clicked.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_disabled.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_down.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_grab.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_left.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_open.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_poised.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_right.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_u.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_up.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_upward.bmp">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\Dirt.ICO">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\headspin.ico">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\Microphone.bmp">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\plClient.rc">
@@ -460,69 +391,6 @@ xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\PhysXLoader.dll ..\..\.
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\resource.h">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\Speaker.bmp">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.01.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.02.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.03.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.04.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.05.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.06.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.07.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.08.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.09.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.10.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.11.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.12.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.13.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.14.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.15.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.16.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.17.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.18.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking_Text.jpg">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Updating_Text.jpg">
 			</File>
 		</Filter>
 		<Filter
