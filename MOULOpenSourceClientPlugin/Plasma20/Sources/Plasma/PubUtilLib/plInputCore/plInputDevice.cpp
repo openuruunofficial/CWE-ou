@@ -946,7 +946,6 @@ void plMouseDevice::HandleWindowActivate(bool bActive, HWND hWnd)
 //		rect.bottom /= plInputManager::GetInstance()->GetMouseScale();
 
 		::MapWindowPoints( hWnd, NULL, (POINT *)&rect, 2 );
-		::ClipCursor(&rect);
 		::ShowCursor( FALSE );
 		SetCapture(hWnd);
 
@@ -954,7 +953,6 @@ void plMouseDevice::HandleWindowActivate(bool bActive, HWND hWnd)
 	else
 	{
 		ReleaseCapture();
-		::ClipCursor(nil);
 		::ShowCursor( TRUE );
 	}	
 }
