@@ -1,7 +1,7 @@
 /*==LICENSE==*
 
 CyanWorlds.com Engine - MMOG client, server and tools
-Copyright (C) 2011  Cyan Worlds, Inc.
+Copyright (C) 2011 Cyan Worlds, Inc.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -10,11 +10,27 @@ the Free Software Foundation, either version 3 of the License, or
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+Additional permissions under GNU GPL version 3 section 7
+
+If you modify this Program, or any covered work, by linking or
+combining it with any of RAD Game Tools Bink SDK, Autodesk 3ds Max SDK,
+NVIDIA PhysX SDK, Microsoft DirectX SDK, OpenSSL library, Independent
+JPEG Group JPEG library, Microsoft Windows Media SDK, or Apple QuickTime SDK
+(or a modified version of those libraries),
+containing parts covered by the terms of the Bink SDK EULA, 3ds Max EULA,
+PhysX SDK EULA, DirectX SDK EULA, OpenSSL and SSLeay licenses, IJG
+JPEG Library README, Windows Media SDK EULA, or QuickTime SDK EULA, the
+licensors of this Program grant you additional
+permission to convey the resulting work. Corresponding Source for a
+non-source form of such a combination shall include the source code for
+the parts of OpenSSL and IJG JPEG Library used as well as that of the covered
+work.
 
 You can contact Cyan Worlds, Inc. by email legal@cyan.com
  or by snail mail at:
@@ -32,6 +48,9 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #include "hsTypes.h"
 #include "hsThread.h"
+#ifndef EAX_SDK_AVAILABLE
+#include <EFX-Util.h>
+#endif
 #include "plEAXEffects.h"
 #include "../plAudioCore/plAudioCore.h"
 #include "plDSoundBuffer.h"
@@ -43,15 +62,19 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #include <dmusici.h>
 #include <dxerr9.h>
+#ifdef EAX_SDK_AVAILABLE
 #include <eax.h>
 #include <eax-util.h>
 #include <eaxlegacy.h>
+#endif
 #include "../plStatusLog/plStatusLog.h"
 
 #define kDebugLog	if( myLog != nil ) myLog->AddLineF(
 
+#ifdef EAX_SDK_AVAILABLE
 static EAXGet			s_EAXGet;
 static EAXSet			s_EAXSet;
+#endif
 
 
 //// GetInstance /////////////////////////////////////////////////////////////
@@ -79,6 +102,7 @@ plEAXListener::~plEAXListener()
 
 hsBool	plEAXListener::Init( void )
 {
+#ifdef EAX_SDK_AVAILABLE
 	if( fInited )
 		return true;
 
@@ -128,6 +152,10 @@ hsBool	plEAXListener::Init( void )
 	ClearProcessCache();
 
 	return true;
+#else /* !EAX_SDK_AVAILABLE */
+	plStatusLog::AddLineS("audio.log", "EAX disabled in this build");
+	return false;
+#endif
 }
 
 //// Shutdown ////////////////////////////////////////////////////////////////
@@ -137,8 +165,10 @@ void	plEAXListener::Shutdown( void )
 	if( !fInited )
 		return;
 
+#ifdef EAX_SDK_AVAILABLE
 	s_EAXSet = nil;
 	s_EAXGet = nil;
+#endif
 	IRelease();
 }
 
@@ -147,7 +177,9 @@ bool plEAXListener::SetGlobalEAXProperty(GUID guid, unsigned long ulProperty, vo
 {
 	if(fInited)
 	{
+#ifdef EAX_SDK_AVAILABLE
 		return s_EAXSet(&guid, ulProperty, 0, pData, ulDataSize) == AL_NO_ERROR;
+#endif
 	}
 	return false;
 }
@@ -156,19 +188,29 @@ bool plEAXListener::GetGlobalEAXProperty(GUID guid, unsigned long ulProperty, vo
 {
 	if(fInited)
 	{
+#ifdef EAX_SDK_AVAILABLE
 		return s_EAXGet(&guid, ulProperty, 0, pData, ulDataSize) == AL_NO_ERROR;
+#endif
 	}
 	return false;
 }
 
 bool plEAXSource::SetSourceEAXProperty(unsigned source, GUID guid, unsigned long ulProperty, void *pData, unsigned long ulDataSize)
 {
+#ifdef EAX_SDK_AVAILABLE
 	return s_EAXSet(&guid, ulProperty, source, pData, ulDataSize) == AL_NO_ERROR;
+#else
+	return false;
+#endif
 }
 
 bool plEAXSource::GetSourceEAXProperty(unsigned source, GUID guid, unsigned long ulProperty, void *pData, unsigned long ulDataSize)
 {
+#ifdef EAX_SDK_AVAILABLE
 	return s_EAXGet(&guid, ulProperty, source, pData, ulDataSize) == AL_NO_ERROR;
+#else
+	return false;
+#endif
 }
 
 
@@ -203,7 +245,7 @@ void	plEAXListener::IFail( const char *msg, hsBool major )
 //	Mutes the given properties, so if you have some props that you want
 //	half strength, this function will do it for ya.
 
-void	plEAXListener::IMuteProperties( EAXLISTENERPROPERTIES *props, hsScalar percent )
+void	plEAXListener::IMuteProperties( EAXREVERBPROPERTIES *props, hsScalar percent )
 {
 	// We only mute the room, roomHF and roomLF, since those control the overall effect
 	// application. All three are a direct linear blend as defined by eax-util.cpp, so
@@ -212,7 +254,9 @@ void	plEAXListener::IMuteProperties( EAXLISTENERPROPERTIES *props, hsScalar perc
 	hsScalar invPercent = 1.f - percent;
 
 	// The old way, as dictated by EAX sample code...
+#ifdef EAX_SDK_AVAILABLE
 	props->lRoom   = (int)( ( (float)EAXLISTENER_MINROOM   * invPercent ) + ( (float)props->lRoom   * percent ) );
+#endif
 	// The new way, as suggested by EAX guys...
 //	props->lRoom = (int)( 2000.f * log( invPercent ) ) + props->lRoom;
 
@@ -243,6 +287,7 @@ void	plEAXListener::ClearProcessCache( void )
 
 void	plEAXListener::ProcessMods( hsTArray<plEAXListenerMod *> &modArray )
 {
+#ifdef EAX_SDK_AVAILABLE
 	int		i;
 	float	totalStrength;
 	hsBool	firstOne;
@@ -386,6 +431,7 @@ void	plEAXListener::ProcessMods( hsTArray<plEAXListenerMod *> &modArray )
 	{
 		IFail(  false );
 	}
+#endif /* EAX_SDK_AVAILABLE */
 }
 
 
@@ -474,8 +520,13 @@ void	plEAXSourceSettings::Enable( hsBool e )
 	fEnabled = e;
 	if( !e )
 	{
+#ifdef EAX_SDK_AVAILABLE
 		fRoom = EAXBUFFER_MINROOM;
 		fRoomHF = EAXBUFFER_MINROOMHF;
+#else
+		fRoom = 0;
+		fRoomHF = 0;
+#endif
 		fRoomAuto = true;
 		fRoomHFAuto = true;
 
@@ -621,6 +672,7 @@ void	plEAXSource::SetFrom( plEAXSourceSettings *settings, unsigned source, hsBoo
 		dirtyParams = settings->fDirtyParams;
 	
 	// Do the params
+#ifdef EAX_SDK_AVAILABLE
 	if( dirtyParams & plEAXSourceSettings::kRoom )
 	{
 		SetSourceEAXProperty(source, DSPROPSETID_EAX_BufferProperties, DSPROPERTY_EAXBUFFER_ROOM, &settings->fRoom, sizeof(settings->fRoom));
@@ -647,10 +699,12 @@ void	plEAXSource::SetFrom( plEAXSourceSettings *settings, unsigned source, hsBoo
 		SetSourceEAXProperty(source, DSPROPSETID_EAX_BufferProperties, DSPROPERTY_EAXBUFFER_OCCLUSIONROOMRATIO, &settings->GetCurrSofts().fOcclusionRoomRatio, sizeof(settings->GetCurrSofts().fOcclusionRoomRatio));
 		SetSourceEAXProperty(source, DSPROPSETID_EAX_BufferProperties, DSPROPERTY_EAXBUFFER_OCCLUSIONDIRECTRATIO, &settings->GetCurrSofts().fOcclusionDirectRatio, sizeof(settings->GetCurrSofts().fOcclusionDirectRatio));
 	}
+#endif /* EAX_SDK_AVAILABLE */
 
 	settings->ClearDirtyParams();
 
 	// Do all the flags in one pass
+#ifdef EAX_SDK_AVAILABLE
 	DWORD	flags;
 	
 
@@ -674,6 +728,7 @@ void	plEAXSource::SetFrom( plEAXSourceSettings *settings, unsigned source, hsBoo
 		// Flag setting failed somehow
 		hsAssert( false, "Unable to set EAX buffer flags" );
 	}
+#endif /* EAX_SDK_AVAILABLE */
 }
 
 
