@@ -237,6 +237,8 @@ void plPythonSDLModifier::SetItemIdx(const char* key, int idx, PyObject* value, 
 				Py_INCREF(Py_None);
 				PyTuple_SetItem(pyTuple, j, Py_None);
 			}
+			// _PyTuple_Resize may have changed pyTuple
+			it->second.obj = pyTuple;
 		}
 	}
 	else
