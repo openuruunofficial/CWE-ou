@@ -75,20 +75,12 @@ plProfile_Extern(MemMipmaps);
 
 //// Constructor & Destructor /////////////////////////////////////////////////
 
-plDynamicTextMap::plDynamicTextMap() : plMipmap()
+plDynamicTextMap::plDynamicTextMap()
+	: fVisWidth(0), fVisHeight(0), fHasAlpha(false), fPremultipliedAlpha(false), fJustify(kLeftJustify),
+	  fInitBuffer(nil), fFontFace(nil), fFontSize(0), fFontFlags(0),
+	  fFontAntiAliasRGB(false), fFontBlockRGB(false), fHasCreateBeenCalled(false)
 {
-	fVisWidth = fVisHeight = 0;
-	fHasAlpha = false;
-	fJustify = kLeftJustify;
-	fInitBuffer = nil;
-	fFontFace = nil;
-	fFontSize = 0;
-	fFontFlags = 0;
-	fFontAntiAliasRGB = false;
-	fFontColor.Set( 0, 0, 0, 1 );
-	fFontBlockRGB = false;
-	fHasCreateBeenCalled = false;
-
+	fFontColor.Set(0, 0, 0, 1);
 }
 
 plDynamicTextMap::~plDynamicTextMap()
@@ -96,11 +88,10 @@ plDynamicTextMap::~plDynamicTextMap()
 	Reset();
 }
 
-plDynamicTextMap::plDynamicTextMap( UInt32 width, UInt32 height, hsBool hasAlpha, UInt32 extraWidth, UInt32 extraHeight ) : plMipmap()
+plDynamicTextMap::plDynamicTextMap( UInt32 width, UInt32 height, hsBool hasAlpha, UInt32 extraWidth, UInt32 extraHeight, hsBool premultipliedAlpha )
+	: fInitBuffer(nil), fFontFace(nil)
 {
-	fInitBuffer = nil;
-	fFontFace = nil;
-	Create( width, height, hasAlpha, extraWidth, extraHeight );
+	Create( width, height, hasAlpha, extraWidth, extraHeight, premultipliedAlpha );
 }
 
 //// SetNoCreate //////////////////////////////////////////////////////////////
@@ -122,7 +113,7 @@ void	plDynamicTextMap::SetNoCreate( UInt32 width, UInt32 height, hsBool hasAlpha
 
 //// Create ///////////////////////////////////////////////////////////////////
 
-void	plDynamicTextMap::Create( UInt32 width, UInt32 height, hsBool hasAlpha, UInt32 extraWidth, UInt32 extraHeight )
+void	plDynamicTextMap::Create( UInt32 width, UInt32 height, hsBool hasAlpha, UInt32 extraWidth, UInt32 extraHeight, hsBool premultipliedAlpha )
 {
 	SetConfig( hasAlpha ? kARGB32Config : kRGB32Config );
 
@@ -130,6 +121,7 @@ void	plDynamicTextMap::Create( UInt32 width, UInt32 height, hsBool hasAlpha, UIn
 	fVisWidth = (UInt16)width;
 	fVisHeight = (UInt16)height;
 	fHasAlpha = hasAlpha;
+	fPremultipliedAlpha = premultipliedAlpha;
 
 	for( fWidth = 1; fWidth < width + extraWidth; fWidth <<= 1 );
 	for( fHeight = 1; fHeight < height + extraHeight; fHeight <<= 1 );
@@ -395,7 +387,7 @@ void	plDynamicTextMap::ClearToColor( hsColorRGBA &color )
 	if( !IIsValid() )
 		return;
 
-	UInt32		i, hex = color.ToARGB32();
+	UInt32		i, hex = fPremultipliedAlpha ? color.ToARGB32Premultiplied() : color.ToARGB32();
 	UInt32		*data = (UInt32 *)fImage;
 
 	// Buffer is of size fVisWidth x fVisHeight, so we need a bit of work to do this right
@@ -520,6 +512,7 @@ void	plDynamicTextMap::DrawString( UInt16 x, UInt16 y, const wchar_t *text )
 	fCurrFont->SetRenderClipRect( 0, 0, fVisWidth, fVisHeight );
 	fCurrFont->SetRenderColor( fFontColor.ToARGB32() );
 	fCurrFont->SetRenderFlag( plFont::kRenderIntoAlpha, fFontBlockRGB );
+	fCurrFont->SetRenderFlag( plFont::kRenderAlphaPremultiplied, fPremultipliedAlpha );
 	fCurrFont->RenderString( this, x, y, text );
 }
 
@@ -541,6 +534,7 @@ void	plDynamicTextMap::DrawClippedString( Int16 x, Int16 y, const wchar_t *text,
 	fCurrFont->SetRenderClipping( x, y, width, height );
 	fCurrFont->SetRenderColor( fFontColor.ToARGB32() );
 	fCurrFont->SetRenderFlag( plFont::kRenderIntoAlpha, fFontBlockRGB );
+	fCurrFont->SetRenderFlag( plFont::kRenderAlphaPremultiplied, fPremultipliedAlpha );
 	fCurrFont->RenderString( this, x, y, text );
 }
 
@@ -561,6 +555,7 @@ void	plDynamicTextMap::DrawClippedString( Int16 x, Int16 y, const wchar_t *text,
 	SetJustify( fJustify );
 	fCurrFont->SetRenderClipping( clipX, clipY, width, height );
 	fCurrFont->SetRenderColor( fFontColor.ToARGB32() );
+	fCurrFont->SetRenderFlag( plFont::kRenderAlphaPremultiplied, fPremultipliedAlpha );
 	fCurrFont->RenderString( this, x, y, text );
 }
 
@@ -582,6 +577,7 @@ void	plDynamicTextMap::DrawWrappedString( UInt16 x, UInt16 y, const wchar_t *tex
 	fCurrFont->SetRenderWrapping( x, y, width, height );
 	fCurrFont->SetRenderColor( fFontColor.ToARGB32() );
 	fCurrFont->SetRenderFlag( plFont::kRenderIntoAlpha, fFontBlockRGB );
+	fCurrFont->SetRenderFlag( plFont::kRenderAlphaPremultiplied, fPremultipliedAlpha );
 	fCurrFont->RenderString( this, x, y, text, lastX, lastY );
 }
 
@@ -665,7 +661,7 @@ void	plDynamicTextMap::FillRect( UInt16 x, UInt16 y, UInt16 width, UInt16 height
 		width = (UInt16)(fWidth - x);
 
 	// Gee, how hard can it REALLY be?
-	UInt32 i, hex = color.ToARGB32();
+	UInt32 i, hex = fPremultipliedAlpha ? color.ToARGB32Premultiplied() : color.ToARGB32();
 	height += y;
 	if( height > fHeight )
 		height = (UInt16)fHeight;
@@ -690,7 +686,7 @@ void	plDynamicTextMap::FrameRect( UInt16 x, UInt16 y, UInt16 width, UInt16 heigh
 		height = (UInt16)(fHeight - y);
 
 	// Shouldn't be much harder
-	UInt32 i, hex = color.ToARGB32();
+	UInt32 i, hex = fPremultipliedAlpha ? color.ToARGB32Premultiplied() : color.ToARGB32();
 	UInt32 *dest1, *dest2;
 
 	dest1 = GetAddr32( x, y );
@@ -724,6 +720,9 @@ void	plDynamicTextMap::DrawImage( UInt16 x, UInt16 y, plMipmap *image, DrawMetho
 		opts.fFlags = 0;		// Default opts
 	else if( method == kImgSprite )
 		opts.fFlags = plMipmap::kCopySrcAlpha;
+
+	if( fPremultipliedAlpha )
+		opts.fFlags |= plMipmap::kDestPremultiplied;
 
 	Composite( image, x, y, &opts );
 
@@ -762,6 +761,9 @@ void	plDynamicTextMap::DrawClippedImage( UInt16 x, UInt16 y, plMipmap *image,
 		opts.fFlags = 0;		// Default opts
 	else if( method == kImgSprite )
 		opts.fFlags = plMipmap::kCopySrcAlpha;
+
+	if( fPremultipliedAlpha )
+		opts.fFlags |= plMipmap::kDestPremultiplied;
 
 	opts.fSrcClipX = srcClipX;
 	opts.fSrcClipY = srcClipY;
@@ -909,6 +911,7 @@ void	plDynamicTextMap::Swap( plDynamicTextMap *other )
 
 	// Swap DTMap info
 	SWAP_ME( hsBool, fHasAlpha, other->fHasAlpha );
+	SWAP_ME( hsBool, fPremultipliedAlpha, other->fPremultipliedAlpha );
 	SWAP_ME( hsBool, fShadowed, other->fShadowed );
 
 	SWAP_ME( Justify, fJustify, other->fJustify );

@@ -71,6 +71,7 @@ struct hsColorRGBA {
 
 	hsColorRGBA&	FromARGB32(UInt32 c);
 	UInt32			ToARGB32() const;
+	UInt32			ToARGB32Premultiplied() const;
 
 	void Read(hsStream *stream);
 	void Write(hsStream *stream) const;
@@ -107,6 +108,14 @@ inline UInt32 hsColorRGBA::ToARGB32() const
 		| (UInt32(r * 255.99f) << 16)
 		| (UInt32(g * 255.99f) << 8)
 		| (UInt32(b * 255.99f) << 0);
+}
+
+inline UInt32 hsColorRGBA::ToARGB32Premultiplied() const
+{
+	return (UInt32(a * 255.0f + 0.5f) << 24)
+		| (UInt32(a * r * 255.0f + 0.5f) << 16)
+		| (UInt32(a * g * 255.0f + 0.5f) << 8)
+		| (UInt32(a * b * 255.0f + 0.5f) << 0);
 }
 
 inline hsColorRGBA operator+(const hsColorRGBA& s, const hsColorRGBA& t)

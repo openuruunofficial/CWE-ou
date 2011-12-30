@@ -345,7 +345,9 @@ void	plFont::IRenderString( plMipmap *mip, UInt16 x, UInt16 y, const wchar_t *st
 		{
 			if( fRenderInfo.fFlags & kRenderIntoAlpha )
 			{
-				if( ( fRenderInfo.fColor & 0xff000000 ) != 0xff000000 )
+				if( fRenderInfo.fFlags & kRenderAlphaPremultiplied )
+					fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32AlphaPremultiplied;
+				else if( ( fRenderInfo.fColor & 0xff000000 ) != 0xff000000 )
 					fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32Alpha;
 				else
 					fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32FullAlpha;
@@ -1025,6 +1027,65 @@ void	plFont::IRenderChar8To32Alpha( const plFont::plCharacter &c )
 			else if( val != 0 )
 			{
 				destPtr[ x ] = ( ( alphaMult * val ) & 0xff000000 ) | destColorOnly;
+			}
+		}
+		destBasePtr = (UInt32 *)( (UInt8 *)destBasePtr + fRenderInfo.fDestStride );
+		src += fWidth;
+	}
+}
+
+void	plFont::IRenderChar8To32AlphaPremultiplied( const plFont::plCharacter &c )
+{
+	UInt8   *src = fBMapData + c.fBitmapOff;
+	UInt32  *destPtr, *destBasePtr = (UInt32 *)( fRenderInfo.fDestPtr - c.fBaseline * fRenderInfo.fDestStride );
+	Int16   x, y, thisHeight, xstart, thisWidth;
+	UInt8   srcA, srcR, srcG, srcB;
+
+
+	// Unfortunately for some fonts, their right kern value actually is
+	// farther left than the right edge of the bitmap (think of overlapping
+	// script fonts). Ideally, we should store the actual width of each char's
+	// bitmap and use that here. However, it really shouldn't make too big of a
+	// difference, especially since the dest pixels that we end up overlapping
+	// should already be in the cache. If it does, time to upgrade the font
+	// format (again)
+	thisWidth = fWidth;// + (Int32)c.fRightKern;
+	if( thisWidth >= fRenderInfo.fMaxWidth )
+		thisWidth = fRenderInfo.fMaxWidth;
+
+	xstart = fRenderInfo.fClipRect.fX - fRenderInfo.fX;
+	if( xstart < 0 )
+		xstart = 0;
+
+	srcA = (UInt8)(( fRenderInfo.fColor >> 24 ) & 0x000000ff);
+	srcR = (UInt8)(( fRenderInfo.fColor >> 16 ) & 0x000000ff);
+	srcG = (UInt8)(( fRenderInfo.fColor >> 8	) & 0x000000ff);
+	srcB = (UInt8)(( fRenderInfo.fColor		) & 0x000000ff);
+
+	y = fRenderInfo.fClipRect.fY - fRenderInfo.fY + (Int16)c.fBaseline;
+	if( y < 0 )
+		y = 0;
+	else
+	{
+		destBasePtr = (UInt32 *)( (UInt8 *)destBasePtr + y*fRenderInfo.fDestStride );
+		src += y*fRenderInfo.fNumCols;
+	}
+
+	thisHeight = fRenderInfo.fMaxHeight + (Int16)c.fBaseline;
+	if( thisHeight > (Int16)c.fHeight )
+		thisHeight = (Int16)c.fHeight;
+
+	for( ; y < thisHeight; y++ )
+	{
+		destPtr = destBasePtr;
+		for( x = xstart; x < thisWidth; x++ )
+		{
+			UInt32 a = src[ x ];
+			if (a != 0)
+			{
+				if (srcA != 0xff)
+					a = (srcA*a + 127)/255;
+				destPtr[ x ] = ( a << 24 ) | (((srcR*a + 127)/255) << 16) | (((srcG*a + 127)/255) << 8) | ((srcB*a + 127)/255);
 			}
 		}
 		destBasePtr = (UInt32 *)( (UInt8 *)destBasePtr + fRenderInfo.fDestStride );
