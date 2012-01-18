@@ -1419,6 +1419,12 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 
 				return TRUE;
 			}
+			else if (HIWORD(wParam) == BN_CLICKED && LOWORD(wParam) == IDC_URULOGIN_GAMETAPLINK2)
+			{
+				ShellExecute(NULL, "open", "http://www.mystonline.com/donate", NULL, NULL, SW_SHOWNORMAL);
+
+				return TRUE;
+			}
 			break;
 		}
 	
