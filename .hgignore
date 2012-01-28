@@ -1,6 +1,7 @@
 syntax: glob
 *.ncb
 *.suo
+*.aps
 Release/
 Debug/
 syntax: regexp
