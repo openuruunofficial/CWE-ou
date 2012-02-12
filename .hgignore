@@ -1,0 +1,9 @@
+syntax: glob
+*.ncb
+*.suo
+*.aps
+Release/
+Debug/
+syntax: regexp
+^MOULOpenSourceClientPlugin/Plasma20/test/
+^MOULOpenSourceClientPlugin/StaticSDKs/
