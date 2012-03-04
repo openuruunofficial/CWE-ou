@@ -511,18 +511,23 @@ hsBool	pfGUIEditBoxMod::HandleKeyEvent( pfGameGUIMgr::EventType event, plKeyDef 
 				else if (key == KEY_V)
 				{
 					wchar_t* contents = plClipboard::GetInstance().GetClipboardText();
-					size_t len = wcslen(contents);
-					if (len > 0) {
-						wchar_t* insertTarget = fBuffer + fCursorPos;
-						size_t bufferTailLen = wcslen(insertTarget);
-						if (fCursorPos + len + bufferTailLen < fBufferSize) {
-							memmove(insertTarget + len, insertTarget, bufferTailLen * sizeof(wchar_t));
-							memcpy(insertTarget, contents, len * sizeof(wchar_t));
-							fCursorPos += len;
-							HandleExtendedEvent( kValueChanging );
+					if (contents != nil) 
+					{
+						size_t len = wcslen(contents);
+						if (len > 0) 
+						{
+							wchar_t* insertTarget = fBuffer + fCursorPos;
+							size_t bufferTailLen = wcslen(insertTarget);
+							if (fCursorPos + len + bufferTailLen < fBufferSize) 
+							{
+								memmove(insertTarget + len, insertTarget, bufferTailLen * sizeof(wchar_t));
+								memcpy(insertTarget, contents, len * sizeof(wchar_t));
+								fCursorPos += len;
+								HandleExtendedEvent( kValueChanging );
+							}
 						}
+						delete contents;
 					}
-					delete contents;
 				}
 			}
 			else

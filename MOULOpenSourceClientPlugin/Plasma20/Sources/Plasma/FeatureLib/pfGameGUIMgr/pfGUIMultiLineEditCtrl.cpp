@@ -1226,8 +1226,11 @@ hsBool	pfGUIMultiLineEditCtrl::HandleKeyEvent( pfGameGUIMgr::EventType event, pl
 			else if (key == KEY_V)
 			{
 				wchar_t* contents = plClipboard::GetInstance().GetClipboardText();
-				InsertString(contents);
-				delete contents;
+				if (contents != nil) 
+				{
+					InsertString(contents);
+					delete contents;
+				}
 			}
 		} 
 		else
