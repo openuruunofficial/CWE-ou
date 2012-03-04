@@ -61,6 +61,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "plgDispatch.h"
 #include "hsResMgr.h"
 #include "../pnInputCore/plKeyMap.h"
+#include "../plClipboard/plClipboard.h"
 
 #include <locale>
 
@@ -500,6 +501,29 @@ hsBool	pfGUIEditBoxMod::HandleKeyEvent( pfGameGUIMgr::EventType event, plKeyDef 
 				fEscapedFlag = true;
 				DoSomething();		// Query WasEscaped() to see if it was escape vs enter
 				return true;
+			}
+			else if (modifiers & pfGameGUIMgr::kCtrlDown) 
+			{
+				if (key == KEY_C) 
+				{
+					plClipboard::GetInstance().SetClipboardText(fBuffer);
+				}
+				else if (key == KEY_V)
+				{
+					wchar_t* contents = plClipboard::GetInstance().GetClipboardText();
+					size_t len = wcslen(contents);
+					if (len > 0) {
+						wchar_t* insertTarget = fBuffer + fCursorPos;
+						size_t bufferTailLen = wcslen(insertTarget);
+						if (fCursorPos + len + bufferTailLen < fBufferSize) {
+							memmove(insertTarget + len, insertTarget, bufferTailLen * sizeof(wchar_t));
+							memcpy(insertTarget, contents, len * sizeof(wchar_t));
+							fCursorPos += len;
+							HandleExtendedEvent( kValueChanging );
+						}
+					}
+					delete contents;
+				}
 			}
 			else
 			{

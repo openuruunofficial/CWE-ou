@@ -60,6 +60,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../plGImage/plDynamicTextMap.h"
 #include "plgDispatch.h"
 #include "hsResMgr.h"
+#include "../plClipboard/plClipboard.h"
 
 
 //// Tiny Helper Class ///////////////////////////////////////////////////////
@@ -1172,9 +1173,6 @@ hsBool	pfGUIMultiLineEditCtrl::HandleKeyEvent( pfGameGUIMgr::EventType event, pl
 	if ((fPrevCtrl || fNextCtrl) && (fLineStarts.GetCount() <= GetFirstVisibleLine()))
 		return true; // we're ignoring if we can't actually edit our visible frame (and we're linked)
 
-	if (modifiers & pfGameGUIMgr::kCtrlDown)
-		return true; // we're ignoring ctrl key events
-
 	if( event == pfGameGUIMgr::kKeyDown || event == pfGameGUIMgr::kKeyRepeat )
 	{
 		// Use arrow keys to do our dirty work
@@ -1219,6 +1217,19 @@ hsBool	pfGUIMultiLineEditCtrl::HandleKeyEvent( pfGameGUIMgr::EventType event, pl
 //			fEscapedFlag = true;
 			DoSomething();		// Query WasEscaped() to see if it was escape vs enter
 		}
+		else if (modifiers & pfGameGUIMgr::kCtrlDown) 
+		{
+			if (key == KEY_C) 
+			{
+				plClipboard::GetInstance().SetClipboardText(fBuffer.AcquireArray());
+			}
+			else if (key == KEY_V)
+			{
+				wchar_t* contents = plClipboard::GetInstance().GetClipboardText();
+				InsertString(contents);
+				delete contents;
+			}
+		} 
 		else
 		{
 			fIgnoreNextKey = false;
