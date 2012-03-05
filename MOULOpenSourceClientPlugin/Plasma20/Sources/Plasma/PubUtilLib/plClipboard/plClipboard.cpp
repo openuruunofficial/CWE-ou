@@ -106,8 +106,7 @@ void plClipboard::SetClipboardText(const wchar_t* text)
 	wcsncpy(target, text, len + 1);
 	::GlobalUnlock(copy); 
 
-	// Place the handle on the clipboard. 
-	::SetClipboardData(CF_UNICODETEXT, target);
+	::SetClipboardData(CF_UNICODETEXT, copy);
 	::CloseClipboard();
 #endif
 }
