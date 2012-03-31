@@ -129,7 +129,7 @@ public:
 	void SetSecsDouble(double secs);
 	void SetMicros(const UInt32 micros) { fMicros = micros; }
 	hsBool SetTime(short year, short month, short day, short hour, short minute, short second, unsigned long usec=0, int dst=-1);
-	hsBool SetGMTime(short year, short month, short day, short hour, short minute, short second, unsigned long usec=0, int dst=-1);
+	hsBool SetGMTime(short year, short month, short day, short hour, short minute, short second, unsigned long usec=0);
 	hsBool SetToUTC();
 	void ToCurrentTime();
 	void ToEpoch() { fSecs = 0; fMicros = 0;}
