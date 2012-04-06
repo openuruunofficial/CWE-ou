@@ -6,4 +6,5 @@ Release/
 Debug/
 syntax: regexp
 ^MOULOpenSourceClientPlugin/Plasma20/test/
+^MOULOpenSourceClientPlugin/Plasma20/tools/
 ^MOULOpenSourceClientPlugin/StaticSDKs/
