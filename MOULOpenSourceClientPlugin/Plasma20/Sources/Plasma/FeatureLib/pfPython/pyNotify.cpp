@@ -151,6 +151,16 @@ void pyNotify::AddVarNumber(const char* name, hsScalar number)
 	fBuildMsg.AddVariableEvent(name,number);
 }
 
+void pyNotify::AddVarNumber(const char* name, Int32 number)
+{
+	fBuildMsg.AddVariableEvent(name,number);
+}
+
+void pyNotify::AddVarNull(const char* name)
+{
+	fBuildMsg.AddVariableEvent(name);
+}
+
 void pyNotify::AddVarKey(const char* name, pyKey* key)
 {
 	fBuildMsg.AddVariableEvent(name, key ? key->getKey() : plKey() );
