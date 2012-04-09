@@ -207,6 +207,21 @@ PYTHON_METHOD_DEFINITION(ptNotify, addVarNumber, args)
 		self->fThis->AddVarNull(name);
 	else if (PyInt_Check(number))
 		self->fThis->AddVarNumber(name, PyInt_AsLong(number));
+	else if (PyLong_Check(number))
+	{
+		// try as int first
+		Int32 i = (Int32)PyLong_AsLong(number);
+		if (!PyErr_Occurred())
+		{
+			self->fThis->AddVarNumber(name, i);
+		}
+		else
+		{
+			// OverflowError, try float
+			PyErr_Clear();
+			self->fThis->AddVarNumber(name, (float)PyLong_AsDouble(number));
+		}
+	}
 	else if (PyNumber_Check(number)) 
 	{
 		PyObject* f = PyNumber_Float(number);
