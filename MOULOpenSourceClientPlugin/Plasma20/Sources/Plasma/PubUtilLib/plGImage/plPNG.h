@@ -1,7 +1,7 @@
 /*==LICENSE==*
 
 CyanWorlds.com Engine - MMOG client, server and tools
-Copyright (C) 2011  Cyan Worlds, Inc.
+Copyright (C) 2011	Cyan Worlds, Inc.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,9 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 You can contact Cyan Worlds, Inc. by email legal@cyan.com
  or by snail mail at:
-      Cyan Worlds, Inc.
-      14617 N Newport Hwy
-      Mead, WA   99021
+	  Cyan Worlds, Inc.
+	  14617 N Newport Hwy
+	  Mead, WA	 99021
 
 *==LICENSE==*/
 
@@ -36,20 +36,20 @@ class hsStream;
 class plPNG {
 protected:
 
-    plMipmap* IRead(hsStream* inStream);
-    hsBool IWrite(plMipmap* source, hsStream* outStream);
+	plMipmap* IRead(hsStream* inStream);
+	hsBool IWrite(plMipmap* source, hsStream* outStream);
 
 public:
 
-    plMipmap* ReadFromStream(hsStream* inStream) { return IRead(inStream); }
-    plMipmap* ReadFromFile(const char* fileName);
-    plMipmap* ReadFromFile(const wchar* fileName);
+	plMipmap* ReadFromStream(hsStream* inStream) { return IRead(inStream); }
+	plMipmap* ReadFromFile(const char* fileName);
+	plMipmap* ReadFromFile(const wchar* fileName);
 
-    hsBool WriteToStream(hsStream* outStream, plMipmap* sourceData) { return IWrite(sourceData, outStream); }
-    hsBool WriteToFile(const char* fileName, plMipmap* sourceData);
-    hsBool WriteToFile(const wchar* fileName, plMipmap* sourceData);
+	hsBool WriteToStream(hsStream* outStream, plMipmap* sourceData) { return IWrite(sourceData, outStream); }
+	hsBool WriteToFile(const char* fileName, plMipmap* sourceData);
+	hsBool WriteToFile(const wchar* fileName, plMipmap* sourceData);
 
-    static plPNG& Instance(void);
+	static plPNG& Instance(void);
 };
 
 #endif // _plPNG_h
