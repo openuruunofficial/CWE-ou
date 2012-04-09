@@ -72,6 +72,7 @@ xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxCharacter.dll ..\..\.
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxCooking.dll ..\..\..\..\test\
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxExtensions.dll ..\..\..\..\test\
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\PhysXLoader.dll ..\..\..\..\test\
+xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..\..\test\
 "
 				ExcludedFromBuild="FALSE"/>
 			<Tool
@@ -161,6 +162,7 @@ xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxCharacter.dll ..\..\.
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxCooking.dll ..\..\..\..\test\
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\NxExtensions.dll ..\..\..\..\test\
 xcopy /Y ..\..\..\..\..\StaticSDKs\Win32\PhysX\Bin\win32\PhysXLoader.dll ..\..\..\..\test\
+xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..\..\test\
 "/>
 			<Tool
 				Name="VCPreBuildEventTool"/>

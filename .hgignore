@@ -2,8 +2,10 @@ syntax: glob
 *.ncb
 *.suo
 *.aps
+*.pyc
 Release/
 Debug/
 syntax: regexp
+^MOULOpenSourceClientPlugin/Plasma20/Sources/Plasma/Apps/plClient/external/render/
 ^MOULOpenSourceClientPlugin/Plasma20/test/
 ^MOULOpenSourceClientPlugin/StaticSDKs/
