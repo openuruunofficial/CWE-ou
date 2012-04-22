@@ -1651,7 +1651,7 @@ plMipmap* plWaveSet7::ICreateBumpMipmapPS()
 //	const int sizeV = kCompositeSize;
 	const int sizeV = 1;
 
-	const kNumLevels = 8; // must be log2(kCompositeSize)
+	const int kNumLevels = 8; // must be log2(kCompositeSize)
 	hsAssert(kCompositeSize == (1 << kNumLevels), "Mismatch on size and num mip levels");
 
 	if( !fCosineLUT )

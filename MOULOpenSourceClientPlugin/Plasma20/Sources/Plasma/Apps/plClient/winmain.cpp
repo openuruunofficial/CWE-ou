@@ -1290,7 +1290,7 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 {
 	static ShaDigest namePassHash;
 	static LoginDialogParam* loginParam;
-	static showAuthFailed = false;
+	static bool showAuthFailed = false;
 
 	switch( uMsg )
 	{
