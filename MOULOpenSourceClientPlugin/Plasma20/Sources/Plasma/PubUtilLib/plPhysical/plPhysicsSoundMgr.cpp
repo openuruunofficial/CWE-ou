@@ -40,6 +40,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 *==LICENSE==*/
 #include <algorithm>
+#include <iterator>
 #include "hsTimer.h"
 #include "plPhysicsSoundMgr.h"
 #include "plPhysicalSndGroup.h"
