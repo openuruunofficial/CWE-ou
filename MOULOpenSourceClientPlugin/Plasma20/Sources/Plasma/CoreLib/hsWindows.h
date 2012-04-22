@@ -44,7 +44,13 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #if HS_BUILD_FOR_WIN32
 
 #ifndef __AFX_H__   // MFC apps won't let us include windows from here. =(
-#define _WIN32_WINNT    0x0400
+
+#if defined(_MSC_VER) && _MSC_VER >= 1600
+	#define _WIN32_WINNT 0x0501
+#else
+	#define _WIN32_WINNT 0x0400
+#endif
+
 #include <WinSock2.h>
 #include <Windows.h>
 #endif  // __AFX_H__
