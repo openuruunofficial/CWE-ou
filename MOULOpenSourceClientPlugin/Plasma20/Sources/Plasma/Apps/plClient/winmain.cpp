@@ -1970,11 +1970,11 @@ bool IsExpired()
 		void* desc = nil;
 		if (VerQueryValue(data, "\\StringFileInfo\\040904B0\\FileDescription", &desc, &descLen))
 		{
-			char* buildDateStart = strstr((const char*)desc, " - Built ");
+			const char* buildDateStart = strstr((const char*)desc, " - Built ");
 			if (buildDateStart)
 			{
 				buildDateStart += strlen(" - Built ");
-				char* buildDateEnd = strstr(buildDateStart, " at");
+				const char* buildDateEnd = strstr(buildDateStart, " at");
 				if (buildDateEnd)
 				{
 					int len = buildDateEnd-buildDateStart;
