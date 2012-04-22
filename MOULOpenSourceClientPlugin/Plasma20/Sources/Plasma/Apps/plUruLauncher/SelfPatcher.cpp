@@ -87,7 +87,7 @@ static wchar		s_newPatcherFile[MAX_PATH];
 
 //============================================================================
 static void NetErrorHandler (ENetProtocol protocol, ENetError error) {
-	ref(protocol);
+	REF(protocol);
 	LogMsg(kLogError, L"NetErr: %s", NetErrorToString(error));
 	if (IS_NET_SUCCESS(s_patchResult))
 		s_patchResult = error;
@@ -109,8 +109,8 @@ static void DownloadCallback (
 	const wchar     filename[],
 	hsStream *      writer
 ) {
-	ref(param);
-	ref(filename);
+	REF(param);
+	REF(filename);
 
 	if(IS_NET_ERROR(result)) {
 		switch (result) {
@@ -158,8 +158,8 @@ static void ManifestCallback (
 	const NetCliFileManifestEntry	manifest[],
 	unsigned						entryCount
 ) {
-	ref(param);
-	ref(group);
+	REF(param);
+	REF(group);
 
 	if(IS_NET_ERROR(result)) {
 		switch (result) {
@@ -208,7 +208,7 @@ static void FileSrvIpAddressCallback (
 	void *			param,
 	const wchar		addr[]
 ) {
-	ref(param);
+	REF(param);
 
 	NetCliGateKeeperDisconnect();
 

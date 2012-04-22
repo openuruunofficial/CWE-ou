@@ -295,7 +295,7 @@ static void __cdecl ReportMem (EMemFile file, bool showDialog, const char fmt[],
 //============================================================================
 #ifdef MEM_DEBUG
 static void __cdecl MemDumpCallback (void * mem, void * param) {
-    ref(MemDumpCallback);
+    REF(MemDumpCallback);
 
     const _CrtMemBlockHeader * pHead = pHdr(mem);
     MemDumpParam * dumpParam = (MemDumpParam *) param;
@@ -337,7 +337,7 @@ static void __cdecl OnExitMemDumpCallback (void * mem, size_t) {
 //===========================================================================
 #ifdef MEM_DEBUG
 static void __cdecl CheckLeaksOnExit () {
-	ref(CheckLeaksOnExit);
+	REF(CheckLeaksOnExit);
     if (!ErrorGetOption(kErrOptDisableMemLeakChecking)) {
         MemDumpParam param;
         param.file          = kMemLeaks;
@@ -357,17 +357,17 @@ static int __cdecl CrtAllocHook (
 	const unsigned char *	szFileName,
 	int						nLine
 ) {
-	ref(method);
-	ref(pUserData);
-	ref(nSize);
-	ref(nBlockUse);
-	ref(lRequest);
-	ref(szFileName);
-	ref(nLine);
+	REF(method);
+	REF(pUserData);
+	REF(nSize);
+	REF(nBlockUse);
+	REF(lRequest);
+	REF(szFileName);
+	REF(nLine);
 
 	if (nBlockUse == _NORMAL_BLOCK) {
 		int xx = 0;
-		ref(xx);
+		REF(xx);
 	}
 	
 	return 1;
@@ -434,7 +434,7 @@ void MemValidateNow () {
 
 //============================================================================
 void MemSetValidation (unsigned on) {
-    ref(on);
+    REF(on);
 
 #ifdef MEM_DEBUG
 #endif // MEM_DEBUG
@@ -459,7 +459,7 @@ void MemPopDisableTracking () {
 
 //============================================================================
 void MemSetColor (unsigned short color) {
-	ref(color);
+	REF(color);
 	
 #ifdef MEM_DEBUG
 	s_memColor = color & 0xFFFF;
@@ -469,8 +469,8 @@ void MemSetColor (unsigned short color) {
 //===========================================================================
 void * MemAlloc (unsigned bytes, unsigned flags, const char file[], int line) {
 
-    ref(file);
-    ref(line);
+    REF(file);
+    REF(line);
 
 #ifdef MEM_DEBUG
 	unsigned block;
@@ -520,7 +520,7 @@ void * MemAlloc (unsigned bytes, unsigned flags, const char file[], int line) {
 
 //============================================================================
 void MemFree (void * ptr, unsigned flags) {
-	ref(flags);
+	REF(flags);
 
 	if (!ptr)
         return;
@@ -535,8 +535,8 @@ void MemFree (void * ptr, unsigned flags) {
 
 //===========================================================================
 void * MemRealloc (void * ptr, unsigned bytes, unsigned flags, const char file[], int line) {
-    ref(file);
-    ref(line);
+    REF(file);
+    REF(line);
 
     #ifdef HS_DEBUGGING
     unsigned oldBytes = ptr ? MemSize(ptr) : 0;

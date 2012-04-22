@@ -806,10 +806,10 @@ static void __cdecl DumpInvalidData (
     const char  fmt[],
     ...
 ) {
-    ref(filename);
-    ref(bytes);
-    ref(data);
-    ref(fmt);
+    REF(filename);
+    REF(bytes);
+    REF(data);
+    REF(fmt);
     
     wchar path[MAX_PATH];
     PathGetProgramDirectory(path, arrsize(path));
@@ -947,7 +947,7 @@ void INtSockDelete (
         sock->notifyProc                = nil;
         notifyProc((AsyncSocket) sock, kNotifySocketDisconnect, nil, &sock->userState);
         DWORD err = GetLastError();
-        ref(err);
+        REF(err);
     }
     else {
         // Since the no application notification procedure was
@@ -1016,7 +1016,7 @@ void INtSocketOpCompleteSocketRead (
 
         if (sock->connType == kConnTypeCliToAuth) {
             int x = 0;
-            ref(x);
+            REF(x);
         }
 
         if (!SocketDispatchRead(sock))

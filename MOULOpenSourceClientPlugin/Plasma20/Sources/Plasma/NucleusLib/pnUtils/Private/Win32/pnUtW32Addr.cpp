@@ -101,7 +101,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 //      127.0.0.0    - 127.0.0.255
 //  (lowest)
 static int NetAddressNodeSortValueNetOrder (NetAddressNode addr) {
-	ref(NetAddressNodeSortValueNetOrder);
+	REF(NetAddressNodeSortValueNetOrder);
     // Loopback addresses
     if ((addr & kNetClassALoopbackMask) == (kNetClassALoopbackAddr & kNetClassALoopbackMask))
         return 4;

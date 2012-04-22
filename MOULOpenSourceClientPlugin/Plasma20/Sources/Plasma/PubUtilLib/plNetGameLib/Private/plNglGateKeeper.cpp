@@ -488,7 +488,7 @@ static void AsyncLookupCallback (
     unsigned            addrCount,
     const NetAddress    addrs[]
 ) {
-    ref(param);
+    REF(param);
     
     if (!addrCount) {
 		ReportNetError(kNetProtocolCli2GateKeeper, kNetErrNameLookupFailed);
@@ -818,7 +818,7 @@ bool PingRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const GateKeeper2Cli_PingReply & reply = *(const GateKeeper2Cli_PingReply *)msg;
 
@@ -882,7 +882,7 @@ bool FileSrvIpAddressRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const GateKeeper2Cli_FileSrvIpAddressReply & reply = *(const GateKeeper2Cli_FileSrvIpAddressReply *)msg;
 
@@ -942,7 +942,7 @@ bool AuthSrvIpAddressRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const GateKeeper2Cli_AuthSrvIpAddressReply & reply = *(const GateKeeper2Cli_AuthSrvIpAddressReply *)msg;
 

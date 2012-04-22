@@ -1008,8 +1008,8 @@ void W9xSocketConnect (
     unsigned                localPort
 ) {
     // Not supported for W9X
-    ref(connectMs);
-    ref(localPort);
+    REF(connectMs);
+    REF(localPort);
 
     // If necessary, startup the window and message queue
     HWND window = StartupWindow();
@@ -1155,8 +1155,8 @@ unsigned W9xSocketStartListening (
     const NetAddress &      listenAddr,
     FAsyncNotifySocketProc  notifyProc
 ) {
-    ref(listenAddr);
-    ref(notifyProc);
+    REF(listenAddr);
+    REF(notifyProc);
     return 0;
 
 }
@@ -1166,8 +1166,8 @@ void W9xSocketStopListening (
     const NetAddress &      listenAddr,
     FAsyncNotifySocketProc  notifyProc
 ) {
-    ref(listenAddr);
-    ref(notifyProc);
+    REF(listenAddr);
+    REF(notifyProc);
 }
 
 //===========================================================================
@@ -1190,8 +1190,8 @@ void W9xSocketSetNotifyProc (
     AsyncSocket             sock, 
     FAsyncNotifySocketProc  notifyProc
 ) {
-    ref(sock);
-    ref(notifyProc);
+    REF(sock);
+    REF(notifyProc);
 
     // This provider does not allow changing the notification procedure
     FATAL("SocketSetNotifyProc");
@@ -1204,8 +1204,8 @@ void W9xSocketSetBacklogAlloc (
 ) {
 
     // This provider does not limit the maximum backlog allocation
-    ref(sock);
-    ref(bufferSize);
+    REF(sock);
+    REF(bufferSize);
 
 }
 

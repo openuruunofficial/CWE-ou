@@ -310,12 +310,12 @@ typedef hsColor32 hsRGBAColor32;
 
 /****************************************************************************
 *
-*   ref
+*   REF
 *   References a variable to prevent compiler warnings
 *
 ***/
 
-#define  ref(a)  ((void *)&(a))
+#define  REF(a)  ((void *)&(a))
 
 
 /****************************************************************************

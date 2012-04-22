@@ -430,9 +430,9 @@ static bool Recv_PingReply (
     unsigned        bytes,
     void *          param
 ) {
-	ref(msg);
-	ref(bytes);
-	ref(param);
+	REF(msg);
+	REF(bytes);
+	REF(param);
     return true;
 }
 
@@ -442,8 +442,8 @@ static bool Recv_JoinAgeReply (
     unsigned        bytes,
     void *          param
 ) {
-	ref(bytes);
-	ref(param);
+	REF(bytes);
+	REF(param);
 	
     const Game2Cli_JoinAgeReply & reply = *(const Game2Cli_JoinAgeReply *)msg;
     if (sizeof(reply) != bytes)
@@ -460,8 +460,8 @@ static bool Recv_PropagateBuffer (
     unsigned        bytes,
     void *          param
 ) {
-    ref(bytes);
-    ref(param);
+    REF(bytes);
+    REF(param);
 
     const Game2Cli_PropagateBuffer & reply = *(const Game2Cli_PropagateBuffer *)msg;
 
@@ -481,8 +481,8 @@ static bool Recv_GameMgrMsg (
     unsigned        bytes,
     void *          param
 ) {
-    ref(bytes);
-    ref(param);
+    REF(bytes);
+    REF(param);
 
     const Game2Cli_GameMgrMsg & reply = *(const Game2Cli_GameMgrMsg *)msg;
 
@@ -571,7 +571,7 @@ bool JoinAgeRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
     const Game2Cli_JoinAgeReply & reply = *(const Game2Cli_JoinAgeReply *) msg;
     m_result        = reply.result;
