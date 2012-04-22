@@ -151,6 +151,8 @@ public:
 	virtual void Read(hsStream *s, hsResMgr *mgr);
 
 protected:
+	friend class plAGModifier;
+
 	// -- methods --
 	virtual void IApply(const plAGModifier *mod, double time) = 0;
 
