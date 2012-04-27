@@ -517,7 +517,7 @@ hsBool	pfGUIEditBoxMod::HandleKeyEvent( pfGameGUIMgr::EventType event, plKeyDef 
 						if (len > 0) 
 						{
 							wchar_t* insertTarget = fBuffer + fCursorPos;
-							size_t bufferTailLen = wcslen(insertTarget);
+							size_t bufferTailLen = wcslen(insertTarget) + 1; //include terminating \0
 							if (fCursorPos + len + bufferTailLen < fBufferSize) 
 							{
 								memmove(insertTarget + len, insertTarget, bufferTailLen * sizeof(wchar_t));
