@@ -2,8 +2,13 @@ syntax: glob
 *.ncb
 *.suo
 *.aps
-Release/
-Debug/
+*.user
+*.sdf
+*.opensdf
+Release*/
+Debug*/
+ipch/
 syntax: regexp
+^MOULOpenSourceClientPlugin/Plasma20/tools/
 ^MOULOpenSourceClientPlugin/Plasma20/test/
 ^MOULOpenSourceClientPlugin/StaticSDKs/
