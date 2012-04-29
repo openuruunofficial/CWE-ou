@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Internal|Win32">
+      <Configuration>Debug_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Internal|Win32">
+      <Configuration>Release_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{05ED75E1-E296-48A9-5027-C2914D8DFA3F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">true</PostBuildEventUseInBuild>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</PostBuildEventUseInBuild>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">plClient_dbg</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UruExplorer_dbg</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UruExplorer</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">plClient</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/PC;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;libci.lib;libcid.lib;libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/plClient.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Running plClient Post-Build Step</Message>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\test\</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/PC;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;libci.lib;libcid.lib;libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/plClient.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Running plClient Post-Build Step</Message>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\test\</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/PC;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AssemblyDebug>false</AssemblyDebug>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/plClient.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Running plClient Post-Build Step</Message>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\test\</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/PC;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AssemblyDebug>false</AssemblyDebug>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/plClient.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Running plClient Post-Build Step</Message>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\test\</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\pfAllCreatables.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">true</BrowseInformation>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\plAllCreatables.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">true</BrowseInformation>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\PlClient\plClient.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">true</BrowseInformation>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\pnAllCreatables.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">true</BrowseInformation>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\PlClient\winmain.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">true</BrowseInformation>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BrowseInformation>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\PlClient\plClient.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plClient\plClientCreatable.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\banner.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap1.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap2.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap3.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00001.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00002.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00003.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00004.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00005.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_cli.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_hig.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cnsl1.bin" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_clicked.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_disabled.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_down.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_grab.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_left.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_open.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_poised.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_right.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_u.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_up.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_upward.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Dirt.ICO" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\headspin.ico" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Microphone.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Speaker.bmp" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.01.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.02.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.03.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.04.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.05.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.06.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.07.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.08.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.09.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.10.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.11.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.12.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.13.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.14.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.15.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.16.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.17.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.18.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking_Text.jpg" />
+    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Updating_Text.jpg" />
+    <None Include="..\..\..\..\Docs\ReleaseNotes\ReleaseNotes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\plClient.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">\Plasma20\Plasma20\Sources\Plasma\Apps\plClient\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">\Plasma20\Plasma20\Sources\Plasma\Apps\plClient\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">\Plasma20\Plasma20\Sources\Plasma\Apps\plClient\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">\Plasma20\Plasma20\Sources\Plasma\Apps\plClient\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SDKs\XPlatform\Cypython-2.3.3\PCbuild\pythoncore_static.vcxproj">
+      <Project>{a32201a8-0255-4863-97b8-4a569c18c624}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLibExe\CoreLibExe.vcxproj">
+      <Project>{4054c94f-866a-4aa7-874b-2afcfef23a71}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CoreLib\CoreLib.vcxproj">
+      <Project>{83a96477-baef-4db7-8134-aeadf4b2e63f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfAnimation\pfAnimation.vcxproj">
+      <Project>{5afa4598-e766-1997-9d8d-ea680f077f44}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfAudio\pfAudio.vcxproj">
+      <Project>{b2270edb-6e92-332f-60c8-255e8af2cffc}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfCamera\pfCamera.vcxproj">
+      <Project>{097a0c82-946c-92d5-fc98-da5d9fd7ab35}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfCCR\pfCCR.vcxproj">
+      <Project>{1599855e-cc20-4c3a-a382-5290c40be08e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfCharacter\pfCharacter.vcxproj">
+      <Project>{b881425c-57be-6591-67c5-276c2e4cb073}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfConditional\pfConditional.vcxproj">
+      <Project>{d7968212-930c-32ac-d0b6-3906491baa08}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfConsole\pfConsole.vcxproj">
+      <Project>{b90d0fad-1d1f-e8ad-f7c6-b86db0fe49de}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfCsrSrv\pfCsrSrv.vcxproj">
+      <Project>{e710bb2b-8e1e-434e-8480-10e3af6df53b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfGameGUIMgr\pfGameGUIMgr.vcxproj">
+      <Project>{bc4410fe-3113-c179-4901-fb98f4fd2ea4}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfGameMgr\pfGameMgr.vcxproj">
+      <Project>{7d83f872-f06c-4d42-a8f2-d77dc22c5981}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfGameScoreMgr\pfGameScoreMgr.vcxproj">
+      <Project>{2cf2d6a0-6f62-43b5-81fc-bb85de01bdf8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfJournalBook\pfJournalBook.vcxproj">
+      <Project>{956106a7-a5a8-5612-7815-80a1243fab51}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfLocalizationMgr\pfLocalizationMgr.vcxproj">
+      <Project>{8e44fb70-5ea0-4d33-b829-e4d16d7c11e3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfMessage\pfMessage.vcxproj">
+      <Project>{cd679637-008c-7e09-198f-51059c2b48e8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfPython\pfPython.vcxproj">
+      <Project>{797721d5-0efe-4912-8f4f-953a71a69b04}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfSecurePreloader\pfSecurePreloader.vcxproj">
+      <Project>{c28b9838-04ae-4ebd-a93f-a94a64230887}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FEATURELIB\pfStackTrace\pfStackTrace.vcxproj">
+      <Project>{0f651486-22d1-42ad-889a-fc577e296ffd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FeatureLib\pfSurface\pfSurface.vcxproj">
+      <Project>{a7246b04-5fb4-7560-b241-69f8d1f6f25b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnAddrInfo\pnAddrInfo.vcxproj">
+      <Project>{af37952c-0c38-4057-8d59-eaa18f28da26}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnAsyncCoreExe\pnAsyncCoreExe.vcxproj">
+      <Project>{55c8ddc2-0675-4977-a18f-166109d89f4b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnAsyncCore\pnAsyncCore.vcxproj">
+      <Project>{4e991726-d69f-4786-a873-df37fb4dabf9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnCsrNet\pnCsrNet.vcxproj">
+      <Project>{4ad6934c-977d-4a01-9faa-d2c32d96dd0b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnDispatch\pnDispatch.vcxproj">
+      <Project>{e609c4f6-52a0-45c6-958a-8b41680ad809}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnFactory\pnFactory.vcxproj">
+      <Project>{7c9680f1-6d8c-429d-a3a9-0cd36d9aea0c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnGameMgr\pnGameMgr.vcxproj">
+      <Project>{d97e0e20-0502-4e63-bd05-41b42eed695f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnIniExe\pnIniExe.vcxproj">
+      <Project>{28e5e146-d581-4492-9dd7-d56247a9f027}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnIni\pnIni.vcxproj">
+      <Project>{430ec1ae-7e25-4039-a83e-09f956285bac}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnInputCore\pnInputCore.vcxproj">
+      <Project>{f26a5e7b-ef4d-4e3f-67a3-ac24ea6a5a87}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnKeyedObject\pnKeyedObject.vcxproj">
+      <Project>{4f020dd6-7d46-49e1-bfc1-082d5f979dac}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnMessage\pnMessage.vcxproj">
+      <Project>{633286c6-e4e8-428f-b1ee-d48cdacc0490}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnModifier\pnModifier.vcxproj">
+      <Project>{b4752dfb-c7f8-4864-a23b-5f15bc64a7a0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnNetBase\pnNetBase.vcxproj">
+      <Project>{ab45ba83-4921-4a3c-80cf-1984d49aca0d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnNetCli\pnNetCli.vcxproj">
+      <Project>{6b9cdd84-ab0f-4643-8d0b-d0c0714e706f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnNetCommon\pnNetCommon.vcxproj">
+      <Project>{90da3776-6b7c-48a0-8cec-1a60db5be61f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnNetProtocol\pnNetProtocol.vcxproj">
+      <Project>{32ec294e-2a45-4627-b5c4-b5cd236c2674}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnNucleusInc\pnNucleusInc.vcxproj">
+      <Project>{f2635bc2-a8ba-4d43-807a-ea91307dbf93}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnProduct\pnProduct.vcxproj">
+      <Project>{ca208971-6c77-47f6-aa4b-fb6ecc071132}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnSceneObject\pnSceneObject.vcxproj">
+      <Project>{c0e5499c-1b5b-49a2-9047-95ab6a6c2b13}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnSimpleNet\pnSimpleNet.vcxproj">
+      <Project>{d20a0f2b-6822-4ee7-88c0-37ed22e38583}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnTimer\pnTimer.vcxproj">
+      <Project>{59197414-421b-457e-a559-f6d875379603}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnUtilsExe\pnUtilsExe.vcxproj">
+      <Project>{08eb4dcb-75f7-419e-a212-0bead6a10ff1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NucleusLib\pnUtils\pnUtils.vcxproj">
+      <Project>{89316659-f4a9-4e92-8200-c36288a61b9b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plAgeDescription\plAgeDescription.vcxproj">
+      <Project>{7147ce72-97c7-48d9-b3be-e0fca3fba83c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PUBUTILLIB\plAgeLoader\plAgeLoader.vcxproj">
+      <Project>{9b7321c8-f015-7ce4-5897-1303d32714d3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plAudible\plAudible.vcxproj">
+      <Project>{ea1464a9-bf37-20fb-fca3-4ab83b8f72bd}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PUBUTILLIB\plAudioCore\plAudioCore.vcxproj">
+      <Project>{99445121-67ba-4696-8904-f2fc13c928bb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plAudio\plAudio.vcxproj">
+      <Project>{0fb2ca48-5f85-e7f0-d67d-aca515650fd8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plAvatar\plAvatar.vcxproj">
+      <Project>{7e6c6f09-c580-4b4d-95e2-c02248122da2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plCompression\plCompression.vcxproj">
+      <Project>{7d696f05-8019-4029-a6e5-1225619ed40a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plContainer\plContainer.vcxproj">
+      <Project>{34121e00-fe04-a056-3f9f-dabe4dd92e67}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plDrawable\plDrawable.vcxproj">
+      <Project>{291f4c1e-bdea-ef0d-acf2-39be5d8a7726}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plEncryption\plEncryption.vcxproj">
+      <Project>{c1056f07-0d34-49cc-9b13-9f212bdf023b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plFile\plFile.vcxproj">
+      <Project>{eefe2438-9f93-4c5c-b85d-6fdd431a1cf1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plGImage\plGImage.vcxproj">
+      <Project>{38d7e623-e3cd-3768-5fc0-bf2385d4cebb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plGLight\plGLight.vcxproj">
+      <Project>{9f98213e-158a-c44a-7c6f-f35b692908b6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plInputCore\plInputCore.vcxproj">
+      <Project>{2ea27eea-f243-5cc7-74db-7fcadb37cbc7}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plInterp\plInterp.vcxproj">
+      <Project>{287c9758-609c-a004-04d2-a8576f290601}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plIntersect\plIntersect.vcxproj">
+      <Project>{1629bcab-59ba-f283-1447-cfc197370dda}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plJPEG\plJPEG.vcxproj">
+      <Project>{ac8d3a0f-d843-d91b-9f42-c7209e58356f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plMath\plMath.vcxproj">
+      <Project>{8195535a-ea05-7cad-38c8-52e188fe0880}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plMessage\plMessage.vcxproj">
+      <Project>{05ab7d6b-5c79-4aa2-bee0-b7f9cbfb976a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plModifier\plModifier.vcxproj">
+      <Project>{b9447918-ac47-1dec-a307-86fbf8c56882}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetClientComm\plNetClientComm.vcxproj">
+      <Project>{605f0bee-a790-868b-af5e-304b78e798c6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetClientRecorder\plNetClientRecorder.vcxproj">
+      <Project>{2bc0dfbf-0c39-d76c-b88b-7a736b0d3967}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetClient\plNetClient.vcxproj">
+      <Project>{6a6c1452-0c40-4f1c-00a0-4f2505d7c593}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetCommon\plNetCommon.vcxproj">
+      <Project>{050ac8c8-a537-46fe-afee-bd3f9cb98f69}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetGameLib\plNetGameLib.vcxproj">
+      <Project>{cbed4802-1fad-49e7-bbdc-fc851c27d7ed}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetMessage\plNetMessage.vcxproj">
+      <Project>{6e2a360e-cf95-4cad-ac40-a022d2fe6f4b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plNetTransport\plNetTransport.vcxproj">
+      <Project>{6e6396bf-a81f-132c-bea0-93b01e9cdce5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plParticleSystem\plParticleSystem.vcxproj">
+      <Project>{51bb45d3-f80c-c144-d1d3-9a8afd391ed0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plPhysical\plPhysical.vcxproj">
+      <Project>{ef09cf84-fa91-24c4-4ed3-41a84041196a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plPhysX\plPhysX.vcxproj">
+      <Project>{5cb24835-47c1-4ae7-900e-70cbd1cc1dea}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plPipeline\plPipeline.vcxproj">
+      <Project>{fe2c8788-f803-6be4-88dc-3cb86878beb2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plProgressMgr\plProgressMgr.vcxproj">
+      <Project>{0705e9a2-f241-5006-a55c-ed402aaea5b0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plResMgr\plResMgr.vcxproj">
+      <Project>{e157e0e4-ac35-4435-95a6-9179aab66436}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plScene\plScene.vcxproj">
+      <Project>{cbe4c2d1-0b39-9600-b18c-c6f08b542590}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pubutillib\plSDL\plSDL.vcxproj">
+      <Project>{ccd6e996-0b96-4754-bb4d-854d2e7665f5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plSockets\plSockets.vcxproj">
+      <Project>{9e775c8a-3a08-d401-1127-5b855cde279f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plStatGather\plStatGather.vcxproj">
+      <Project>{58b4046e-a0cb-2c56-06f9-d7c2bf1e7b0b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plStatusLog\plStatusLog.vcxproj">
+      <Project>{21694294-7039-4c2a-b332-08dcad747f05}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plStreamLogger\plStreamLogger.vcxproj">
+      <Project>{b5311a8b-501d-4a8d-f7cf-404fb8dc0b3e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plSurface\plSurface.vcxproj">
+      <Project>{3fcede9a-a9cb-5fbd-69f7-ddc6543076f5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plTransform\plTransform.vcxproj">
+      <Project>{19f61572-5e19-3bb0-21dc-ece609d395cb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plUnifiedTime\plUnifiedTime.vcxproj">
+      <Project>{fe69f407-565e-4c33-a91a-fba622d59c18}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plUUID\plUUID.vcxproj">
+      <Project>{bbdf8302-be9c-43ec-aaf8-912e601515b3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PUBUTILLIB\plVault\plVault.vcxproj">
+      <Project>{6e33c5fc-442f-4d84-af7f-015aa8740791}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
