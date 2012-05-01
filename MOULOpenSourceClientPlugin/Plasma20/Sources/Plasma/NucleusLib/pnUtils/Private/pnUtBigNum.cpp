@@ -337,8 +337,8 @@ void BigNum::DivNormalized (const BigNum & a, const BigNum & b, BigNum * remaind
         if (quotient) {
             Val borrow = 0;
             Val carry  = 0;
-            unsigned denomIndex = 0;
-            for (; denomIndex != denomCount; ++denomIndex) {
+            unsigned denomIndex;
+            for (denomIndex = 0; denomIndex != denomCount; ++denomIndex) {
                 DVal product = (DVal)(Mul((*denom)[denomIndex], quotient) + carry);
                 carry = HIGH(product);
                 numer->SetVal(quotientIndex + denomIndex, (DVal)((DVal)(*numer)[quotientIndex + denomIndex] - (DVal)LOW(product) - (DVal)borrow), &borrow);
@@ -1314,8 +1314,8 @@ void BigNum::Sub (const BigNum & a, Val b) {
     const unsigned count = a.Count();
     SetCount(count);
     Val borrow = b;
-    unsigned index = 0;
-    for (; index < count; ++index) {
+    unsigned index;
+    for (index = 0; index < count; ++index) {
         SetVal(index, (DVal)((DVal)a[index] - (DVal)borrow), &borrow);
         borrow = (Val)((Val)0 - (Val)borrow);
     }
@@ -1332,8 +1332,8 @@ void BigNum::Sub (const BigNum & a, const BigNum & b) {
     const unsigned bCount = b.Count();
     GrowToCount(count, true);
     Val borrow = 0;
-    unsigned index = 0;
-    for (; index < count; ++index) {
+    unsigned index;
+    for (index = 0; index < count; ++index) {
         Val bVal = (index < bCount) ? b[index] : (Val)0;
         SetVal(index, (DVal)((DVal)a[index] - (DVal)bVal - (DVal)borrow), &borrow);
         borrow = (Val)((Val)0 - (Val)borrow);

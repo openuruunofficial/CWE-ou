@@ -151,8 +151,6 @@ public:
 	virtual void Read(hsStream *s, hsResMgr *mgr);
 
 protected:
-	friend class plAGModifier;
-
 	// -- methods --
 	virtual void IApply(const plAGModifier *mod, double time) = 0;
 
@@ -162,6 +160,9 @@ protected:
 	plDrawInterface * IGetDI(const plAGModifier *modifier) const;
 	plSimulationInterface * IGetSI(const plAGModifier *modifier) const;
 	plObjInterface * IGetGI(const plAGModifier *modifier, UInt16 classIdx) const;
+
+	// Allow plAGModifier to declare IGet?? as friends
+	friend class plAGModifier;
 
 	// -- members --
 	plAGChannel *fChannel;
