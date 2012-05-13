@@ -826,7 +826,7 @@ PF_CONSOLE_CMD( Console, CreateDocumentation, "string fileName",
 	}
 	
 
-	fprintf(f, "<center> <h2> Console Commands for Plasma 2.0 Client </h2> <em>Built %s on %s.</em></center><br />", 
+	fprintf(f, "<h2 style=\"text-align: center;\"> Console Commands for Plasma 2.0 Client </h2> <em style=\"display: block; text-align: center;\">Built %s on %s.</em><br />", 
 		pnBuildDates::fBuildTime, pnBuildDates::fBuildDate );
 
 	DocGenIterator iter(f);
@@ -856,7 +856,7 @@ PF_CONSOLE_CMD( Console, CreateBriefDocumentation, "string fileName",
 		return;
 	}
 
-	fprintf(f, "<center> <h3> Console Commands for Plasma 2.0 Client </h3> <em>Built %s on %s.</em></center><br />", 
+	fprintf(f, "<h2 style=\"text-align: center;\"> Console Commands for Plasma 2.0 Client </h2> <em style=\"display: block; text-align: center;\">Built %s on %s.</em><br />", 
 		pnBuildDates::fBuildTime, pnBuildDates::fBuildDate );
 	BriefDocGenIterator iter(f);
 	group = pfConsoleCmdGroup::GetBaseGroup();
