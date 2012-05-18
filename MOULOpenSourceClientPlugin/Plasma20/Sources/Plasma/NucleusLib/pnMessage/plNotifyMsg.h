@@ -87,8 +87,10 @@ public:
 
 	enum dataType
 	{
-		kNumber=1,
+		kFloat=1,
 		kKey,
+		kInt,
+		kNull,
 		kNotta
 	};
 
@@ -181,7 +183,10 @@ proEventType(Variable)
 	Int32	fDataType;		// type of data
 
 	// Can't be a union, sadly, but it isn't that much of a waste of space...
-	hsScalar	fNumber;	// if its a number
+	union {
+		hsScalar f;
+		Int32 i;
+	} fNumber; // if its a number
 	plKey		fKey;		// if its a plKey (pointer to something)
 
 
@@ -193,6 +198,9 @@ protected:
 
 	virtual void IReadVersion(hsStream* s, hsResMgr* mgr);
 	virtual void IWriteVersion(hsStream* s, hsResMgr* mgr);
+
+	virtual void IReadNumber(hsStream * stream);
+	virtual void IWriteNumber(hsStream * stream);
 };
 
 proEventType(Facing)
@@ -368,6 +376,8 @@ public:
 	void AddPickEvent( const plKey &other, const plKey& self, hsBool enabled, hsPoint3 hitPoint );
 	void AddControlKeyEvent( Int32 key, hsBool down );
 	void AddVariableEvent( const char* name, hsScalar number );
+	void AddVariableEvent( const char* name, Int32 number );
+	void AddVariableEvent( const char* name );
 	void AddVariableEvent( const char *name, const plKey &key);
 	void AddFacingEvent( const plKey &other, const plKey &self, hsScalar dot, hsBool enabled);
 	void AddContainerEvent( const plKey &container, const plKey &contained, hsBool entering);
