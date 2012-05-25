@@ -317,6 +317,10 @@ typedef hsColor32 hsRGBAColor32;
 
 #define  REF(a)  ((void *)&(a))
 
+#if _MSC_VER < 1400
+// For compatibility only, deprecated - use REF instead
+#define ref(a) REF(a)
+#endif
 
 /****************************************************************************
 *
