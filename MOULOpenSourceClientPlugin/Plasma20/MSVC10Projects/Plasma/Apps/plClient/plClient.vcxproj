@@ -672,6 +672,10 @@
       <Project>{7e6c6f09-c580-4b4d-95e2-c02248122da2}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plClipboard\plClipboard.vcxproj">
+      <Project>{ca2d4e65-ea68-465f-843a-4af75243b474}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\..\PubUtilLib\plCompression\plCompression.vcxproj">
       <Project>{7d696f05-8019-4029-a6e5-1225619ed40a}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
