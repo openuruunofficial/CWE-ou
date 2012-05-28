@@ -1,7 +1,7 @@
 /*==LICENSE==*
 
 CyanWorlds.com Engine - MMOG client, server and tools
-Copyright (C) 2011 Cyan Worlds, Inc.
+Copyright (C) 2011  Cyan Worlds, Inc.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -10,11 +10,11 @@ the Free Software Foundation, either version 3 of the License, or
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Additional permissions under GNU GPL version 3 section 7
 
@@ -34,54 +34,29 @@ work.
 
 You can contact Cyan Worlds, Inc. by email legal@cyan.com
  or by snail mail at:
-      Cyan Worlds, Inc.
-      14617 N Newport Hwy
-      Mead, WA   99021
+	  Cyan Worlds, Inc.
+	  14617 N Newport Hwy
+	  Mead, WA   99021
 
 *==LICENSE==*/
-/*****************************************************************************
-*
-*   $/Plasma20/Sources/Plasma/NucleusLib/pnProduct/Private/pnPrBuildId.cpp
-*   
-***/
 
-#include "../Pch.h"
-#pragma hdrstop
+#ifndef _plClipboard_h
+#define _plClipboard_h
 
+//// Class Definition /////////////////////////////////////////////////////////
 
-/*****************************************************************************
-*
-*   Private definitions
-*
-***/
+class plClipboard
+{
+	private:
+	
+		plClipboard() {}
+		plClipboard(const plClipboard& rhs) {}
+		
+	public:
+		bool IsTextInClipboard();
+		wchar_t* GetClipboardText();
+		void SetClipboardText(const wchar_t* text);
+		static plClipboard& GetInstance( void );
+};
 
-// This line must NEVER be modified manually; it is automatically updated
-// by the build server.
-#define BUILD_ID 906
-COMPILER_ASSERT(BUILD_ID != 0);
-
-
-/*****************************************************************************
-*
-*   Private data
-*
-***/
-
-static unsigned s_buildIdOverride;
-
-
-/*****************************************************************************
-*
-*   Exports
-*
-***/
-
-//============================================================================
-unsigned BuildId () {
-    return s_buildIdOverride ? s_buildIdOverride : BUILD_ID;
-}
-
-//============================================================================
-void OverrideBuildId (unsigned buildId) {
-	s_buildIdOverride = buildId;
-}
+#endif // _Clipboard_h

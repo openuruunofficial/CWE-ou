@@ -9,6 +9,6 @@ Release*/
 Debug*/
 ipch/
 syntax: regexp
-^MOULOpenSourceClientPlugin/Plasma20/tools/
 ^MOULOpenSourceClientPlugin/Plasma20/test/
+^MOULOpenSourceClientPlugin/Plasma20/tools/
 ^MOULOpenSourceClientPlugin/StaticSDKs/

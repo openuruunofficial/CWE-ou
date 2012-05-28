@@ -71,7 +71,7 @@ public:
 		{ fX = X; fY = Y; fZ = Z; fW = W; }
 	void GetAngleAxis(hsScalar *rad, hsVector3 *axis) const;
 	void SetAngleAxis(const hsScalar rad, const hsVector3 &axis);
-	hsPoint3 Rotate(const hsScalarTriple* v);
+	hsPoint3 Rotate(const hsScalarTriple* v) const;
 	
 	// Access operators
 	hsScalar& operator[](int i) { return (&fX)[i]; }     
@@ -94,7 +94,7 @@ public:
 	hsScalar MagnitudeSquared();
 	hsQuat Conjugate() const
 		{ return hsQuat(-fX,-fY,-fZ,fW); }
-	hsQuat Inverse();
+	hsQuat Inverse() const;
 	// Binary operators
 	hsQuat operator-(const hsQuat&) const;
 	hsQuat operator+(const hsQuat&) const;
