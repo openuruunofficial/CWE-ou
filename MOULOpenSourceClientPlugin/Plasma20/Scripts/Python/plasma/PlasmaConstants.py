@@ -215,8 +215,10 @@ class PtNotificationType:
 
 class PtNotifyDataType:
     """(none)"""
-    kNumber = 1
+    kFloat = 1
     kKey = 2
+    kInt = 3
+    kNull = 4
 
 class PtSDLReadWriteOptions:
     """(none)"""

@@ -52,7 +52,9 @@
 				TypeLibraryName=".\Debug/plFileSecure.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copy to Tools directory"
+				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -101,10 +103,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="rpcrt4.lib"
+				AdditionalDependencies="rpcrt4.lib CoreLib.lib CoreLibExe.lib plFile.lib plUnifiedTime.lib pnProduct.lib pnUtils.lib"
 				OutputFile=".\Release/plFileSecure.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="../../NucleusLib/pnUtils/Release;../../NucleusLib/pnProduct/Release;../../CoreLibExe/Release;../../CoreLib/Release;../../PubUtilLib/plUnifiedTime/Release;../../PubUtilLib/plFile/Release"
 				ProgramDatabaseFile=".\Release/plFileSecure.pdb"
 				SubSystem="1"
 				TargetMachine="1"/>
@@ -113,7 +116,9 @@
 				TypeLibraryName=".\Release/plFileSecure.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copy to Tools directory"
+				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool

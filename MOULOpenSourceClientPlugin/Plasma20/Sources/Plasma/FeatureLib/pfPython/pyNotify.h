@@ -100,6 +100,8 @@ public:
 	virtual void AddPickEvent(hsBool enabled, pyKey* other, pyKey* self, pyPoint3 hitPoint);
 	virtual void AddControlKeyEvent( Int32 key, hsBool down );
 	virtual void AddVarNumber(const char* name, hsScalar number);
+	virtual void AddVarNumber(const char* name, Int32 number);
+	virtual void AddVarNull(const char* name);
 	virtual void AddVarKey(const char* name, pyKey* key);
 	virtual void AddFacingEvent( hsBool enabled, pyKey* other, pyKey* self, hsScalar dot);
 	virtual void AddContainerEvent( hsBool entering, pyKey* container, pyKey* contained);

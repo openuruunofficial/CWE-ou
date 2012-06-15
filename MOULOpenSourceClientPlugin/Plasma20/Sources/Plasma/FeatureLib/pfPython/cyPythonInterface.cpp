@@ -196,7 +196,7 @@ PyObject* PythonInterface::dbgOut = nil;
 PyObject* PythonInterface::dbgSlice = nil;				// time slice function for the debug window
 plStatusLog* PythonInterface::dbgLog = nil;				// output logfile
 
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 bool PythonInterface::usePythonDebugger = false;
 plCyDebServer PythonInterface::debugServer;
 bool PythonInterface::requestedExit = false;
@@ -205,7 +205,7 @@ bool PythonInterface::requestedExit = false;
 // stupid Windows.h  and who started including that!
 #undef DrawText
 
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 // Special includes for debugging
 #include <frameobject.h>
 
@@ -856,7 +856,7 @@ void PythonInterface::initPython()
 		Py_SetProgramName("plasma");
 		Py_Initialize();
 
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 		if (usePythonDebugger)
 		{
 			debugServer.SetCallbackClass(&debServerCallback);
@@ -1528,7 +1528,7 @@ void PythonInterface::finiPython()
 	initialized--;
 	if ( initialized < 1 && Py_IsInitialized() != 0 && IsInShutdown )
 	{
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 		if (usePythonDebugger)
 			debugServer.Disconnect();
 #endif
@@ -1675,7 +1675,7 @@ int PythonInterface::getOutputAndReset(std::string *output)
 		pyOutputRedirector::ClearData(stdOut);
 
 		// tell python debugger
-#ifndef PLASMA_EXTERNAL_RELEASE
+#if defined(HAVE_CYPYTHONIDE) && !defined(PLASMA_EXTERNAL_RELEASE)
 		if (UsePythonDebugger())
 			PythonInterface::PythonDebugger()->StdOut(strVal);
 #endif
