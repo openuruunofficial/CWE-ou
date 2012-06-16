@@ -35,9 +35,6 @@
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -84,9 +81,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvLadderModifier.cpp">
@@ -163,9 +157,6 @@
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -215,9 +206,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvDefs.h">
