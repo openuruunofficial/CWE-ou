@@ -159,6 +159,7 @@ protected:
 
 	float fMaxDelta;
 	float fStepSize;
+	float fAccumulator;
 
 	// A utility class to keep track of a request for a physical synchronization.
 	// These requests must pass a certain criteria (see the code for the latest)

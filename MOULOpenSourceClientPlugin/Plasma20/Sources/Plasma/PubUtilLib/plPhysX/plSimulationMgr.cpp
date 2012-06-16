@@ -67,80 +67,26 @@ class SensorReport : public NxUserTriggerReport
 {
 	virtual void onTrigger(NxShape& triggerShape, NxShape& otherShape, NxTriggerFlag status)
 	{
-		// Get our trigger physical.  This should definitely have a plPXPhysical
-		plPXPhysical* triggerPhys = (plPXPhysical*)triggerShape.getActor().userData;
+		plKey otherKey = nil;
 		hsBool doReport = false;
 
-		// Get the triggerer.  This may be an avatar, which doesn't have a
-		// plPXPhysical, so we have to extract the necessary info.
-		plKey otherKey = nil;
-		hsPoint3 otherPos = plPXConvert::Point(otherShape.getGlobalPosition());
+		// Get our trigger physical.  This should definitely have a plPXPhysical
+		plPXPhysical* triggerPhys = (plPXPhysical*)triggerShape.getActor().userData;
 
-		if (plSimulationMgr::fExtraProfile)
-			DetectorLogRed("-->%s %s (status=%x) other@(%f,%f,%f)",triggerPhys->GetObjectKey()->GetName(),status & NX_TRIGGER_ON_ENTER ? "enter" : "exit",status,otherPos.fX,otherPos.fY,otherPos.fZ);
-
+		// Get the triggerer. If it doesn't have a plPXPhyscial, it's an avatar
 		plPXPhysical* otherPhys = (plPXPhysical*)otherShape.getActor().userData;
 		if (otherPhys)
 		{
 			otherKey = otherPhys->GetObjectKey();
 			doReport = triggerPhys->DoReportOn((plSimDefs::Group)otherPhys->GetGroup());
-			if (!doReport)
-			{
-				if (plSimulationMgr::fExtraProfile)
-					DetectorLogRed("<--Kill collision %s :failed group. US=%x OTHER=(%s)%x",triggerPhys->GetObjectKey()->GetName(),triggerPhys->GetGroup(),otherPhys->GetObjectKey()->GetName(),otherPhys->GetGroup());
-			}
 		}
 		else
 		{
-			bool isController;
-			plPXPhysicalControllerCore* controller = plPXPhysicalControllerCore::GetController(otherShape.getActor(),&isController);
+			plPXPhysicalControllerCore* controller = plPXPhysicalControllerCore::GetController(otherShape.getActor());
 			if (controller)
 			{
-				if (isController)
-				{
-#ifdef PHYSX_ONLY_TRIGGER_FROM_KINEMATIC
-					if (plSimulationMgr::fExtraProfile)
-						DetectorLogRed("<--Kill collision %s : ignoring controller events.",triggerPhys->GetObjectKey()->GetName());
-					return;
-#else // else if trigger on both controller and kinematic
-					// only suppress controller collision 'enters' when disabled but let 'exits' continue
-					// ...this is because there are detector regions that are on the edge on ladders that the exit gets missed.
-					if ( ( !controller->IsEnabled() /*&& (status & NX_TRIGGER_ON_ENTER)*/ ) || controller->IsKinematic() )
-					{
-						if (plSimulationMgr::fExtraProfile)
-							DetectorLogRed("<--Kill collision %s : controller is not enabled.",triggerPhys->GetObjectKey()->GetName());
-						return;
-					}
-#endif  // PHYSX_ONLY_TRIGGER_FROM_KINEMATIC
-				}
-#ifndef PHYSX_ONLY_TRIGGER_FROM_KINEMATIC  // if triggering only kinematics, then all should trigger
-				else
-				{
-					// only suppress kinematic collision 'enters' when disabled but let 'exits' continue
-					// ...this is because there are detector regions that are on the edge on ladders that the exit gets missed.
-					if ( !controller->IsKinematic() /*&& (status & NX_TRIGGER_ON_ENTER) */ )
-					{
-						if (plSimulationMgr::fExtraProfile)
-							DetectorLogRed("<--Kill collision %s : kinematic is not enabled.",triggerPhys->GetObjectKey()->GetName());
-						return;
-					}
-				}
-#endif  // PHYSX_ONLY_TRIGGER_FROM_KINEMATIC
 				otherKey = controller->GetOwner();
 				doReport = triggerPhys->DoReportOn(plSimDefs::kGroupAvatar);
-				if (plSimulationMgr::fExtraProfile )
-				{
-					if (!doReport)
-					{
-						DetectorLogRed("<--Kill collision %s :failed group. US=%x OTHER=(NotAvatar)",triggerPhys->GetObjectKey()->GetName(),triggerPhys->GetGroup());
-					}
-					else
-					{
-						hsPoint3 avpos;
-						controller->GetPositionSim(avpos);
-						DetectorLogRed("-->Avatar at (%f,%f,%f)",avpos.fX,avpos.fY,avpos.fZ);
-					}
-				}
 			}
 		}
 
@@ -408,6 +354,7 @@ plSimulationMgr::plSimulationMgr()
 	: fSuspended(true)
 	, fMaxDelta(kDefaultMaxDelta)
 	, fStepSize(kDefaultStepSize)
+	, fAccumulator(0.0f)
 	, fLOSDispatch(TRACKED_NEW plLOSDispatch())
 	, fSoundMgr(new plPhysicsSoundMgr)
 	, fLog(nil)
@@ -496,6 +443,7 @@ NxScene* plSimulationMgr::GetScene(plKey world)
 			scene->setGroupCollisionFlag(i, plSimDefs::kGroupDynamicBlocker, false);
 			scene->setGroupCollisionFlag(i, plSimDefs::kGroupLOSOnly, false);
 			scene->setGroupCollisionFlag(plSimDefs::kGroupLOSOnly, i, false);
+			scene->setGroupCollisionFlag(i, plSimDefs::kGroupAvatarKinematic, false);
 		}
 		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatar, plSimDefs::kGroupAvatar, false);
 		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatar, plSimDefs::kGroupAvatarBlocker, true);
@@ -503,6 +451,10 @@ NxScene* plSimulationMgr::GetScene(plKey world)
 		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatar, plSimDefs::kGroupStatic, true);
 		scene->setGroupCollisionFlag( plSimDefs::kGroupStatic, plSimDefs::kGroupAvatar, true);
 		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatar, plSimDefs::kGroupDynamic, true);
+
+		// Kinematically controlled avatars interact with detectors and dynamics
+		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatarKinematic, plSimDefs::kGroupDetector, true);
+		scene->setGroupCollisionFlag(plSimDefs::kGroupAvatarKinematic, plSimDefs::kGroupDynamic, true);
 		
 		// The dynamics are in actor group 1, everything else is in 0.  Request
 		// a callback for whenever a dynamic touches something.
@@ -616,8 +568,7 @@ void plSimulationMgr::UpdateAvatarInDetector(plKey world, plPXPhysical* detector
 				if ( actors[i]->userData == nil )
 				{
 					// we go a controller
-					bool isController;
-					plPXPhysicalControllerCore* controller = plPXPhysicalControllerCore::GetController(*actors[i],&isController);
+					plPXPhysicalControllerCore* controller = plPXPhysicalControllerCore::GetController(*actors[i]);
 					if (controller && controller->IsEnabled())
 					{
 						plKey avatar = controller->GetOwner();
@@ -644,20 +595,29 @@ void plSimulationMgr::Advance(float delSecs)
 	if (fSuspended)
 		return;
 
-	if (delSecs > fMaxDelta)
+	fAccumulator += delSecs;
+	if (fAccumulator < fStepSize)
+	{
+		// Not enough time has passed to perform a substep.
+		plPXPhysicalControllerCore::UpdateNonPhysical(fAccumulator / fStepSize);
+		return;
+	}
+	else if (fAccumulator > fMaxDelta)
 	{
 		if (fExtraProfile)
-			Log("Step clamped from %f to limit of %f", delSecs, fMaxDelta);
-		delSecs = fMaxDelta;
+			Log("Step clamped from %f to limit of %f", fAccumulator, fMaxDelta);
+		fAccumulator = fMaxDelta;
 	}
-	plProfile_IncCount(StepLen, (int)(delSecs*1000));
 
-#ifndef PLASMA_EXTERNAL_RELASE
-	UInt32 stepTime = hsTimer::GetPrecTickCount();
-#endif
+	// Perform as many whole substeps as possible saving the remainder in our accumulator.
+	int numSubSteps = (int)(fAccumulator / fStepSize);
+	float delta = numSubSteps * fStepSize;
+	fAccumulator -= delta;
+
+	plProfile_IncCount(StepLen, (int)(delta*1000));
 	plProfile_BeginTiming(Step);
-	plPXPhysicalControllerCore::UpdatePrestep(delSecs);
-	plPXPhysicalControllerCore::UpdatePoststep( delSecs);
+
+	plPXPhysicalControllerCore::Apply(delta);
 	
 	for (SceneMap::iterator it = fScenes.begin(); it != fScenes.end(); it++)
 	{
@@ -672,12 +632,13 @@ void plSimulationMgr::Advance(float delSecs)
 		}
 		if (do_advance)
 		{
-			scene->simulate(delSecs);
+			scene->simulate(delta);
 			scene->flushStream();
 			scene->fetchResults(NX_RIGID_BODY_FINISHED, true);
 		}
 	}
-	plPXPhysicalControllerCore::UpdatePostSimStep(delSecs);
+
+	plPXPhysicalControllerCore::Update(numSubSteps, fAccumulator / fStepSize);
 	
 	//sending off and clearing the Collision Messages generated by scene->simulate
 	IDispatchCollisionMessages();
@@ -754,9 +715,6 @@ void plSimulationMgr::ISendUpdates()
 			plPXPhysical* physical = (plPXPhysical*)actors[i]->userData;
 			if (physical)
 			{
-				// apply any hit forces
-				physical->ApplyHitForce();
-
 				if (physical->GetSceneNode())
 				{
 					physical->SendNewLocation();
