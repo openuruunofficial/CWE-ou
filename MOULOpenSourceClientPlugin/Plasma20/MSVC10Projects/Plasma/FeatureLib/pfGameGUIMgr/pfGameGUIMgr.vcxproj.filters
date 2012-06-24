@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5e33458c-0215-41fd-8965-765df38bd5c9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7f536798-2d19-4634-a208-127ea89d7bf0}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGameGUIMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIButtonMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUICheckBoxCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIClickMapCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIControlHandlers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIControlMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUICtrlGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDialogMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDialogNotifyProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDragBarCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDraggableMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDynDisplayCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIEditBoxMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIKnobCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIListBoxMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIListElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIMultiLineEditCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIPopUpMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIProgressCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIRadioGroupCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUITagDefs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUITextBoxMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIUpDownPairMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIValueCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGameGUIMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGameGUIMgrCreatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIButtonMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUICheckBoxCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIClickMapCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIControlHandlers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIControlMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUICtrlGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDialogHandlers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDialogMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDialogNotifyProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDragBarCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDraggableMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIDynDisplayCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIEditBoxMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIKnobCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIListBoxMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIListElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIMenuItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIMultiLineEditCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIPopUpMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIProgressCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIRadioGroupCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUITagDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUITextBoxMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIUpDownPairMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfGameGUIMgr\pfGUIValueCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

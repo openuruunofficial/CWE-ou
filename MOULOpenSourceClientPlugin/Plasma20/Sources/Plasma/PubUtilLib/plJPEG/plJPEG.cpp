@@ -288,7 +288,7 @@ plMipmap	*plJPEG::IRead( hsStream *inStream )
 #else
 		while( cinfo.output_scanline < cinfo.output_height )
 		{
-			UInt8 *startp = newMipmap->GetAddr8( 0, cinfo.output_scanline );
+			UInt8 *startp = (UInt8*)newMipmap->GetAddr32( 0, cinfo.output_scanline );
 			(void) jpeg_read_scanlines( &cinfo, &startp, 1 );
 		}
 #endif
@@ -439,7 +439,7 @@ hsBool	plJPEG::IWrite( plMipmap *source, hsStream *outStream )
 #else
 		while( cinfo.next_scanline < cinfo.image_height )
 		{
-			UInt8 *startp = source->GetAddr8( 0, cinfo.next_scanline );
+			UInt8 *startp = (UInt8*)source->GetAddr32( 0, cinfo.next_scanline );
 			(void) jpeg_write_scanlines( &cinfo, &startp, 1 );
 		}
 		jpeg_finish_compress( &cinfo );

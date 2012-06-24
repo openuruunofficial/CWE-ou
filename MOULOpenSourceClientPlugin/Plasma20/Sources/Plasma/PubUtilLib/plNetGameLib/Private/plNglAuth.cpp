@@ -1241,7 +1241,8 @@ static ENetError FixupPlayerName (wchar * name) {
 	// Trim leading and trailing whitespace and convert
 	// multiple internal spaces into only one space
 	unsigned nonSpaceChars = 0;
-	for (wchar *src = name, *dst = name; *src; ) {
+	wchar *dst = name;
+	for (wchar *src = name; *src; ) {
 		// Skip whitespace
 		while (*src && ICharIsSpace(*src))
 			src++;
@@ -1549,7 +1550,7 @@ static void AsyncLookupCallback (
     unsigned            addrCount,
     const NetAddress    addrs[]
 ) {
-    ref(param);
+    REF(param);
     
     if (!addrCount) {
 		ReportNetError(kNetProtocolCli2Auth, kNetErrNameLookupFailed);
@@ -2004,8 +2005,8 @@ static bool Recv_KickedOff (
     unsigned        bytes,
     void *          param
 ) {
-    ref(bytes);
-    ref(param);
+    REF(bytes);
+    REF(param);
     
     const Auth2Cli_KickedOff & msg = *(const Auth2Cli_KickedOff *)buffer;
 
@@ -2537,7 +2538,7 @@ bool PingRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_PingReply & reply = *(const Auth2Cli_PingReply *)msg;
 
@@ -2600,7 +2601,7 @@ bool AccountExistsRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_AccountExistsReply & reply = *(const Auth2Cli_AccountExistsReply *)msg;
 
@@ -2709,7 +2710,7 @@ bool LoginRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 
     dword msgId = (dword)*msg;
     switch (msgId) {
@@ -2798,7 +2799,7 @@ bool AgeRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AgeReply & reply = *(const Auth2Cli_AgeReply *) msg;
     m_gameSrvNode   = reply.gameSrvNode;
     m_ageMcpId		= reply.ageMcpId;
@@ -2871,7 +2872,7 @@ bool AccountCreateRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctCreateReply & reply = *(const Auth2Cli_AcctCreateReply *) msg;
 
 	m_result    = reply.result;
@@ -2943,7 +2944,7 @@ bool AccountCreateFromKeyRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctCreateFromKeyReply & reply = *(const Auth2Cli_AcctCreateFromKeyReply *) msg;
 
 	m_result		= reply.result;
@@ -3011,7 +3012,7 @@ bool PlayerCreateRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_PlayerCreateReply & reply = *(const Auth2Cli_PlayerCreateReply *) msg;
     if (!IS_NET_ERROR(reply.result)) {
 		m_playerInfo.playerInt	= reply.playerInt;
@@ -3178,7 +3179,7 @@ bool SetPlayerRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctSetPlayerReply & reply = *(const Auth2Cli_AcctSetPlayerReply *) msg;
     m_result        = reply.result;
     m_state         = kTransStateComplete;
@@ -3240,7 +3241,7 @@ bool AccountChangePasswordRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctChangePasswordReply & reply = *(const Auth2Cli_AcctChangePasswordReply *) msg;
 
 	m_result    = reply.result;
@@ -3296,7 +3297,7 @@ bool GetPublicAgeListTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_PublicAgeList & reply = *(const Auth2Cli_PublicAgeList *) msg;
     
     if (IS_NET_SUCCESS(reply.result))
@@ -3358,7 +3359,7 @@ bool AccountSetRolesRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctSetRolesReply & reply = *(const Auth2Cli_AcctSetRolesReply *) msg;
 
 	m_result    = reply.result;
@@ -3416,7 +3417,7 @@ bool AccountSetBillingTypeRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctSetBillingTypeReply & reply = *(const Auth2Cli_AcctSetBillingTypeReply *) msg;
 
 	m_result    = reply.result;
@@ -3471,7 +3472,7 @@ bool AccountActivateRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_AcctActivateReply & reply = *(const Auth2Cli_AcctActivateReply *) msg;
 
 	m_result    = reply.result;
@@ -3526,7 +3527,7 @@ bool FileListRequestTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	const Auth2Cli_FileListReply & reply = *(const Auth2Cli_FileListReply *) msg;
 
 	dword wcharCount = reply.wcharCount;
@@ -3642,7 +3643,7 @@ bool FileDownloadRequestTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	const Auth2Cli_FileDownloadChunk & reply = *(const Auth2Cli_FileDownloadChunk *) msg;
 
 	if (IS_NET_ERROR(reply.result)) {
@@ -3977,7 +3978,7 @@ bool VaultFetchNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultNodeFetched & reply = *(const Auth2Cli_VaultNodeFetched *) msg;
 	
@@ -4055,7 +4056,7 @@ bool VaultFindNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultNodeFindReply & reply = *(const Auth2Cli_VaultNodeFindReply *) msg;
 
@@ -4125,7 +4126,7 @@ bool VaultCreateNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultNodeCreated & reply = *(const Auth2Cli_VaultNodeCreated *) msg;
 	
@@ -4195,7 +4196,7 @@ bool VaultSaveNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultSaveNodeReply & reply = *(const Auth2Cli_VaultSaveNodeReply *) msg;
 	
@@ -4260,7 +4261,7 @@ bool VaultAddNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultAddNodeReply & reply = *(const Auth2Cli_VaultAddNodeReply *) msg;
 	
@@ -4322,7 +4323,7 @@ bool VaultRemoveNodeTrans::Recv (
 	const byte	msg[],
 	unsigned	bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Auth2Cli_VaultRemoveNodeReply & reply = *(const Auth2Cli_VaultRemoveNodeReply *) msg;
 	
@@ -4395,7 +4396,7 @@ bool SetPlayerBanStatusRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_SetPlayerBanStatusReply & reply = *(const Auth2Cli_SetPlayerBanStatusReply *) msg;
 
 	m_result    = reply.result;
@@ -4453,7 +4454,7 @@ bool ChangePlayerNameRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ChangePlayerNameReply & reply = *(const Auth2Cli_ChangePlayerNameReply *) msg;
 
 	m_result    = reply.result;
@@ -4515,7 +4516,7 @@ bool SendFriendInviteTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_SendFriendInviteReply & reply = *(const Auth2Cli_SendFriendInviteReply *) msg;
 
 	m_result    = reply.result;
@@ -4606,7 +4607,7 @@ bool ScoreCreateTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreCreateReply & reply = *(const Auth2Cli_ScoreCreateReply *) msg;
 
 	m_scoreId		= reply.scoreId;
@@ -4666,7 +4667,7 @@ bool ScoreDeleteTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreDeleteReply & reply = *(const Auth2Cli_ScoreDeleteReply *) msg;
 
 	m_result		= reply.result;
@@ -4733,7 +4734,7 @@ bool ScoreGetScoresTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreGetScoresReply & reply = *(const Auth2Cli_ScoreGetScoresReply *) msg;
 
 	if (reply.scoreCount > 0) {
@@ -4809,7 +4810,7 @@ bool ScoreAddPointsTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreAddPointsReply & reply = *(const Auth2Cli_ScoreAddPointsReply *) msg;
 
 	m_result		= reply.result;
@@ -4872,7 +4873,7 @@ bool ScoreTransferPointsTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreTransferPointsReply & reply = *(const Auth2Cli_ScoreTransferPointsReply *) msg;
 
 	m_result		= reply.result;
@@ -4932,7 +4933,7 @@ bool ScoreSetPointsTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreSetPointsReply & reply = *(const Auth2Cli_ScoreSetPointsReply *) msg;
 
 	m_result		= reply.result;
@@ -5013,7 +5014,7 @@ bool ScoreGetRanksTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
     const Auth2Cli_ScoreGetRanksReply & reply = *(const Auth2Cli_ScoreGetRanksReply *) msg;
 
 	if (reply.rankCount > 0) {
@@ -5709,7 +5710,7 @@ unsigned NetCliAuthVaultNodeSave (
 void NetCliAuthVaultNodeDelete (
 	unsigned					nodeId
 ) {
-	ref(nodeId);
+	REF(nodeId);
 	hsAssert(false, "eric, implement me");
 }
 
@@ -5842,7 +5843,7 @@ void NetCliAuthSetRecvBufferHandler (
 void NetCliAuthSendCCRPetition (
 	const wchar *		petitionText
 ) {
-	ref(petitionText);
+	REF(petitionText);
 	hsAssert(false, "eric, implement me.");
 }
 

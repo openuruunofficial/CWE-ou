@@ -153,7 +153,7 @@ void ITicTacToe::OnOwnerChange (const Srv2Cli_Game_OwnerChange & msg) {
 
 //============================================================================
 void ITicTacToe::RecvGameStarted (const Srv2Cli_TTT_GameStarted & msg, void * param) {
-	ref(param);
+	REF(param);
 	
 	// player that goes first is shown as X's.
 	if (msg.yourTurn) {
@@ -172,7 +172,7 @@ void ITicTacToe::RecvGameStarted (const Srv2Cli_TTT_GameStarted & msg, void * pa
 
 //============================================================================
 void ITicTacToe::RecvGameOver (const Srv2Cli_TTT_GameOver & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -183,7 +183,7 @@ void ITicTacToe::RecvGameOver (const Srv2Cli_TTT_GameOver & msg, void * param) {
 
 //============================================================================
 void ITicTacToe::RecvMoveMade (const Srv2Cli_TTT_MoveMade & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	// Update the board with the appropriate piece	
 	if (msg.playerId == NetCommGetPlayer()->playerInt)

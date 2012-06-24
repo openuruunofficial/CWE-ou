@@ -1299,7 +1299,7 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 {
 	static ShaDigest namePassHash;
 	static LoginDialogParam* loginParam;
-	static showAuthFailed = false;
+	static bool showAuthFailed = false;
 
 	switch( uMsg )
 	{
@@ -1979,11 +1979,11 @@ bool IsExpired()
 		void* desc = nil;
 		if (VerQueryValue(data, "\\StringFileInfo\\040904B0\\FileDescription", &desc, &descLen))
 		{
-			char* buildDateStart = strstr((const char*)desc, " - Built ");
+			const char* buildDateStart = strstr((const char*)desc, " - Built ");
 			if (buildDateStart)
 			{
 				buildDateStart += strlen(" - Built ");
-				char* buildDateEnd = strstr(buildDateStart, " at");
+				const char* buildDateEnd = strstr(buildDateStart, " at");
 				if (buildDateEnd)
 				{
 					int len = buildDateEnd-buildDateStart;

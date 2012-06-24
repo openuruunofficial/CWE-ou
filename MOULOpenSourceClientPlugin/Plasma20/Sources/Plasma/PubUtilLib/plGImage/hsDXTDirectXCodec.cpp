@@ -55,7 +55,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "hsWindows.h"
 
 #include <ddraw.h>
-#include <d3d.h>
+#include <d3d9.h>
 
 #include "hsTypes.h"
 #include "hsDXTDirectXCodec.h"

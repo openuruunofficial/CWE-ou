@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c40f4229-19ba-4d6a-8867-a63bb4e46630}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{cb4ba823-9d1f-4451-9240-56d9c6404445}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Python Files">
+      <UniqueIdentifier>{cd96f0f6-a964-4b09-b4f6-8562ebcf4569}</UniqueIdentifier>
+      <Extensions>py</Extensions>
+    </Filter>
+    <Filter Include="Glue Files">
+      <UniqueIdentifier>{7e34166c-803c-4ca2-afe0-9bd5de0c0ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue">
+      <UniqueIdentifier>{44f5c9cd-a806-42fb-9ecf-991a98f1177a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\TicTacToe">
+      <UniqueIdentifier>{c02d81f4-4d1f-4dfe-bdbe-73cafd76f6fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\Heek">
+      <UniqueIdentifier>{8d22d856-fa09-429e-8720-94314a50ac80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\Marker">
+      <UniqueIdentifier>{405de5e1-a2d5-43cf-b073-3174712c35f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\BlueSpiral">
+      <UniqueIdentifier>{71fa9179-6fa1-4e15-9221-9a73343814ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\ClimbingWall">
+      <UniqueIdentifier>{76287783-7199-4e12-807c-71ab0dd6b3a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Glue\VarSync">
+      <UniqueIdentifier>{3bbbc94a-74c0-4435-90fd-461558152427}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAccountManagement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAvatar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyDraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyInputInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMisc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyParticleSys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyPhysics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyPythonInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonFileMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonSDLModifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeInfoStruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeLinkStruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeVault.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAlarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAudioControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCCRMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCluster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyColor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCritterBrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniCoordinates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniInfoSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDrawControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDynamicText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyEnum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGameScore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGeometry3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGrassShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlCheckBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlClickMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDragBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDraggable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDynamicText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlEditBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlMultiLineEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlRadioGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlTextBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIPopUpMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUISkin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyJournalBook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKeyMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMarkerMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMatrix44.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMoviePlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetLinkingMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetServerSessionInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNotify.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySceneObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyScoreMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySDL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySpawnPointInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStatusLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySwimCurrentInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVault.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoListNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeLinkNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultChronicleNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultFolderNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultImageNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultMarkerGameNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNodeRef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoListNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSDLNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSystemNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultTextNoteNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyWaveSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAccountManagementGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAnimationGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAvatarGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyCameraGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyDrawGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyInputInterfaceGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMiscGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMiscGlue2.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMiscGlue3.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMiscGlue4.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyParticleSysGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyPhysicsGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonSDLModifierGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeInfoStructGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeLinkStructGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeVaultGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAudioControlGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCCRMgrGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCCRMgrGlue2.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyClusterGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyColorGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCritterBrainGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniCoordinatesGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniInfoSourceGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDrawControlGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDynamicTextGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGameScoreGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGeometry3Glue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGrassShaderGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlButtonGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlCheckBoxGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlClickMapGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDragBarGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDraggableGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDynamicTextGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlEditBoxGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlListBoxGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlMultiLineEditGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlRadioGroupGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlTextBoxGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlValueGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIDialogGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIPopUpMenuGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUISkinGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyImageGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyJournalBookGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKeyGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKeyMapGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMarkerMgrGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMatrix44Glue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMoviePlayerGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetLinkingMgrGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetServerSessionInfoGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNotifyGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyPlayerGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySceneObjectGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyScoreMgrGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySDLGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySpawnPointInfoGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStatusLogGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStreamGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySwimCurrentInterfaceGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoListNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeLinkNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultChronicleNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultFolderNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultImageNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultMarkerGameNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNodeRefGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoListNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSDLNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSystemNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultTextNoteNodeGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyWaveSetGlue.cpp">
+      <Filter>Glue Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCli.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCliGlue.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCliMsg.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCliMsgGlue.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameMgrMsg.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameMgrMsgGlue.cpp">
+      <Filter>Game Glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTGame.cpp">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTGameGlue.cpp">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTMsg.cpp">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTMsgGlue.cpp">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekGame.cpp">
+      <Filter>Game Glue\Heek</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekGameGlue.cpp">
+      <Filter>Game Glue\Heek</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekMsg.cpp">
+      <Filter>Game Glue\Heek</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekMsgGlue.cpp">
+      <Filter>Game Glue\Heek</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerGame.cpp">
+      <Filter>Game Glue\Marker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerGameGlue.cpp">
+      <Filter>Game Glue\Marker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerMsg.cpp">
+      <Filter>Game Glue\Marker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerMsgGlue.cpp">
+      <Filter>Game Glue\Marker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralGame.cpp">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralGameGlue.cpp">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralMsg.cpp">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralMsgGlue.cpp">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallGame.cpp">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallGameGlue.cpp">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallMsg.cpp">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallMsgGlue.cpp">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncGame.cpp">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncGameGlue.cpp">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncMsg.cpp">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncMsgGlue.cpp">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAccountManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyAvatar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyInputInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyMisc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyParticleSys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyPhysics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\cyPythonInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pfPythonCreatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonFileMod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonPack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonParameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\plPythonSDLModifier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeInfoStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeLinkStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAgeVault.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAlarm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyAudioControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCCRMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCluster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyColor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyCritterBrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniCoordinates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDniInfoSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDrawControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyDynamicText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGameScore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGeometry3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGrassShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlCheckBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlClickMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDragBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDraggable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlDynamicText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlEditBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlMultiLineEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlRadioGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlTextBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIControlValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUIPopUpMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGUISkin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyJournalBook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyKeyMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMarkerMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMatrix44.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyMoviePlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetLinkingMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNetServerSessionInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyNotify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySceneObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyScoreMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySDL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySpawnPointInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStatusLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pySwimCurrentInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVault.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoListNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeInfoNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultAgeLinkNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultChronicleNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultFolderNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultImageNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultMarkerGameNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultNodeRef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoListNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerInfoNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultPlayerNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSDLNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultSystemNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyVaultTextNoteNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyWaveSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\pyGlueHelpers.h">
+      <Filter>Glue Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCli.h">
+      <Filter>Game Glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameCliMsg.h">
+      <Filter>Game Glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\pyGameMgrMsg.h">
+      <Filter>Game Glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTGame.h">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\TicTacToe\pyTTTMsg.h">
+      <Filter>Game Glue\TicTacToe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekGame.h">
+      <Filter>Game Glue\Heek</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Heek\pyHeekMsg.h">
+      <Filter>Game Glue\Heek</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerGame.h">
+      <Filter>Game Glue\Marker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\Marker\pyMarkerMsg.h">
+      <Filter>Game Glue\Marker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralGame.h">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\BlueSpiral\pyBlueSpiralMsg.h">
+      <Filter>Game Glue\BlueSpiral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallGame.h">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\ClimbingWall\pyClimbingWallMsg.h">
+      <Filter>Game Glue\ClimbingWall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncGame.h">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\FeatureLib\pfPython\Games\VarSync\pyVarSyncMsg.h">
+      <Filter>Game Glue\VarSync</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Scripts\Python\plasma\Plasma.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaConstants.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaControlKeys.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaKITypes.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaNetConstants.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaTypes.py">
+      <Filter>Python Files</Filter>
+    </None>
+    <None Include="..\..\..\..\Scripts\Python\plasma\PlasmaVaultConstants.py">
+      <Filter>Python Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

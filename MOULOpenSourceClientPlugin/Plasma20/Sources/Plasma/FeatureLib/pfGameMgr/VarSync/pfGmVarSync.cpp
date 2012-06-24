@@ -150,7 +150,7 @@ void IVarSync::OnOwnerChange (const Srv2Cli_Game_OwnerChange & msg) {
 
 //============================================================================
 void IVarSync::RecvStringVarChanged (const Srv2Cli_VarSync_StringVarChanged & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -159,7 +159,7 @@ void IVarSync::RecvStringVarChanged (const Srv2Cli_VarSync_StringVarChanged & ms
 
 //============================================================================
 void IVarSync::RecvNumericVarChanged (const Srv2Cli_VarSync_NumericVarChanged & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -168,7 +168,7 @@ void IVarSync::RecvNumericVarChanged (const Srv2Cli_VarSync_NumericVarChanged & 
 
 //============================================================================
 void IVarSync::RecvAllVarsSent (const Srv2Cli_VarSync_AllVarsSent & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -177,7 +177,7 @@ void IVarSync::RecvAllVarsSent (const Srv2Cli_VarSync_AllVarsSent & msg, void * 
 
 //============================================================================
 void IVarSync::RecvStringVarCreated (const Srv2Cli_VarSync_StringVarCreated & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -186,7 +186,7 @@ void IVarSync::RecvStringVarCreated (const Srv2Cli_VarSync_StringVarCreated & ms
 
 //============================================================================
 void IVarSync::RecvNumericVarCreated (const Srv2Cli_VarSync_NumericVarCreated & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);

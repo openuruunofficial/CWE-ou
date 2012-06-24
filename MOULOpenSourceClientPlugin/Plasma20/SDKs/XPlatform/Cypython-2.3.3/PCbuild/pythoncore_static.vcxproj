@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Internal|Win32">
+      <Configuration>Debug_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Internal|Win32">
+      <Configuration>Release_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A32201A8-0255-4863-97B8-4A569C18C624}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Include;../PC;../Python;../Modules;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/FeatureLib/pfPython;../../StaticSDKs/XPlatform/zlib;../pyconfig_static;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;Py_NO_ENABLE_SHARED;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Include;../PC;../Python;../Modules;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/FeatureLib/pfPython;../../StaticSDKs/XPlatform/zlib;../pyconfig_static;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;Py_NO_ENABLE_SHARED;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../Include;../PC;../Python;../Modules;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/FeatureLib/pfPython;../../StaticSDKs/XPlatform/zlib;../pyconfig_static;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;Py_NO_ENABLE_SHARED;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../Include;../PC;../Python;../Modules;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/FeatureLib/pfPython;../../StaticSDKs/XPlatform/zlib;../pyconfig_static;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;Py_NO_ENABLE_SHARED;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Modules\_codecsmodule.c" />
+    <ClCompile Include="..\Modules\_hotshot.c" />
+    <ClCompile Include="..\Modules\_localemodule.c" />
+    <ClCompile Include="..\Modules\_randommodule.c" />
+    <ClCompile Include="..\Modules\_sre.c" />
+    <ClCompile Include="..\Modules\_weakref.c" />
+    <ClCompile Include="..\Objects\abstract.c" />
+    <ClCompile Include="..\Parser\acceler.c" />
+    <ClCompile Include="..\Modules\arraymodule.c" />
+    <ClCompile Include="..\Modules\audioop.c" />
+    <ClCompile Include="..\Modules\binascii.c" />
+    <ClCompile Include="..\Parser\bitset.c" />
+    <ClCompile Include="..\Python\bltinmodule.c" />
+    <ClCompile Include="..\Objects\boolobject.c" />
+    <ClCompile Include="..\Objects\bufferobject.c" />
+    <ClCompile Include="..\Objects\cellobject.c" />
+    <ClCompile Include="..\Python\ceval.c" />
+    <ClCompile Include="..\Objects\classobject.c" />
+    <ClCompile Include="..\Modules\cmathmodule.c" />
+    <ClCompile Include="..\Objects\cobject.c" />
+    <ClCompile Include="..\Python\codecs.c" />
+    <ClCompile Include="..\Python\compile.c" />
+    <ClCompile Include="..\Objects\complexobject.c" />
+    <ClCompile Include="..\PC\config.c" />
+    <ClCompile Include="..\Modules\cPickle.c" />
+    <ClCompile Include="..\Modules\cStringIO.c" />
+    <ClCompile Include="..\Objects\descrobject.c" />
+    <ClCompile Include="..\Objects\dictobject.c" />
+    <ClCompile Include="..\Pc\dl_nt.c" />
+    <ClCompile Include="..\Python\dynload_win.c" />
+    <ClCompile Include="..\Objects\enumobject.c" />
+    <ClCompile Include="..\Modules\errnomodule.c" />
+    <ClCompile Include="..\Python\errors.c" />
+    <ClCompile Include="..\Python\exceptions.c" />
+    <ClCompile Include="..\Objects\fileobject.c" />
+    <ClCompile Include="..\Objects\floatobject.c" />
+    <ClCompile Include="..\Objects\frameobject.c" />
+    <ClCompile Include="..\Python\frozen.c" />
+    <ClCompile Include="..\Objects\funcobject.c" />
+    <ClCompile Include="..\Python\future.c" />
+    <ClCompile Include="..\Modules\gcmodule.c" />
+    <ClCompile Include="..\Python\getargs.c" />
+    <ClCompile Include="..\Modules\getbuildinfo.c" />
+    <ClCompile Include="..\Python\getcompiler.c" />
+    <ClCompile Include="..\Python\getcopyright.c" />
+    <ClCompile Include="..\Python\getmtime.c" />
+    <ClCompile Include="..\Python\getopt.c" />
+    <ClCompile Include="..\PC\getpathp.c" />
+    <ClCompile Include="..\Python\getplatform.c" />
+    <ClCompile Include="..\Python\getversion.c" />
+    <ClCompile Include="..\Python\graminit.c" />
+    <ClCompile Include="..\Parser\grammar1.c" />
+    <ClCompile Include="..\Modules\imageop.c" />
+    <ClCompile Include="..\PC\import_nt.c" />
+    <ClCompile Include="..\Python\import_pack.c" />
+    <ClCompile Include="..\Python\importdl.c" />
+    <ClCompile Include="..\Objects\intobject.c" />
+    <ClCompile Include="..\Objects\iterobject.c" />
+    <ClCompile Include="..\Modules\itertoolsmodule.c" />
+    <ClCompile Include="..\Parser\listnode.c" />
+    <ClCompile Include="..\Objects\listobject.c" />
+    <ClCompile Include="..\Objects\longobject.c" />
+    <ClCompile Include="..\Modules\main.c" />
+    <ClCompile Include="..\Python\marshal.c" />
+    <ClCompile Include="..\Modules\mathmodule.c" />
+    <ClCompile Include="..\Modules\md5c.c" />
+    <ClCompile Include="..\Modules\md5module.c" />
+    <ClCompile Include="..\Parser\metagrammar.c" />
+    <ClCompile Include="..\Objects\methodobject.c" />
+    <ClCompile Include="..\Python\modsupport.c" />
+    <ClCompile Include="..\Objects\moduleobject.c" />
+    <ClCompile Include="..\PC\msvcrtmodule.c" />
+    <ClCompile Include="..\Parser\myreadline.c" />
+    <ClCompile Include="..\Python\mysnprintf.c" />
+    <ClCompile Include="..\Python\mystrtoul.c" />
+    <ClCompile Include="..\Parser\node.c" />
+    <ClCompile Include="..\Objects\object.c" />
+    <ClCompile Include="..\Objects\obmalloc.c" />
+    <ClCompile Include="..\Modules\operator.c" />
+    <ClCompile Include="..\Parser\parser.c" />
+    <ClCompile Include="..\Parser\parsetok.c" />
+    <ClCompile Include="..\Modules\pcremodule.c" />
+    <ClCompile Include="..\Pc\PlasmaPack.cpp" />
+    <ClCompile Include="..\Modules\posixmodule.c" />
+    <ClCompile Include="..\Python\pyfpe.c" />
+    <ClCompile Include="..\Modules\pypcre.c" />
+    <ClCompile Include="..\Python\pystate.c" />
+    <ClCompile Include="..\Python\pythonrun.c" />
+    <ClCompile Include="..\Objects\rangeobject.c" />
+    <ClCompile Include="..\Modules\regexmodule.c" />
+    <ClCompile Include="..\Modules\regexpr.c" />
+    <ClCompile Include="..\Modules\rgbimgmodule.c" />
+    <ClCompile Include="..\Modules\rotormodule.c" />
+    <ClCompile Include="..\Modules\shamodule.c" />
+    <ClCompile Include="..\Modules\signalmodule.c" />
+    <ClCompile Include="..\Objects\sliceobject.c" />
+    <ClCompile Include="..\Objects\stringobject.c" />
+    <ClCompile Include="..\Modules\stropmodule.c" />
+    <ClCompile Include="..\Python\structmember.c" />
+    <ClCompile Include="..\Modules\structmodule.c" />
+    <ClCompile Include="..\Objects\structseq.c" />
+    <ClCompile Include="..\Python\symtable.c" />
+    <ClCompile Include="..\Python\sysmodule.c" />
+    <ClCompile Include="..\Python\thread.c" />
+    <ClCompile Include="..\Modules\threadmodule.c" />
+    <ClCompile Include="..\Modules\timemodule.c" />
+    <ClCompile Include="..\Parser\tokenizer.c" />
+    <ClCompile Include="..\Python\traceback.c" />
+    <ClCompile Include="..\Objects\tupleobject.c" />
+    <ClCompile Include="..\Objects\typeobject.c" />
+    <ClCompile Include="..\Objects\unicodectype.c" />
+    <ClCompile Include="..\Objects\unicodeobject.c" />
+    <ClCompile Include="..\Objects\weakrefobject.c" />
+    <ClCompile Include="..\Modules\xreadlinesmodule.c" />
+    <ClCompile Include="..\Modules\xxsubtype.c" />
+    <ClCompile Include="..\Modules\yuvconvert.c" />
+    <ClCompile Include="..\Modules\zipimport.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

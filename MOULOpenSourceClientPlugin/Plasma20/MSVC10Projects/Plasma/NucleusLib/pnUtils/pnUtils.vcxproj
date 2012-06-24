@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Internal|Win32">
+      <Configuration>Debug_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Internal|Win32">
+      <Configuration>Release_Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{89316659-F4A9-4E92-8200-C36288A61B9B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>Pch.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>Pch.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>Pch.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>Pch.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\pnUtils.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtAddr.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtArray.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtBase64.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtBigNum.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtCmd.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtCrypt.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtEndian.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtHash.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtList.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtMath.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtMisc.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtPath.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtRand.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSpareList.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtStr.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSubst.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtTime.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtTls.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtUuid.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Addr.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Misc.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Path.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Str.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Sync.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Time.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Win32\pnUtW32Uuid.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Unix\pnUtUxStr.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Unix\pnUtUxSync.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\Unix\pnUtUxUuid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Intern.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Pch.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\pnUtils.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtAddr.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtAllIncludes.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtArray.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtBase64.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtBigNum.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtCmd.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtCoreLib.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtCrypt.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtEndian.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtHash.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtList.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtMath.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtMisc.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtPath.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtPragma.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtPriQ.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtRand.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtRef.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSkipList.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSort.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSpareList.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtStr.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSubst.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtSync.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtTime.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtTls.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtils\Private\pnUtUuid.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
