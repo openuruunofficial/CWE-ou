@@ -50,6 +50,9 @@
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plMipmap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plPNG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plTGAWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -101,6 +104,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plMipmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plPNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plTGAWriter.h">

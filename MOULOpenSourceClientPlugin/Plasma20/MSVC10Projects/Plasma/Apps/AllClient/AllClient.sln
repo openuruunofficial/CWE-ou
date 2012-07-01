@@ -192,6 +192,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plClientPatcher", "..\plCli
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plClipboard", "..\..\PubUtilLib\plClipboard\plClipboard.vcxproj", "{CA2D4E65-EA68-465F-843A-4AF75243B474}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plClientResMgr", "..\..\PubUtilLib\plClientResMgr\plClientResMgr.vcxproj", "{D005F6EF-6A43-1957-7458-10ED3CA39F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_Internal|Win32 = Debug_Internal|Win32
@@ -968,6 +970,14 @@ Global
 		{CA2D4E65-EA68-465F-843A-4AF75243B474}.Release_Internal|Win32.Build.0 = Release_Internal|Win32
 		{CA2D4E65-EA68-465F-843A-4AF75243B474}.Release|Win32.ActiveCfg = Release|Win32
 		{CA2D4E65-EA68-465F-843A-4AF75243B474}.Release|Win32.Build.0 = Release|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Debug_Internal|Win32.ActiveCfg = Debug_Internal|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Debug_Internal|Win32.Build.0 = Debug_Internal|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Debug|Win32.Build.0 = Debug|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Release_Internal|Win32.ActiveCfg = Release_Internal|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Release_Internal|Win32.Build.0 = Release_Internal|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Release|Win32.ActiveCfg = Release|Win32
+		{D005F6EF-6A43-1957-7458-10ED3CA39F02}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
