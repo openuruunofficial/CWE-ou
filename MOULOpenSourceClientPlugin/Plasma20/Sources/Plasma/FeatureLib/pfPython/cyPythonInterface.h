@@ -138,6 +138,8 @@ public:
 	// Writes 'text' to stderr specified in the python interface
 	static void WriteToStdErr(const char* text);
 
+	static PyObject* ImportModule(const char* module);
+
 	// Find module. If it doesn't exist then don't create, return nil.
 	static PyObject* FindModule(char* module);
 
@@ -218,6 +220,12 @@ public:
 	//  PURPOSE    : run a compiled python code in a specific module name
 	//
 	static hsBool RunPYC(PyObject* code, PyObject* module);
+
+	static PyObject* RunFunction(PyObject* module, const char* name, PyObject* args);
+
+	static PyObject* ParseArgs(const char* args);
+
+	static bool RunFunctionSafe(const char* module, const char* function, const char* args);
 
 	/////////////////////////////////////////////////////////////////////////////
 	//

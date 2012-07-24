@@ -7042,16 +7042,18 @@ PF_CONSOLE_CMD( Python,
 				"string functions, ...",	// Params
 				"Run a cheat command" )
 {
-	const char* extraParms = "";
+	std::string extraParms;
 	if (numParams > 1)
-		extraParms = params[1];
-	// now evaluate this mess they made
-	PyObject* mymod = PythonInterface::FindModule("__main__");
+	{
+		extraParms = "(";
+		extraParms.append(params[1]);
+		extraParms.append(",)");
+	}
+	else
+		extraParms = "()";
 
-	// create the line to execute the file
-	char runline[256];
-	sprintf(runline,"import xCheat;xCheat.%s('%s')", (const char*)params[0],extraParms);
-	PythonInterface::RunString(runline,mymod);
+	PythonInterface::RunFunctionSafe("xCheat", params[0], extraParms.c_str());
+
 	std::string output;
 	// get the messages
 	PythonInterface::getOutputAndReset(&output);
