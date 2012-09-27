@@ -173,7 +173,6 @@ public:
 	~plMouseDevice();
 
 	const char* GetInputName() { return "mouse"; }
-	void HandleWindowActivate(bool bActive, HWND hWnd);
 
 	hsBool	HasControlFlag(int f) const { return fControlFlags.IsBitSet(f); }
 	void	SetControlFlag(int f) 

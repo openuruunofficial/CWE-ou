@@ -933,26 +933,3 @@ hsBool plMouseDevice::MsgReceive(plMessage* msg)
 	return false;
 }
 
-
-
-void plMouseDevice::HandleWindowActivate(bool bActive, HWND hWnd)
-{
-	if ( bActive )
-	{
-		RECT rect;
-		::GetClientRect(hWnd,&rect);
-
-//		rect.right /= plInputManager::GetInstance()->GetMouseScale();
-//		rect.bottom /= plInputManager::GetInstance()->GetMouseScale();
-
-		::MapWindowPoints( hWnd, NULL, (POINT *)&rect, 2 );
-		::ShowCursor( FALSE );
-		SetCapture(hWnd);
-
-	}
-	else
-	{
-		ReleaseCapture();
-		::ShowCursor( TRUE );
-	}	
-}
