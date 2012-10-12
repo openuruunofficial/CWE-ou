@@ -1546,6 +1546,7 @@ hsBool plClient::StartInit()
 
 	pfGameGUIMgr::GetInstance()->SetAspectRatio( aspectratio );
 	plMouseDevice::Instance()->SetDisplayResolution((float)fPipeline->Width(), (float)fPipeline->Height());
+	plInputManager::SetRecenterMouse(false);
 
 	// create the listener for the audio system:
 	plListener* pLMod = TRACKED_NEW plListener;
@@ -2207,7 +2208,6 @@ void plClient::ResetDisplayDevice(int Width, int Height, int ColorDepth, hsBool 
 	else
 	{
 		SetWindowPos( fWindowHndl, HWND_TOP, 0, 0, Width, Height, flags );
-		::ClipCursor(nil);
 	}
 
 	WindowActivate(true);

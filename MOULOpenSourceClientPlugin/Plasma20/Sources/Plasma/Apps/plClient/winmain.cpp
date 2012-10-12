@@ -58,6 +58,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../plNetClient/plNetClientMgr.h"
 #include "../plNetClient/plNetLinkingMgr.h"
 #include "../plInputCore/plInputManager.h"
+#include "../plInputCore/plInputDevice.h"
 #include "../plUnifiedTime/plUnifiedTime.h"
 #include "plPipeline.h"
 #include "../plResMgr/plResManager.h"
@@ -453,13 +454,19 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case WM_LBUTTONUP :
 		case WM_RBUTTONUP :
 		case WM_MBUTTONUP :			// The middle mouse button was released. 
-		case WM_MOUSEMOVE :
 		case 0x020A:				// fuc&ing windows b.s...
 			{
 				if (gClient && gClient->WindowActive() && gClient->GetInputManager())
 				{
 					gClient->GetInputManager()->HandleWin32ControlEvent(message, wParam, lParam, hWnd);
 				}
+			}
+			break;
+
+		case WM_MOUSEMOVE:
+			{
+				if (gClient && gClient->GetInputManager())
+					gClient->GetInputManager()->HandleWin32ControlEvent(message, wParam, lParam, hWnd);
 			}
 			break;
 
@@ -498,6 +505,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
 			break;
 
+		case WM_SETCURSOR:
+			{
+				static bool winCursor = true;
+				if (LOWORD(lParam) == HTCLIENT)
+				{
+					if (winCursor)
+					{
+						winCursor = false;
+						ShowCursor(FALSE);
+						plMouseDevice::ShowCursor();
+					}
+				}
+				else
+				{
+					if (!winCursor)
+					{
+						winCursor = true;
+						ShowCursor(TRUE);
+						plMouseDevice::HideCursor();
+					}
+				}
+				return TRUE;
+			}
+			break;
+
         case WM_ACTIVATE:
 			{
 				bool active = (LOWORD(wParam) == WA_ACTIVE || LOWORD(wParam) == WA_CLICKACTIVE);
@@ -509,28 +541,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 					(LOWORD(wParam) == WA_CLICKACTIVE) ? "true" : "false");
 
 				if (gClient && !minimized && !gClient->GetDone())
-				{
-					if (LOWORD(wParam) == WA_CLICKACTIVE)
-					{
-						// See if they've clicked on the frame, in which case they just want to
-						// move, not activate, us.
-						POINT pt;
-						GetCursorPos(&pt);
-						ScreenToClient(hWnd, &pt);
-
-						RECT rect;
-						GetClientRect(hWnd, &rect);
-
-						if( (pt.x < rect.left)
-							||(pt.x >= rect.right)
-							||(pt.y < rect.top)
-							||(pt.y >= rect.bottom) )
-						{
-							active = false;
-						}
-					}
 					gClient->WindowActivate(active);
-				}
 				else
 				{
 					gPendingActivate = true;
