@@ -93,7 +93,7 @@ void CBaseSpareList::Free (void * object, unsigned objectSize) {
     #ifdef HS_DEBUGGING
     MemSet(object, (byte) ((unsigned) object >> 4), objectSize);
     #else
-    ref(objectSize);
+    REF(objectSize);
     #endif
 
     // link memory block onto head of spare list
@@ -157,7 +157,7 @@ void CBaseSpareList::CleanUp (const char typeName[]) {
         #endif
     }
     #else
-    ref(typeName);
+    REF(typeName);
     #endif
 
     // walk chain of AllocNodes and free each of them

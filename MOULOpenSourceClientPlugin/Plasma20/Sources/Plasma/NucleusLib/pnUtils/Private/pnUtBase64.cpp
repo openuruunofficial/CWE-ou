@@ -107,7 +107,7 @@ unsigned Base64Encode (
     ASSERT(dstChars >= Base64EncodeSize(srcChars));
     ASSERT(dstData);
     
-    ref(dstChars);
+    REF(dstChars);
 
     const char * dstBase = dstData;
     const byte * srcTerm = srcData + srcChars;
@@ -152,7 +152,7 @@ unsigned Base64Decode (
     ASSERT(srcData);
     ASSERT(dstChars >= Base64DecodeSize(srcChars));
     ASSERT(dstData);
-    ref(dstChars);
+    REF(dstChars);
 
     const byte * dstBase = dstData;
     const char * srcTerm = srcData + srcChars;

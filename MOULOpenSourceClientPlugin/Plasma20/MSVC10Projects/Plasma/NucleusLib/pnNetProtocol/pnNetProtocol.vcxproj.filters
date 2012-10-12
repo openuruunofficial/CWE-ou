@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{4bdb76eb-6fa4-47cb-b1da-1ed7a8344e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols">
+      <UniqueIdentifier>{c43d10db-6f7e-4993-bd86-0920084f8288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Cli2Auth">
+      <UniqueIdentifier>{00541823-31ee-4d74-a282-8d8f26ee3551}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Cli2Game">
+      <UniqueIdentifier>{f6a0e497-a388-44e0-98a8-6f12723debf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2Vault">
+      <UniqueIdentifier>{79062258-9d92-4dc0-b12b-994649991074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2Db">
+      <UniqueIdentifier>{f3865dfb-7be8-4b26-89e6-bda12f1bba8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2Mcp">
+      <UniqueIdentifier>{6283a763-81f5-4c11-94ca-37f6e593ae61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Cli2File">
+      <UniqueIdentifier>{29b38850-6de4-4fed-8fc3-a06075be667c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2State">
+      <UniqueIdentifier>{26460d68-ca34-4205-99e2-0cd87daedc4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2Log">
+      <UniqueIdentifier>{780cf578-2120-401c-bead-93fbacb105b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Srv2Score">
+      <UniqueIdentifier>{977038c6-0935-441f-b558-f94d62a1bfab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Cli2Csr">
+      <UniqueIdentifier>{0aeba0ad-2435-4601-a4fd-d280d1fb28b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Protocols\Cli2GateKeeper">
+      <UniqueIdentifier>{4a28a1b3-b4ee-4aee-b754-5019b3868ed8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Intern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\pnNetProtocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\pnNpAllIncludes.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\pnNpCommon.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Auth\pnNpCli2Auth.h">
+      <Filter>Private\Protocols\Cli2Auth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Game\pnNpCli2Game.h">
+      <Filter>Private\Protocols\Cli2Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Vault\pnNpSrv2Vault.h">
+      <Filter>Private\Protocols\Srv2Vault</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Db\pnNpSrv2Db.h">
+      <Filter>Private\Protocols\Srv2Db</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Mcp\pnNpSrv2Mcp.h">
+      <Filter>Private\Protocols\Srv2Mcp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2File\pnNpCli2File.h">
+      <Filter>Private\Protocols\Cli2File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2State\pnNpSrv2State.h">
+      <Filter>Private\Protocols\Srv2State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Log\pnNpSrv2Log.h">
+      <Filter>Private\Protocols\Srv2Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Score\pnNpSrv2Score.h">
+      <Filter>Private\Protocols\Srv2Score</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Csr\pnNpCli2Csr.h">
+      <Filter>Private\Protocols\Cli2Csr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2GateKeeper\pnNpCli2GateKeeper.h">
+      <Filter>Private\Protocols\Cli2GateKeeper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\pnNpCommon.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Auth\pnNpCli2Auth.cpp">
+      <Filter>Private\Protocols\Cli2Auth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Game\pnNpCli2Game.cpp">
+      <Filter>Private\Protocols\Cli2Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Vault\pnNpSrv2Vault.cpp">
+      <Filter>Private\Protocols\Srv2Vault</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Db\pnNpSrv2Db.cpp">
+      <Filter>Private\Protocols\Srv2Db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Mcp\pnNpSrv2Mcp.cpp">
+      <Filter>Private\Protocols\Srv2Mcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2File\pnNpCli2File.cpp">
+      <Filter>Private\Protocols\Cli2File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2State\pnNpSrv2State.cpp">
+      <Filter>Private\Protocols\Srv2State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Log\pnNpSrv2Log.cpp">
+      <Filter>Private\Protocols\Srv2Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Srv2Score\pnNpSrv2Score.cpp">
+      <Filter>Private\Protocols\Srv2Score</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2Csr\pnNpCli2Csr.cpp">
+      <Filter>Private\Protocols\Cli2Csr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnNetProtocol\Private\Protocols\Cli2GateKeeper\pnNpCli2GateKeeper.cpp">
+      <Filter>Private\Protocols\Cli2GateKeeper</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

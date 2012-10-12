@@ -10575,7 +10575,7 @@ inline void inlTESTPOINT(const hsPoint3& destP,
 
 void	plDXPipeline::IBlendVertsIntoBuffer( plSpan* span, 
 											  hsMatrix44* matrixPalette, int numMatrices,
-											  UInt8 *src, UInt8 format, UInt32 srcStride, 
+											  const UInt8 *src, UInt8 format, UInt32 srcStride, 
 											  UInt8 *dest, UInt32 destStride, UInt32 count,
 											  UInt16 localUVWChans )
 {

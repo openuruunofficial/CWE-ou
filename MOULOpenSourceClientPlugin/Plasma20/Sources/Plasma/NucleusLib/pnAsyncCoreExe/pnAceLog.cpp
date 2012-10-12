@@ -143,8 +143,8 @@ static void LogFileNotifyProc (
     AsyncNotifyFile *   notify,
     void **             userState
 ) {
-    ref(file);
-    ref(userState);
+    REF(file);
+    REF(userState);
 
     switch (code) {
         case kNotifyFileWrite:
@@ -163,7 +163,7 @@ static void LogFileNotifyProc (
 
 //============================================================================
 static void AllocLogBuffer_CS (unsigned index) {
-	ref(AllocLogBuffer_CS);
+	REF(AllocLogBuffer_CS);
 	
     ASSERT(!s_logBuf[index]);
     s_logBuf[index] = (char *)ALLOC(s_logSize[index]);
@@ -175,7 +175,7 @@ static void AllocLogBuffer_CS (unsigned index) {
 
 //============================================================================
 static void FreeLogBuffer_CS (unsigned index) {
-	ref(FreeLogBuffer_CS);
+	REF(FreeLogBuffer_CS);
 	
     if (s_logBuf[index]) {
         FREE(s_logBuf[index]);
@@ -322,7 +322,7 @@ static void FlushLogFile_CS (
     unsigned index,
     TimeDesc timeDesc
 ) {
-	ref(FlushLogFile_CS);
+	REF(FlushLogFile_CS);
 	
     bool close = !s_running || (s_logTime[index].day != timeDesc.day);
     WriteLogFile_CS(index, close);
@@ -332,7 +332,7 @@ static void FlushLogFile_CS (
 
 //============================================================================
 static unsigned FlushLogsTimerCallback (void *) {
-	ref(FlushLogsTimerCallback);
+	REF(FlushLogsTimerCallback);
 	
 	AsyncLogFlush();
 	return kAsyncTimeInfinite;
@@ -427,9 +427,9 @@ void AsyncLogWriteMsg (
     ELogSeverity    severity,
     const wchar     msg[]
 ) {
-	ref(facility);
-	ref(severity);
-	ref(msg);
+	REF(facility);
+	REF(severity);
+	REF(msg);
 	
     if (!s_running)
         return;

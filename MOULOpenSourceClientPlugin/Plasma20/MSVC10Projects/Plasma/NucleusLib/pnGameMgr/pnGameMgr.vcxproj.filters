@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="TicTacToe">
+      <UniqueIdentifier>{4ba33dc2-556f-4628-a2b4-245fe8c51e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Heek">
+      <UniqueIdentifier>{76fbda7c-0422-406b-b59d-49a6f7d64cd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Marker">
+      <UniqueIdentifier>{31998704-f091-40c7-9cec-ba4907ccf190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BlueSpiral">
+      <UniqueIdentifier>{2a02d36a-5cac-4e73-b53b-234fd47f6c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClimbingWall">
+      <UniqueIdentifier>{a8b790a0-4dc2-46f7-8685-310706e32f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VarSync">
+      <UniqueIdentifier>{8ca44f92-0b17-4294-b751-953b3779d71c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\TicTacToe\pnGmTicTacToe.cpp">
+      <Filter>TicTacToe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Heek\pnGmHeek.cpp">
+      <Filter>Heek</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Marker\pnGmMarker.cpp">
+      <Filter>Marker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\BlueSpiral\pnGmBlueSpiral.cpp">
+      <Filter>BlueSpiral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\ClimbingWall\pnGmClimbingWall.cpp">
+      <Filter>ClimbingWall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\VarSync\pnGmVarSync.cpp">
+      <Filter>VarSync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\pnGameMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\TicTacToe\pnGmTicTacToe.h">
+      <Filter>TicTacToe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Heek\pnGmHeek.h">
+      <Filter>Heek</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Marker\pnGmMarker.h">
+      <Filter>Marker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\BlueSpiral\pnGmBlueSpiral.h">
+      <Filter>BlueSpiral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\ClimbingWall\pnGmClimbingWall.h">
+      <Filter>ClimbingWall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\VarSync\pnGmVarSync.h">
+      <Filter>VarSync</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Intern.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\Pch.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnGameMgr\pnGameMgr.h" />
+  </ItemGroup>
+</Project>

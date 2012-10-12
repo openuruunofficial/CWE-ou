@@ -79,8 +79,8 @@ AUTO_INIT_FUNC(hsExeErrorInit) {
 //============================================================================
 static void DoAssert (int line, const char file[], const char msg[]) {
 
-    ref(line);
-    ref(file);
+    REF(line);
+    REF(file);
 
     ErrorMinimizeAppWindow();
 
@@ -252,8 +252,8 @@ void DebugMsgV (const char fmt[], va_list args) {
 
 #else
 
-    ref(fmt);
-    ref(args);
+    REF(fmt);
+    REF(args);
 
 #endif
 }
@@ -269,7 +269,7 @@ void __cdecl DebugMsg (const char fmt[], ...) {
 
 #else
 
-    ref(fmt);
+    REF(fmt);
 
 #endif
 }

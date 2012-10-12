@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{93e70bfe-1706-437e-8f7c-4db440d0d279}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Nt">
+      <UniqueIdentifier>{d02adf25-244f-4f65-b34f-cda0f5a2bdc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\W9x">
+      <UniqueIdentifier>{11678e2e-79b6-4986-9fd9-00962bd4c26f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Unix">
+      <UniqueIdentifier>{6089ed48-7e98-4190-8e25-ba0d5c573fdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Win32">
+      <UniqueIdentifier>{eca37fd3-e0f7-4f9f-a039-d7e8a4ac300f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\pnAceCore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\pnAceIo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\pnAceLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\pnAceThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\pnAceTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNt.cpp">
+      <Filter>Private\Nt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNtFile.cpp">
+      <Filter>Private\Nt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNtSocket.cpp">
+      <Filter>Private\Nt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNtThread.cpp">
+      <Filter>Private\Nt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9x.cpp">
+      <Filter>Private\W9x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9xFile.cpp">
+      <Filter>Private\W9x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9xSocket.cpp">
+      <Filter>Private\W9x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9xThread.cpp">
+      <Filter>Private\W9x</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Win32\pnAceW32Dns.cpp">
+      <Filter>Private\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Win32\pnAceW32Thread.cpp">
+      <Filter>Private\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\pnAceInt.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNt.h">
+      <Filter>Private\Nt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Nt\pnAceNtInt.h">
+      <Filter>Private\Nt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9x.h">
+      <Filter>Private\W9x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\W9x\pnAceW9xInt.h">
+      <Filter>Private\W9x</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnAsyncCoreExe\Private\Unix\pnAceUx.h">
+      <Filter>Private\Unix</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

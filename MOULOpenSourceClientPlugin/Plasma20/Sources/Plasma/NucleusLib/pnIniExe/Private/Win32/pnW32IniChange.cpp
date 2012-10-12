@@ -126,7 +126,7 @@ static void ChangeDispatch_WL (IniChangeReg * marker) {
 
 //===========================================================================
 static unsigned THREADCALL IniSrvThreadProc (AsyncThread * thread) {
-	ref(thread);
+	REF(thread);
 	
     IniChangeReg marker;
     marker.fNotify = nil;

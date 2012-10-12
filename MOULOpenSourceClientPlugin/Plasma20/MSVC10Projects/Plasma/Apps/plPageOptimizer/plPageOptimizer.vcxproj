@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EED64223-B75A-4476-9F16-6ACE587158CD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_dbg</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/dx9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4267;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CoreLib.lib;CoreLibExe.lib;pfAnimation.lib;pfAudio.lib;pfCamera.lib;pfCharacter.lib;pfConditional.lib;pfGameGUIMgr.lib;pfGameMgr.lib;pfGameScoreMgr.lib;pfJournalBook.lib;pfLocalizationMgr.lib;pfMessage.lib;pfPython.lib;pfSurface.lib;pnAddrInfo.lib;pnAsyncCore.lib;pnAsyncCoreExe.lib;pnDispatch.lib;pnFactory.lib;pnGameMgr.lib;pnIni.lib;pnIniExe.lib;pnInputCore.lib;pnKeyedObject.lib;pnMessage.lib;pnModifier.lib;pnNetBase.lib;pnNetCli.lib;pnNetCommon.lib;pnNetProtocol.lib;pnNucleusInc.lib;pnProduct.lib;pnSceneObject.lib;pnTimer.lib;pnUtils.lib;pnUtilsExe.lib;plAgeDescription.lib;plAgeLoader.lib;plAudible.lib;plAudio.lib;plAudioCore.lib;plAvatar.lib;plCompression.lib;plContainer.lib;plDrawable.lib;plEncryption.lib;plFile.lib;plGImage.lib;plGLight.lib;plInputCore.lib;plInterp.lib;plIntersect.lib;plJPEG.lib;plMath.lib;plMessage.lib;plModifier.lib;plNetClient.lib;plNetClientComm.lib;plNetClientRecorder.lib;plNetCommon.lib;plNetGameLib.lib;plNetMessage.lib;plNetTransport.lib;plParticleSystem.lib;plPhysical.lib;plPhysX.lib;plPipeline.lib;plProgressMgr.lib;plResMgr.lib;plScene.lib;plSDL.lib;plStatusLog.lib;plSurface.lib;plTransform.lib;plUnifiedTime.lib;plUUID.lib;plVault.lib;winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;Rpcrt4.lib;pythoncore_static.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\CoreLib\Debug;..\..\CoreLibExe\Debug;..\..\FeatureLib\pfAnimation\Debug;..\..\FeatureLib\pfAudio\Debug;..\..\FeatureLib\pfCamera\Debug;..\..\FeatureLib\pfCharacter\Debug;..\..\FeatureLib\pfConditional\Debug;..\..\FeatureLib\pfGameGUIMgr\Debug;..\..\FeatureLib\pfGameMgr\Debug;..\..\FeatureLib\pfGameScoreMgr\Debug;..\..\FeatureLib\pfJournalBook\Debug;..\..\FeatureLib\pfLocalizationMgr\Debug;..\..\FeatureLib\pfMessage\Debug;..\..\FeatureLib\pfPython\Debug;..\..\FeatureLib\pfSurface\Debug;..\..\NucleusLib\pnAddrInfo\Debug;..\..\NucleusLib\pnAsyncCore\Debug;..\..\NucleusLib\pnAsyncCoreExe\Debug;..\..\NucleusLib\pnDispatch\Debug;..\..\NucleusLib\pnFactory\Debug;..\..\NucleusLib\pnGameMgr\Debug;..\..\NucleusLib\pnIni\Debug;..\..\NucleusLib\pnIniExe\Debug;..\..\NucleusLib\pnInputCore\Debug;..\..\NucleusLib\pnKeyedObject\Debug;..\..\NucleusLib\pnMessage\Debug;..\..\NucleusLib\pnModifier\Debug;..\..\NucleusLib\pnNetBase\Debug;..\..\NucleusLib\pnNetCli\Debug;..\..\NucleusLib\pnNetCommon\Debug;..\..\NucleusLib\pnNetProtocol\Debug;..\..\NucleusLib\pnNucleusInc\Debug;..\..\NucleusLib\pnProduct\Debug;..\..\NucleusLib\pnSceneObject\Debug;..\..\NucleusLib\pnTimer\Debug;..\..\NucleusLib\pnUtils\Debug;..\..\NucleusLib\pnUtilsExe\Debug;..\..\PubUtilLib\plAgeDescription\Debug;..\..\PubUtilLib\plAgeLoader\Debug;..\..\PubUtilLib\plAudible\Debug;..\..\PubUtilLib\plAudio\Debug;..\..\PubUtilLib\plAudioCore\Debug;..\..\PubUtilLib\plAvatar\Debug;..\..\PubUtilLib\plCompression\Debug;..\..\PubUtilLib\plContainer\Debug;..\..\PubUtilLib\plDrawable\Debug;..\..\PubUtilLib\plEncryption\Debug;..\..\PubUtilLib\plFile\Debug;..\..\PubUtilLib\plGImage\Debug;..\..\PubUtilLib\plGLight\Debug;..\..\PubUtilLib\plInputCore\Debug;..\..\PubUtilLib\plInterp\Debug;..\..\PubUtilLib\plIntersect\Debug;..\..\PubUtilLib\plJPEG\Debug;..\..\PubUtilLib\plMath\Debug;..\..\PubUtilLib\plMessage\Debug;..\..\PubUtilLib\plModifier\Debug;..\..\PubUtilLib\plNetClient\Debug;..\..\PubUtilLib\plNetClientComm\Debug;..\..\PubUtilLib\plNetClientRecorder\Debug;..\..\PubUtilLib\plNetCommon\Debug;..\..\PubUtilLib\plNetGameLib\Debug;..\..\PubUtilLib\plNetMessage\Debug;..\..\PubUtilLib\plNetTransport\Debug;..\..\PubUtilLib\plParticleSystem\Debug;..\..\PubUtilLib\plPhysical\Debug;..\..\PubUtilLib\plPhysX\Debug;..\..\PubUtilLib\plPipeline\Debug;..\..\PubUtilLib\plProgressMgr\Debug;..\..\PubUtilLib\plResMgr\Debug;..\..\PubUtilLib\plScene\Debug;..\..\PubUtilLib\plSDL\Debug;..\..\PubUtilLib\plStatusLog\Debug;..\..\PubUtilLib\plSurface\Debug;..\..\PubUtilLib\plTransform\Debug;..\..\PubUtilLib\plUnifiedTime\Debug;..\..\PubUtilLib\plUUID\Debug;..\..\PubUtilLib\plVault\Debug;..\..\..\..\SDKs\XPlatform\Cypython-2.3.3\PCbuild\Debug;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;libci.lib;libcid.lib;libcmt.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy to Tools directory</Message>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\tools\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../SDKs/XPlatform/Cypython-2.3.3/Include;../../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static;../../../../../StaticSDKs/Win32/dx9.0c/include;../../../../../StaticSDKs/Win32/OpenAL 1.1 with EFX SDK/include;../../../../../StaticSDKs/Win32/OpenSSL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;PLASMA_EXTERNAL_RELEASE;BUILD_TYPE=BUILD_TYPE_LIVE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <DisableSpecificWarnings>4267;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>Full</Optimization>
+      <StringPooling>true</StringPooling>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CoreLib.lib;CoreLibExe.lib;pfAnimation.lib;pfAudio.lib;pfCamera.lib;pfCharacter.lib;pfConditional.lib;pfGameGUIMgr.lib;pfGameMgr.lib;pfGameScoreMgr.lib;pfJournalBook.lib;pfLocalizationMgr.lib;pfMessage.lib;pfPython.lib;pfSurface.lib;pnAddrInfo.lib;pnAsyncCore.lib;pnAsyncCoreExe.lib;pnDispatch.lib;pnFactory.lib;pnGameMgr.lib;pnIni.lib;pnIniExe.lib;pnInputCore.lib;pnKeyedObject.lib;pnMessage.lib;pnModifier.lib;pnNetBase.lib;pnNetCli.lib;pnNetCommon.lib;pnNetProtocol.lib;pnNucleusInc.lib;pnProduct.lib;pnSceneObject.lib;pnTimer.lib;pnUtils.lib;pnUtilsExe.lib;plAgeDescription.lib;plAgeLoader.lib;plAudible.lib;plAudio.lib;plAudioCore.lib;plAvatar.lib;plCompression.lib;plContainer.lib;plDrawable.lib;plEncryption.lib;plFile.lib;plGImage.lib;plGLight.lib;plInputCore.lib;plInterp.lib;plIntersect.lib;plJPEG.lib;plMath.lib;plMessage.lib;plModifier.lib;plNetClient.lib;plNetClientComm.lib;plNetClientRecorder.lib;plNetCommon.lib;plNetGameLib.lib;plNetMessage.lib;plNetTransport.lib;plParticleSystem.lib;plPhysical.lib;plPhysX.lib;plPipeline.lib;plProgressMgr.lib;plResMgr.lib;plScene.lib;plSDL.lib;plStatusLog.lib;plSurface.lib;plTransform.lib;plUnifiedTime.lib;plUUID.lib;plVault.lib;winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;Rpcrt4.lib;pythoncore_static.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\CoreLib\Release;..\..\CoreLibExe\Release;..\..\FeatureLib\pfAnimation\Release;..\..\FeatureLib\pfAudio\Release;..\..\FeatureLib\pfCamera\Release;..\..\FeatureLib\pfCharacter\Release;..\..\FeatureLib\pfConditional\Release;..\..\FeatureLib\pfGameGUIMgr\Release;..\..\FeatureLib\pfGameMgr\Release;..\..\FeatureLib\pfGameScoreMgr\Release;..\..\FeatureLib\pfJournalBook\Release;..\..\FeatureLib\pfLocalizationMgr\Release;..\..\FeatureLib\pfMessage\Release;..\..\FeatureLib\pfPython\Release;..\..\FeatureLib\pfSurface\Release;..\..\NucleusLib\pnAddrInfo\Release;..\..\NucleusLib\pnAsyncCore\Release;..\..\NucleusLib\pnAsyncCoreExe\Release;..\..\NucleusLib\pnDispatch\Release;..\..\NucleusLib\pnFactory\Release;..\..\NucleusLib\pnGameMgr\Release;..\..\NucleusLib\pnIni\Release;..\..\NucleusLib\pnIniExe\Release;..\..\NucleusLib\pnInputCore\Release;..\..\NucleusLib\pnKeyedObject\Release;..\..\NucleusLib\pnMessage\Release;..\..\NucleusLib\pnModifier\Release;..\..\NucleusLib\pnNetBase\Release;..\..\NucleusLib\pnNetCli\Release;..\..\NucleusLib\pnNetCommon\Release;..\..\NucleusLib\pnNetProtocol\Release;..\..\NucleusLib\pnNucleusInc\Release;..\..\NucleusLib\pnProduct\Release;..\..\NucleusLib\pnSceneObject\Release;..\..\NucleusLib\pnTimer\Release;..\..\NucleusLib\pnUtils\Release;..\..\NucleusLib\pnUtilsExe\Release;..\..\PubUtilLib\plAgeDescription\Release;..\..\PubUtilLib\plAgeLoader\Release;..\..\PubUtilLib\plAudible\Release;..\..\PubUtilLib\plAudio\Release;..\..\PubUtilLib\plAudioCore\Release;..\..\PubUtilLib\plAvatar\Release;..\..\PubUtilLib\plCompression\Release;..\..\PubUtilLib\plContainer\Release;..\..\PubUtilLib\plDrawable\Release;..\..\PubUtilLib\plEncryption\Release;..\..\PubUtilLib\plFile\Release;..\..\PubUtilLib\plGImage\Release;..\..\PubUtilLib\plGLight\Release;..\..\PubUtilLib\plInputCore\Release;..\..\PubUtilLib\plInterp\Release;..\..\PubUtilLib\plIntersect\Release;..\..\PubUtilLib\plJPEG\Release;..\..\PubUtilLib\plMath\Release;..\..\PubUtilLib\plMessage\Release;..\..\PubUtilLib\plModifier\Release;..\..\PubUtilLib\plNetClient\Release;..\..\PubUtilLib\plNetClientComm\Release;..\..\PubUtilLib\plNetClientRecorder\Release;..\..\PubUtilLib\plNetCommon\Release;..\..\PubUtilLib\plNetGameLib\Release;..\..\PubUtilLib\plNetMessage\Release;..\..\PubUtilLib\plNetTransport\Release;..\..\PubUtilLib\plParticleSystem\Release;..\..\PubUtilLib\plPhysical\Release;..\..\PubUtilLib\plPhysX\Release;..\..\PubUtilLib\plPipeline\Release;..\..\PubUtilLib\plProgressMgr\Release;..\..\PubUtilLib\plResMgr\Release;..\..\PubUtilLib\plScene\Release;..\..\PubUtilLib\plSDL\Release;..\..\PubUtilLib\plStatusLog\Release;..\..\PubUtilLib\plSurface\Release;..\..\PubUtilLib\plTransform\Release;..\..\PubUtilLib\plUnifiedTime\Release;..\..\PubUtilLib\plUUID\Release;..\..\PubUtilLib\plVault\Release;..\..\..\..\SDKs\XPlatform\Cypython-2.3.3\PCbuild\Release;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>
+      </GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /I "$(TargetPath)" ..\..\..\..\tools\</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy to Tools directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plPageOptimizer\main.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plPageOptimizer\pfAllCreatables.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\plAllCreatables.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plPageOptimizer\plPageOptimizer.cpp" />
+    <ClCompile Include="..\..\..\..\Sources\Plasma\Apps\plClient\pnAllCreatables.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plPageOptimizer\plPageOptimizer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -244,7 +244,7 @@ static void INtOpDispatch (
 
 //===========================================================================
 static unsigned THREADCALL NtWorkerThreadProc (AsyncThread * thread) {
-	ref(thread);
+	REF(thread);
 	
     ThreadDenyBlock();
 
@@ -340,7 +340,7 @@ void INtConnCompleteOperation (NtObject * ntObj) {
         return;
 
     DWORD err = GetLastError();
-    ref(err);
+    REF(err);
     switch (ntObj->ioType) {
         case kNtFile:
             INtFileDelete((NtFile *) ntObj);

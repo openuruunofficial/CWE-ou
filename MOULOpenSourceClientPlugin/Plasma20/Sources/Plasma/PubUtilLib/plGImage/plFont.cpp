@@ -336,22 +336,22 @@ void	plFont::IRenderString( plMipmap *mip, UInt16 x, UInt16 y, const wchar_t *st
 	// Choose an optimal rendering function
 	fRenderInfo.fRenderFunc = nil;
 	if( justCalc )
-		fRenderInfo.fRenderFunc = IRenderCharNull;
+		fRenderInfo.fRenderFunc = &plFont::IRenderCharNull;
 	else if( mip->GetPixelSize() == 32 )
 	{
 		if( fBPP == 1 )
-			fRenderInfo.fRenderFunc = ( fRenderInfo.fFlags & kRenderScaleAA ) ? IRenderChar1To32AA : IRenderChar1To32;
+			fRenderInfo.fRenderFunc = ( fRenderInfo.fFlags & kRenderScaleAA ) ? &plFont::IRenderChar1To32AA : &plFont::IRenderChar1To32;
 		else if( fBPP == 8 )
 		{
 			if( fRenderInfo.fFlags & kRenderIntoAlpha )
 			{
 				if( ( fRenderInfo.fColor & 0xff000000 ) != 0xff000000 )
-					fRenderInfo.fRenderFunc = IRenderChar8To32Alpha;
+					fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32Alpha;
 				else
-					fRenderInfo.fRenderFunc = IRenderChar8To32FullAlpha;
+					fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32FullAlpha;
 			}
 			else
-				fRenderInfo.fRenderFunc = IRenderChar8To32;
+				fRenderInfo.fRenderFunc = &plFont::IRenderChar8To32;
 		}
 	}
 
@@ -537,7 +537,7 @@ void	plFont::IRenderString( plMipmap *mip, UInt16 x, UInt16 y, const wchar_t *st
 
 					fRenderInfo.fX = 0;
 					CharRenderFunc oldFunc = fRenderInfo.fRenderFunc;
-					fRenderInfo.fRenderFunc = IRenderCharNull;
+					fRenderInfo.fRenderFunc = &plFont::IRenderCharNull;
 
 					IRenderLoop( string, lastWord );
 
@@ -559,7 +559,7 @@ void	plFont::IRenderString( plMipmap *mip, UInt16 x, UInt16 y, const wchar_t *st
 
 					fRenderInfo.fX = 0;
 					CharRenderFunc oldFunc = fRenderInfo.fRenderFunc;
-					fRenderInfo.fRenderFunc = IRenderCharNull;
+					fRenderInfo.fRenderFunc = &plFont::IRenderCharNull;
 
 					IRenderLoop( string, lastWord );
 
@@ -658,7 +658,7 @@ void	plFont::IRenderString( plMipmap *mip, UInt16 x, UInt16 y, const wchar_t *st
 		{
 			// Advance left past any clipping area
 			CharRenderFunc oldFunc = fRenderInfo.fRenderFunc;
-			fRenderInfo.fRenderFunc = IRenderCharNull;
+			fRenderInfo.fRenderFunc = &plFont::IRenderCharNull;
 			while( fRenderInfo.fX < fRenderInfo.fClipRect.fX && *string != 0 )
 			{
 				IRenderLoop( string, 1 );

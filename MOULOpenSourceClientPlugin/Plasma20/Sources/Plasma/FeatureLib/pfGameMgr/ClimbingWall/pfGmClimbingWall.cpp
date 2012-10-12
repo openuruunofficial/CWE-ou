@@ -151,7 +151,7 @@ void IClimbingWall::OnOwnerChange (const Srv2Cli_Game_OwnerChange & msg) {
 
 //============================================================================
 void IClimbingWall::RecvNumBlockersChanged (const Srv2Cli_ClimbingWall_NumBlockersChanged & msg, void * param) {
-	ref(param);
+	REF(param);
 	
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -160,7 +160,7 @@ void IClimbingWall::RecvNumBlockersChanged (const Srv2Cli_ClimbingWall_NumBlocke
 
 //============================================================================
 void IClimbingWall::RecvReady (const Srv2Cli_ClimbingWall_Ready & msg, void * param) {
-	ref(param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -169,7 +169,7 @@ void IClimbingWall::RecvReady (const Srv2Cli_ClimbingWall_Ready & msg, void * pa
 
 //============================================================================
 void IClimbingWall::RecvBlockersChanged (const Srv2Cli_ClimbingWall_BlockersChanged & msg, void * param) {
-	ref (param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -178,7 +178,7 @@ void IClimbingWall::RecvBlockersChanged (const Srv2Cli_ClimbingWall_BlockersChan
 
 //============================================================================
 void IClimbingWall::RecvPlayerEntered (const Srv2Cli_ClimbingWall_PlayerEntered & msg, void * param) {
-	ref (param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -187,7 +187,7 @@ void IClimbingWall::RecvPlayerEntered (const Srv2Cli_ClimbingWall_PlayerEntered 
 
 //============================================================================
 void IClimbingWall::RecvSuitMachineLocked (const Srv2Cli_ClimbingWall_SuitMachineLocked & msg, void * param) {
-	ref (param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
@@ -196,7 +196,7 @@ void IClimbingWall::RecvSuitMachineLocked (const Srv2Cli_ClimbingWall_SuitMachin
 
 //============================================================================
 void IClimbingWall::RecvGameOver (const Srv2Cli_ClimbingWall_GameOver & msg, void * param) {
-	ref (param);
+	REF(param);
 
 	pfGameCliMsg * gameCliMsg = NEWZERO(pfGameCliMsg);
 	gameCliMsg->Set(gameCli, msg);
