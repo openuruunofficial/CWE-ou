@@ -22,7 +22,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -89,7 +89,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -254,7 +254,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\SRC\contrib\minizip\unzip.c">
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\unzip.c">
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
@@ -290,7 +290,7 @@
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plPlasmaInstaller\plUnzip.h">
 			</File>
 			<File
-				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\SRC\contrib\minizip\unzip.h">
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\unzip.h">
 			</File>
 		</Filter>
 		<Filter

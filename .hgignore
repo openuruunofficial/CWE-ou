@@ -5,10 +5,12 @@ syntax: glob
 *.user
 *.sdf
 *.opensdf
+*.pyc
 Release*/
 Debug*/
 ipch/
 syntax: regexp
+^MOULOpenSourceClientPlugin/Plasma20/Sources/Plasma/Apps/plClient/external/render/
 ^MOULOpenSourceClientPlugin/Plasma20/test/
 ^MOULOpenSourceClientPlugin/Plasma20/tools/
 ^MOULOpenSourceClientPlugin/StaticSDKs/

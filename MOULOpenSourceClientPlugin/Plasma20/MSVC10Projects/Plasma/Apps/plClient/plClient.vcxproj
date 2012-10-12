@@ -106,10 +106,10 @@
       <StringPooling>true</StringPooling>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;libpngd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;libci.lib;libcid.lib;libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
@@ -158,10 +158,10 @@
       <StringPooling>true</StringPooling>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlibd.lib;libpngd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Debug;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;libcd.lib;libci.lib;libcid.lib;libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug>true</AssemblyDebug>
@@ -214,10 +214,10 @@
       <BufferSecurityCheck>true</BufferSecurityCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AssemblyDebug>false</AssemblyDebug>
@@ -274,10 +274,10 @@
       <BufferSecurityCheck>true</BufferSecurityCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;ws2_32.lib;strmiids.lib;vfw32.lib;version.lib;Rpcrt4.lib;d3dx9.lib;dinput8.lib;dxerr9.lib;dxguid.lib;dsound.lib;OpenAL32.lib;libeay32.lib;NxCharacter.lib;PhysXLoader.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;libspeex.lib;libjpeg.lib;zlib.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;..\..\..\..\..\StaticSDKs\Win32\xiph\lib\Release;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AssemblyDebug>false</AssemblyDebug>
@@ -406,53 +406,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\banner.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap1.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap2.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bitmap3.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00001.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00002.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00003.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00004.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\bmp00005.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_cli.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\book_hig.bmp" />
     <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cnsl1.bin" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_clicked.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_disabled.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_down.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_grab.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_left.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_open.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_poised.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_right.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_u.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_up.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\cursor_upward.bmp" />
     <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Dirt.ICO" />
     <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\headspin.ico" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Microphone.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\Speaker.bmp" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.01.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.02.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.03.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.04.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.05.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.06.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.07.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.08.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.09.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.10.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.11.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.12.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.13.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.14.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.15.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.16.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.17.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking.18.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Linking_Text.jpg" />
-    <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\xLoading_Updating_Text.jpg" />
     <None Include="..\..\..\..\Docs\ReleaseNotes\ReleaseNotes.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -670,6 +626,10 @@
     </ProjectReference>
     <ProjectReference Include="..\..\PubUtilLib\plAvatar\plAvatar.vcxproj">
       <Project>{7e6c6f09-c580-4b4d-95e2-c02248122da2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PubUtilLib\plClientResMgr\plClientResMgr.vcxproj">
+      <Project>{d005f6ef-6a43-1957-7458-10ed3ca39f02}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\..\PubUtilLib\plClipboard\plClipboard.vcxproj">
