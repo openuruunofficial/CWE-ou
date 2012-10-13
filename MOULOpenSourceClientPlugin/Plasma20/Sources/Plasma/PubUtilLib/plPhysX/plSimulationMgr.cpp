@@ -261,7 +261,7 @@ public:
 //
 /////////////////////////////////////////////////////////////////
 
-#define kDefaultMaxDelta	0.1			// if the step is greater than .1 seconds, clamp to that
+#define kDefaultMaxDelta	0.15		// if the step is greater than .15 seconds, clamp to that
 #define kDefaultStepSize	1.f / 60.f	// default simulation freqency is 60hz
 
 /////////////////////////////////////////////////////////////////
@@ -610,7 +610,7 @@ void plSimulationMgr::Advance(float delSecs)
 	}
 
 	// Perform as many whole substeps as possible saving the remainder in our accumulator.
-	int numSubSteps = (int)(fAccumulator / fStepSize);
+	int numSubSteps = (int)(fAccumulator / fStepSize + 0.000001f);
 	float delta = numSubSteps * fStepSize;
 	fAccumulator -= delta;
 
