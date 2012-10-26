@@ -73,7 +73,7 @@ int plPXPhysicalControllerCore::fPXControllersMax = 0;
 #define kCCTSkinWidth 0.1f
 #define kCCTStepOffset 0.6f
 #define kCCTZOffset ((fRadius + (fHeight / 2)) + kCCTSkinWidth)
-#define kPhysHeightCorrection 0.6f
+#define kPhysHeightCorrection 0.8f
 #define kPhysZOffset ((kCCTZOffset + (kPhysHeightCorrection / 2)) - 0.05f)
 #define kAvatarMass 200.0f
 
