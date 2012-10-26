@@ -501,6 +501,9 @@ void plWalkingStrategy::Update(hsScalar delSecs)
 		}
 	}
 
+	hsVector3 zeroVelocity(0.f, 0.f, 0.f);
+	fController->SetLinearVelocity(zeroVelocity);
+
 	if (!fHitGroundInThisAge && IsOnGround())
 		fHitGroundInThisAge = true;
 
