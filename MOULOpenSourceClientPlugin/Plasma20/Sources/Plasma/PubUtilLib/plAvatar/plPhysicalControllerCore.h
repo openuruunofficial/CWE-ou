@@ -150,7 +150,7 @@ public:
 	hsScalar GetHeight() const { return fHeight; }
 
 	// Create a new controller instance - Implemented in the physics system
-	static plPhysicalControllerCore* Create(plKey ownerSO, hsScalar height, hsScalar radius);
+	static plPhysicalControllerCore* Create(plKey ownerSO, hsScalar height, hsScalar radius, bool human);
 
 protected:
 	virtual void IHandleEnableChanged() = 0;
