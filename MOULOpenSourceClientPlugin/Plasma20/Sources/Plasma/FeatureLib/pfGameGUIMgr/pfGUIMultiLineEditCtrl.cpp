@@ -308,6 +308,13 @@ void	pfGUIMultiLineEditCtrl::SetScrollPosition( Int32 topLine )
 		fDialog->GetHandler()->DoSomething(this);
 }
 
+//// GetScrollPosition ///////////////////////////////////////////////////////
+
+Int32	pfGUIMultiLineEditCtrl::GetScrollPosition()
+{
+	return fScrollPos;
+}
+
 //// MoveCursor - by direction command////////////////////////////////////////////////
 void	pfGUIMultiLineEditCtrl::MoveCursor( Direction dir )
 {

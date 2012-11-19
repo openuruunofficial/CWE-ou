@@ -225,6 +225,7 @@ class pfGUIMultiLineEditCtrl : public pfGUIControlMod
 		};
 
 		void	SetScrollPosition( Int32 topLine );
+		Int32	GetScrollPosition();
 		void	MoveCursor( Direction dir );
 
 		void	InsertChar( char c );

@@ -80,6 +80,8 @@ public:
 	virtual void	Clickable( void );
 	virtual void	Unclickable( void );
 	virtual void	SetScrollPosition( Int32 topLine );
+	virtual Int32	GetScrollPosition();
+	virtual hsBool	IsAtEnd();
 	virtual void	MoveCursor( Int32 dir );
 	virtual void	ClearBuffer( void );
 	virtual void	SetText( const char *asciiText );

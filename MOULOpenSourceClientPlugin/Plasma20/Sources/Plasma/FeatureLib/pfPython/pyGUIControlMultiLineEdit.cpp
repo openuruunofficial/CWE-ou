@@ -80,6 +80,30 @@ void pyGUIControlMultiLineEdit::SetScrollPosition( Int32 topLine )
 	}
 }
 
+Int32 pyGUIControlMultiLineEdit::GetScrollPosition()
+{
+	if ( fGCkey )
+	{
+		// get the pointer to the modifier
+		pfGUIMultiLineEditCtrl* pbmod = pfGUIMultiLineEditCtrl::ConvertNoRef(fGCkey->ObjectIsLoaded());
+		if ( pbmod )
+			return pbmod->GetScrollPosition();
+	}
+	return 0;
+}
+
+hsBool pyGUIControlMultiLineEdit::IsAtEnd()
+{
+	if ( fGCkey )
+	{
+		// get the pointer to the modifier
+		pfGUIMultiLineEditCtrl* pbmod = pfGUIMultiLineEditCtrl::ConvertNoRef(fGCkey->ObjectIsLoaded());
+		if ( pbmod )
+			return pbmod->ShowingEndOfBuffer();
+	}
+	return false;
+}
+
 void pyGUIControlMultiLineEdit::MoveCursor( Int32 dir)
 {
 	if ( fGCkey )
