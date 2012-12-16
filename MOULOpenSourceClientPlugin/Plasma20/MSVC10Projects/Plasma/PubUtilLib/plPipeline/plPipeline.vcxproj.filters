@@ -23,9 +23,6 @@
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plPipeline\hsGDDrawDllLoad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plPipeline\plBinkPlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plPipeline\plCaptureRender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
