@@ -50,7 +50,7 @@ class plLayerBink : public plLayerMovie
 protected:
 	virtual Int32				ISecsToFrame(float secs) { return 0; }
 	virtual hsBool				IInit() { return true; }
-	virtual hsBool				IGetCurrentFrame() { return 0; }
+	virtual hsBool				IGetCurrentFrame() { return true; }
 	virtual hsBool				IRelease() { return true; }
 
 public:
