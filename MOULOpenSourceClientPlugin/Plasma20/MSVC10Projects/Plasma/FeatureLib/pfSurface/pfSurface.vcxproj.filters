@@ -26,9 +26,6 @@
     <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfSurface\plLayerAVI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfSurface\plLayerBink.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Sources\Plasma\FeatureLib\pfSurface\plLayerMovie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
