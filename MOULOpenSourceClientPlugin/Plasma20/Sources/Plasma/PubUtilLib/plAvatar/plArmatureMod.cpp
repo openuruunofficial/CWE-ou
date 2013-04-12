@@ -54,7 +54,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "plAvBrainHuman.h"
 #include "plMatrixChannel.h"
 #include "plAvatarTasks.h"
-#include "plAvCallbackAction.h"
+#include "plPhysicalControllerCore.h"
 #include "plAvBrainCritter.h"
 
 // global
@@ -534,8 +534,7 @@ void plArmatureModBase::EnablePhysics(hsBool status, UInt16 reason /* = kDisable
 //   i.e. normal enabled physical
 void plArmatureModBase::EnablePhysicsKinematic(hsBool status)
 {
-	if (fController)
-		fController->Kinematic(status);
+	EnablePhysics(!status, kDisableReasonKinematic);
 }
 
 void plArmatureModBase::EnableDrawing(hsBool status, UInt16 reason /* = kDisableReasonUnknown */)
@@ -2007,7 +2006,7 @@ hsBool plArmatureMod::ValidatePhysics()
 		return false;
 
 	if (!fController)
-		fController = plPhysicalControllerCore::Create(GetTarget(0)->GetKey(), fPhysHeight, fPhysWidth);
+		fController = plPhysicalControllerCore::Create(GetTarget(0)->GetKey(), fPhysHeight, fPhysWidth, (fBodyType == kBoneBaseMale || fBodyType == kBoneBaseFemale));
 
 	if (fController)
 	{
@@ -2684,19 +2683,7 @@ void plArmatureMod::DumpToDebugDisplay(int &x, int &y, int lineHeight, char *str
 		debugTxt.DrawString(x, y, strBuf);
 		y += lineHeight;
 
-		hsPoint3 kPos;
-		char *kinematic = "n.a.";
 		const char* frozen = "n.a.";
-		if (fController)
-		{
-			fController->GetKinematicPosition(kPos);
-			kinematic = fController->IsKinematic() ? "on" : "off";
-		}
-		sprintf(strBuf, "kinematc(world): %.2f, %.2f, %.2f  Kinematic: %3s",
-			kPos.fX, kPos.fY, kPos.fZ,kinematic);
-		debugTxt.DrawString(x, y, strBuf);
-		y += lineHeight;
-
 		if (fController)
 			frozen = fController->IsEnabled() ? "no" : "yes";
 

@@ -283,26 +283,6 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
@@ -570,26 +550,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -940,9 +900,6 @@
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.h">
 			</File>
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.h">
-			</File>
-			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.h">
 			</File>
 			<File
@@ -992,9 +949,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.h">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.h">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvDefs.h">

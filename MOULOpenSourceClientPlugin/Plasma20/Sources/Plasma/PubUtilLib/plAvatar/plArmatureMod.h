@@ -145,6 +145,7 @@ public:
 		kDisableReasonCCR		= 0x0008,
 		kDisableReasonVehicle	= 0x0010,
 		kDisableReasonGenericBrain	= 0x0020,
+		kDisableReasonKinematic = 0x0040
 	};	
 	void EnablePhysics(hsBool status, UInt16 reason = kDisableReasonUnknown);
 	void EnablePhysicsKinematic(hsBool status);

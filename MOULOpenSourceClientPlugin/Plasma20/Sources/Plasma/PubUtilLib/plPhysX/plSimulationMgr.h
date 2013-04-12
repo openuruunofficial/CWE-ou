@@ -99,6 +99,8 @@ public:
 
 	int GetMaterialIdx(NxScene* scene, hsScalar friction, hsScalar restitution);
 
+	UInt32 GetStepCount() { return fStepCount; }
+
 	// PHYSX FIXME - walk thru all the convex hull detector regions to see if we are in any... we're either coming or going
 	void UpdateDetectorsInScene(plKey world, plKey avatar, hsPoint3& pos, bool entering);
 	void UpdateAvatarInDetector(plKey world, plPXPhysical* detector);
@@ -159,6 +161,9 @@ protected:
 
 	float fMaxDelta;
 	float fStepSize;
+	float fAccumulator;
+
+	UInt32 fStepCount;
 
 	// A utility class to keep track of a request for a physical synchronization.
 	// These requests must pass a certain criteria (see the code for the latest)

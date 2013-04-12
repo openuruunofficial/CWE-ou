@@ -328,7 +328,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.cpp" />
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -555,7 +554,6 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Internal|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.cpp" />
     <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvLadderModifier.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Internal|Win32'">Disabled</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -807,7 +805,6 @@
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAGMasterSDLModifier.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAGModifier.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.h" />
-    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureMod.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvatarClothing.h" />
@@ -825,7 +822,6 @@
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainHuman.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainRideAnimatedPhysical.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.h" />
-    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvDefs.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvLadderModifier.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvTask.h" />
