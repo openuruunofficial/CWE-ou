@@ -2278,7 +2278,7 @@ hsBool plDXPipeline::IResetDevice()
 
 			/// Broadcast a message letting everyone know that we were recreated and that
 			/// all device-specific stuff needs to be recreated
-			plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg();
+			plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg(this);
 			plgDispatch::MsgSend(clean);
 		}
 		fDevWasLost = true;
@@ -2552,7 +2552,7 @@ void	plDXPipeline::Resize( UInt32 width, UInt32 height )
 
 	/// Broadcast a message letting everyone know that we were recreated and that
 	/// all device-specific stuff needs to be recreated
-	plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg();
+	plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg(this);
 	plgDispatch::MsgSend(clean);
 }
 
@@ -3834,7 +3834,7 @@ hsBool plDXPipeline::BeginRender()
 	{
 		/// Broadcast a message letting everyone know that we were recreated and that
 		/// all device-specific stuff needs to be recreated
-//		plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg();
+//		plDeviceRecreateMsg* clean = TRACKED_NEW plDeviceRecreateMsg(this);
 //		plgDispatch::MsgSend(clean);
 
 		fDevWasLost = false;
