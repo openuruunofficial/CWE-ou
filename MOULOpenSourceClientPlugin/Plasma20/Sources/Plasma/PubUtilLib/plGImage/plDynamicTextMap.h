@@ -222,6 +222,8 @@ class plDynamicTextMap : public plMipmap
 		UInt32		*IAllocateOSSurface( UInt16 width, UInt16 height );
 		void		IDestroyOSSurface( void );
 
+		void		IPropagateFlags();
+
 		hsBool		fHasAlpha, fPremultipliedAlpha, fShadowed;
 
 		Justify		fJustify;
