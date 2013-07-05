@@ -22,7 +22,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/dx8.1sdk/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/XPlatform/zlib;../../../../../StaticSDKs/XPlatform/png;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -74,7 +74,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/dx8.1sdk/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/DX9.0c/include;../../../../../StaticSDKs/XPlatform/zlib;../../../../../StaticSDKs/XPlatform/png;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -382,6 +382,9 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plPNG.cpp">
+			</File>
+			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plTGAWriter.cpp">
 				<FileConfiguration
 					Name="Release|Win32">
@@ -469,6 +472,9 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plMipmap.h">
+			</File>
+			<File
+				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plPNG.h">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plGImage\plTGAWriter.h">

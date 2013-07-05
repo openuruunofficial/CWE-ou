@@ -414,9 +414,6 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 /* Define if you want to have a Unicode type. */
 #define Py_USING_UNICODE
 
-/* Define as the integral type used for Unicode representation. */
-#define PY_UNICODE_TYPE unsigned short
-
 /* Define as the size of the unicode type. */
 #define Py_UNICODE_SIZE SIZEOF_SHORT
 

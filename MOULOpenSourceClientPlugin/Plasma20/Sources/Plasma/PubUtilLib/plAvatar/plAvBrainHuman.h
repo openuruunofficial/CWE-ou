@@ -58,7 +58,7 @@ class plAGAnimInstance;
 class plAvTask;
 class plAvTaskMsg;
 class plAvBrainHuman;
-class plWalkingController;
+class plWalkingStrategy;
 class plArmatureUpdateMsg;
 class plClimbMsg;
 class plControlEventMsg;
@@ -164,7 +164,7 @@ public:
 	static const hsScalar kControlledFlightThreshold;
 	static const hsScalar kAirTimeThreshold;
 	static const hsScalar kAirTimePanicThreshold;
-	plWalkingController* fCallbackAction;
+	plWalkingStrategy* fWalkingStrategy;
 	
 protected:
 	plAGAnim *FindCustomAnim(const char *baseName);

@@ -19,7 +19,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				StringPooling="TRUE"
 				MinimalRebuild="TRUE"
@@ -35,7 +35,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd.lib winmm.lib libcrypto.a comctl32.lib"
+				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd.lib winmm.lib libeay32.lib comctl32.lib"
 				OutputFile="$(OutDir)/plMD5.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib"
@@ -72,7 +72,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				StringPooling="TRUE"
 				ExceptionHandling="FALSE"
@@ -86,7 +86,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib.lib winmm.lib libcrypto.a  comctl32.lib"
+				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib.lib winmm.lib libeay32.lib comctl32.lib"
 				OutputFile="$(OutDir)/plMD5.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib"

@@ -53,7 +53,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "plAGAnimInstance.h"
 #include "plAGModifier.h"
 #include "plMatrixChannel.h"
-#include "plAvCallbackAction.h"
+#include "plPhysicalControllerCore.h"
 #include "plAvatarMgr.h"
 
 // global
@@ -440,7 +440,7 @@ hsBool plAvAnimTask::Start(plArmatureMod *avatar, plArmatureBrain *brain, double
 }
 
 // PROCESS
-plAvAnimTask::Process(plArmatureMod *avatar, plArmatureBrain *brain, double time, hsScalar elapsed)
+hsBool plAvAnimTask::Process(plArmatureMod *avatar, plArmatureBrain *brain, double time, hsScalar elapsed)
 {
 	// the only reason we need this function is to watch the animation until it fades out
 	hsBool result = false;
@@ -664,7 +664,7 @@ hsBool plAvOneShotTask::Start(plArmatureMod *avatar, plArmatureBrain *brain, dou
 }
 
 // PROCESS
-plAvOneShotTask::Process(plArmatureMod *avatar, plArmatureBrain *brain, double time, hsScalar elapsed)
+hsBool plAvOneShotTask::Process(plArmatureMod *avatar, plArmatureBrain *brain, double time, hsScalar elapsed)
 {
 	// *** if we are under mouse control, adjust it here
 
@@ -689,7 +689,7 @@ plAvOneShotTask::Process(plArmatureMod *avatar, plArmatureBrain *brain, double t
 				if(fEnablePhysicsAtEnd)
 				{
 #if 0//ndef PLASMA_EXTERNAL_RELEASE
-					if (!humanBrain || humanBrain->fCallbackAction->HitGroundInThisAge())
+					if (!humanBrain || humanBrain->fWalkingStrategy->HitGroundInThisAge())
 					{
 						// For some reason, calling CheckValidPosition at the beginning of
 						// an age can cause detectors to incorrectly report collisions. So

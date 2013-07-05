@@ -78,7 +78,7 @@ static void LookupCallback (
     unsigned            addrCount,
     const NetAddress    addrs[]
 ) {
-	ref(name);
+	REF(name);
 	
 	DNSParam * p = (DNSParam *)param;
 	if (addrCount) {

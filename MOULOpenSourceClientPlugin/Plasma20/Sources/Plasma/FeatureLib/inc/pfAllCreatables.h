@@ -54,7 +54,9 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../pfAudio/pfAudioCreatable.h"
 #include "../pfPython/pfPythonCreatable.h"
 #include "../pfGameGUIMgr/pfGameGUIMgrCreatable.h"
+#ifdef PLASMA_CCR_RELEASE
 #include "../pfCCR/plCCRCreatable.h"
+#endif // PLASMA_CCR_RELEASE
 #include "../pfJournalBook/pfJournalBookCreatable.h"
 #include "../pfGameMgr/pfGameMgrCreatables.h"
 #include "../pfSecurePreloader/pfSecurePreloaderCreatable.h"

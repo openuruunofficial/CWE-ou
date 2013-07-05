@@ -21,7 +21,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/Bink/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -73,7 +73,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/Bink/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -203,26 +203,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfSurface\plLayerAVI.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfSurface\plLayerBink.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool

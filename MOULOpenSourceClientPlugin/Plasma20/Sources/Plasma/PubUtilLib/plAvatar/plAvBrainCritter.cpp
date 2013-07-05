@@ -42,7 +42,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "hsConfig.h"
 #include "hsWindows.h"
 
-#include "plAvCallbackAction.h"
+#include "plPhysicalControllerCore.h"
 #include "plAvBrainCritter.h"
 #include "plAvBrainHuman.h"
 #include "plArmatureMod.h"
@@ -127,7 +127,7 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////////////
 
-plAvBrainCritter::plAvBrainCritter(): fCallbackAction(nil), fCurMode(kIdle), fNextMode(kIdle), fFadingNextBehavior(true),
+plAvBrainCritter::plAvBrainCritter(): fWalkingStrategy(nil), fCurMode(kIdle), fNextMode(kIdle), fFadingNextBehavior(true),
 	fLocallyControlled(false), fAvoidingAvatars(false), fFinalGoalPos(0, 0, 0), fImmediateGoalPos(0, 0, 0), fDotGoal(0),
 	fAngRight(0)
 {
@@ -145,8 +145,8 @@ plAvBrainCritter::~plAvBrainCritter()
 		fBehaviors[i] = nil;
 	}
 
-	delete fCallbackAction;
-	fCallbackAction = nil;
+	delete fWalkingStrategy;
+	fWalkingStrategy = nil;
 
 	fUserBehaviors.clear();
 	fReceivers.clear();
@@ -169,8 +169,8 @@ hsBool plAvBrainCritter::Apply(double time, hsScalar elapsed)
 		IProcessBehavior(time, elapsed); // just continue with the currently running one
 
 	// update our controller to keep us turned and moving to where we want to go
-	fCallbackAction->RecalcVelocity(time, time - elapsed);		
-	fCallbackAction->SetTurnStrength(IGetTurnStrength(time));
+	fWalkingStrategy->SetTurnStrength(IGetTurnStrength(time));
+	fWalkingStrategy->RecalcVelocity(time, elapsed);
 
 	return plArmatureBrain::Apply(time, elapsed);
 }
@@ -190,13 +190,13 @@ void plAvBrainCritter::Activate(plArmatureModBase* avMod)
 	IInitBaseAnimations();
 
 	// create the controller if we haven't done so already
-	if (!fCallbackAction)
+	if (!fWalkingStrategy)
 	{
 		plSceneObject* avObj = fArmature->GetTarget(0);
 		plAGModifier* agMod = const_cast<plAGModifier*>(plAGModifier::ConvertNoRef(FindModifierByClass(avObj, plAGModifier::Index())));
 		plPhysicalControllerCore* controller = avMod->GetController();
-		fCallbackAction = TRACKED_NEW plWalkingController(avObj, agMod->GetApplicator(kAGPinTransform), controller);
-		fCallbackAction->ActivateController();
+		fWalkingStrategy = TRACKED_NEW plWalkingStrategy(agMod->GetApplicator(kAGPinTransform), controller);
+		controller->SetMovementStrategy(fWalkingStrategy);
 	}
 
 	// tell people that care that we are good to go
@@ -226,7 +226,7 @@ void plAvBrainCritter::Resume()
 	// fade in the idle
 	fNextMode = kIdle;
 
-	fCallbackAction->Reset(false);
+	fWalkingStrategy->Reset(false);
 
 	plArmatureBrain::Resume();
 }

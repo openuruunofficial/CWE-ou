@@ -22,8 +22,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../sdks/win32/havok/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
-				PreprocessorDefinitions="_DEBUG;WIN32;_LIB"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../sdks/win32/havok/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include"
+				PreprocessorDefinitions="_DEBUG;WIN32;_LIB;EAX_SDK_AVAILABLE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				ForceConformanceInForLoopScope="TRUE"
@@ -74,8 +74,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../sdks/win32/havok/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
-				PreprocessorDefinitions="NDEBUG;WIN32;_LIB"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/FeatureLib/inc;../../../../sdks/win32/havok/include;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib;../../../../../StaticSDKs/Win32/OpenSSL/include"
+				PreprocessorDefinitions="NDEBUG;WIN32;_LIB;EAX_SDK_AVAILABLE"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
@@ -264,26 +264,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -570,26 +550,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -940,9 +900,6 @@
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAnimStage.h">
 			</File>
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAntiGravAction.h">
-			</File>
-			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plArmatureEffects.h">
 			</File>
 			<File
@@ -992,9 +949,6 @@
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvBrainSwim.h">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvCallbackAction.h">
 			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plAvatar\plAvDefs.h">

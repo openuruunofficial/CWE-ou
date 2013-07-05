@@ -105,7 +105,9 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../MaxPlasmaMtls/Layers/plLayerTexBitmapPB.h"
 
 #include "../pfSurface/plLayerAVI.h"
+#ifdef USE_BINK_SDK
 #include "../pfSurface/plLayerBink.h"
+#endif
 
 #include "../MaxComponent/plLightMapComponent.h"
 #include "../plDrawable/plGeometrySpan.h"
@@ -1999,12 +2001,15 @@ static plLayerInterface* IProcessLayerMovie(plPassMtlBase* mtl, plLayerTex* layT
 		plLayerMovie* movieLayer = nil;
 		const char* moviePostfix = nil;
 
+#ifdef USE_BINK_SDK
 		if (isBink)
 		{
 			movieLayer = TRACKED_NEW plLayerBink;
 			moviePostfix = "_bink";
 		}
-		else if (isAvi)
+		else
+#endif // USE_BINK_SDK
+		if (isAvi)
 		{
 			movieLayer = TRACKED_NEW plLayerAVI;
 			moviePostfix = "_avi";

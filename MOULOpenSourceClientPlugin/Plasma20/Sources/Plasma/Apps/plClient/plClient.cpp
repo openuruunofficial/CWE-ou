@@ -114,7 +114,9 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../plStatusLog/plStatusLog.h"
 #include "../plProgressMgr/plProgressMgr.h"
 #include "../plPipeline/plDTProgressMgr.h"
+#ifdef USE_BINK_SDK
 #include "../plPipeline/plBinkPlayer.h"
+#endif
 #include "../plMessage/plMovieMsg.h"
 
 #include "../plSDL/plSDL.h"
@@ -269,11 +271,15 @@ hsBool plClient::Shutdown()
 	// Let the resmanager know we're going to be shutting down.
 	hsgResMgr::ResMgr()->BeginShutdown();
 
+#ifdef USE_BINK_SDK
 	// Must kill off all movies before shutting down audio.
 	IKillMovies();
+#endif
 
 	plgAudioSys::Activate(false);
+#ifdef USE_BINK_SDK
 	plBinkPlayer::DeInit();
+#endif
 	//
 	// Get any proxies to commit suicide.
 	plProxyDrawMsg* nuke = TRACKED_NEW plProxyDrawMsg(plProxyDrawMsg::kAllTypes
@@ -767,7 +773,7 @@ hsBool plClient::MsgReceive(plMessage* msg)
 			{
 				ISetGraphicsDefaults();
 				ResetDisplayDevice(plPipeline::fDefaultPipeParams.Width, plPipeline::fDefaultPipeParams.Height, plPipeline::fDefaultPipeParams.ColorDepth, plPipeline::fDefaultPipeParams.Windowed,
-					plPipeline::fDefaultPipeParams.AntiAliasingAmount, plPipeline::fDefaultPipeParams.AnisotropicLevel, plPipeline::fDefaultPipeParams.VSync, true);
+					plPipeline::fDefaultPipeParams.AntiAliasingAmount, plPipeline::fDefaultPipeParams.AnisotropicLevel, plPipeline::fDefaultPipeParams.VSync);
 			}
 			break;
 
@@ -816,11 +822,13 @@ hsBool plClient::MsgReceive(plMessage* msg)
 		}
 		return true;
 	}
+#ifdef USE_BINK_SDK
 	plMovieMsg* mov = plMovieMsg::ConvertNoRef(msg);
 	if( mov )
 	{
 		return IHandleMovieMsg(mov);
 	}
+#endif // USE_BINK_SDK
 
 	plLinkEffectsTriggerMsg* linkFX = plLinkEffectsTriggerMsg::ConvertNoRef(msg);
 	if (linkFX)
@@ -867,6 +875,7 @@ hsBool plClient::MsgReceive(plMessage* msg)
 	return hsKeyedObject::MsgReceive(msg);
 }
 
+#ifdef USE_BINK_SDK
 //============================================================================
 hsBool plClient::IHandleMovieMsg(plMovieMsg* mov)
 {
@@ -947,6 +956,7 @@ hsBool plClient::IHandleMovieMsg(plMovieMsg* mov)
 
 	return true;
 }
+#endif // USE_BINK_SDK
 
 int plClient::IFindRoomByLoc(const plLocation& loc)
 {
@@ -1512,6 +1522,7 @@ hsBool plClient::StartInit()
 
 	plgAudioSys::Activate(true);
 
+#ifdef USE_BINK_SDK
 	plConst(hsScalar) delay(2.f);
 	//commenting out publisher splash for MORE
 	//IPlayIntroBink("avi/intro0.bik", delay, 0.f, 0.f, 1.f, 1.f, 0.75);
@@ -1519,6 +1530,7 @@ hsBool plClient::StartInit()
 	IPlayIntroBink("avi/intro1.bik", 0.f, 0.f, 0.f, 1.f, 1.f, 0.75);
 	if( GetDone() ) return false;
 	plgDispatch::Dispatch()->RegisterForExactType(plMovieMsg::Index(), GetKey());
+#endif // USE_BINK_SDK
 
 	//
 	// Init Net before loading things
@@ -1546,6 +1558,7 @@ hsBool plClient::StartInit()
 
 	pfGameGUIMgr::GetInstance()->SetAspectRatio( aspectratio );
 	plMouseDevice::Instance()->SetDisplayResolution((float)fPipeline->Width(), (float)fPipeline->Height());
+	plInputManager::SetRecenterMouse(false);
 
 	// create the listener for the audio system:
 	plListener* pLMod = TRACKED_NEW plListener;
@@ -1923,9 +1936,11 @@ hsBool plClient::IDraw()
 		IProcessPostRenderRequests();
 	plProfile_EndTiming(PostRender);
 
+#ifdef USE_BINK_SDK
 	plProfile_BeginTiming(Movies);
 	IServiceMovies();
 	plProfile_EndTiming(Movies);
+#endif // USE_BINK_SDK
 
 #ifndef PLASMA_EXTERNAL_RELEASE
 	plProfile_BeginTiming(Console);
@@ -1956,6 +1971,7 @@ hsBool plClient::IDraw()
 	return false;
 }
 
+#ifdef USE_BINK_SDK
 void plClient::IServiceMovies()
 {
 	int i;
@@ -1970,7 +1986,9 @@ void plClient::IServiceMovies()
 		}
 	}
 }
+#endif // USE_BINK_SDK
 
+#ifdef USE_BINK_SDK
 void plClient::IKillMovies()
 {
 	int i;
@@ -1978,7 +1996,9 @@ void plClient::IKillMovies()
 		delete fMovies[i];
 	fMovies.Reset();
 }
+#endif // USE_BINK_SDK
 
+#ifdef USE_BINK_SDK
 hsBool plClient::IPlayIntroBink(const char* movieName, hsScalar endDelay, hsScalar posX, hsScalar posY, hsScalar scaleX, hsScalar scaleY, hsScalar volume /* = 1.0 */)
 {
 	SetQuitIntro(false);
@@ -2027,6 +2047,7 @@ hsBool plClient::IPlayIntroBink(const char* movieName, hsScalar endDelay, hsScal
 	}
 	return false;
 }
+#endif // USE_BINK_SDK
 
 hsBool plClient::IFlushRenderRequests()
 {
@@ -2164,55 +2185,61 @@ hsG3DDeviceModeRecord plClient::ILoadDevMode(const char* devModeFile)
 	return dmr;
 }
 
-void plClient::ResetDisplayDevice(int Width, int Height, int ColorDepth, hsBool Windowed, int NumAASamples, int MaxAnisotropicSamples, hsBool VSync, hsBool windowOnly)
+void plClient::ResetDisplayDevice(int Width, int Height, int ColorDepth, hsBool Windowed, int NumAASamples, int MaxAnisotropicSamples, hsBool VSync)
 {
 	if(!fPipeline) return;
-	int BorderWidth = 0, BorderHeight = 0, CaptionHeight = 0;
 
 	WindowActivate(false);
-	int ActualWidth;
-	int ActualHeight;
 
-	if( Windowed )
-	{
-		BorderWidth	= GetSystemMetrics( SM_CXSIZEFRAME );
-		BorderHeight = GetSystemMetrics( SM_CYSIZEFRAME );
-		CaptionHeight = GetSystemMetrics( SM_CYCAPTION );
-		ActualWidth = Width + BorderWidth * 2;
-		ActualHeight = Height + BorderHeight * 2 + CaptionHeight;
-		SetWindowLong( fWindowHndl, GWL_STYLE,
-			WS_POPUP | WS_OVERLAPPEDWINDOW | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_VISIBLE);
-		SetWindowLong(fWindowHndl, GWL_EXSTYLE, 0);
-	}
-	else
-	{
-		SetWindowLong(fWindowHndl, GWL_STYLE,
-			WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_MAXIMIZE | WS_VISIBLE);
+	fPipeline->ResetDisplayDevice(Width, Height, ColorDepth, Windowed, NumAASamples, MaxAnisotropicSamples, VSync);
 
-		SetWindowLong(fWindowHndl, GWL_EXSTYLE, WS_EX_APPWINDOW);
-	}
-
-	if(!windowOnly)
-		fPipeline->ResetDisplayDevice(Width, Height, ColorDepth, Windowed, NumAASamples, MaxAnisotropicSamples, VSync);
-
-	float aspectratio = (float)Width / (float)Height;
-	plMouseDevice::Instance()->SetDisplayResolution((float)Width, (float)Height);
-	pfGameGUIMgr::GetInstance()->SetAspectRatio( aspectratio );
-
-	UINT flags = SWP_NOCOPYBITS | SWP_NOMOVE | SWP_SHOWWINDOW;
-	if(Windowed)
-	{
-		SetWindowPos( fWindowHndl, HWND_NOTOPMOST, 0, 0, ActualWidth, ActualHeight, flags );
-	}
-	else
-	{
-		SetWindowPos( fWindowHndl, HWND_TOP, 0, 0, Width, Height, flags );
-		::ClipCursor(nil);
-	}
-
+	ResizeDisplayDevice(Width, Height, Windowed);
+	
 	WindowActivate(true);
 }
 
+void plClient::ResizeDisplayDevice(int Width, int Height, hsBool Windowed)
+{
+
+	if (plMouseDevice::Instance())
+		plMouseDevice::Instance()->SetDisplayResolution((float)Width, (float)Height);
+
+	float aspectratio = (float)Width / (float)Height;
+	if (pfGameGUIMgr::GetInstance())
+		pfGameGUIMgr::GetInstance()->SetAspectRatio( aspectratio );
+
+
+	UInt32 winStyle, winExStyle;
+	if( Windowed )
+	{
+		// WS_VISIBLE appears necessary to avoid leaving behind framebuffer junk when going from windowed to a smaller window
+		winStyle = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_VISIBLE;
+		winExStyle = WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;
+	} else {
+		winStyle = WS_POPUP;
+		winExStyle = WS_EX_APPWINDOW;
+	}
+	SetWindowLong(fWindowHndl, GWL_STYLE, winStyle);
+	SetWindowLong(fWindowHndl, GWL_EXSTYLE, winExStyle);
+
+
+	UInt32 flags = SWP_NOCOPYBITS | SWP_SHOWWINDOW | SWP_FRAMECHANGED;
+	UInt32 OutsideWidth, OutsideHeight;
+	HWND insertAfter;
+	if( Windowed )
+	{
+		RECT winRect = { 0, 0, Width, Height };
+		AdjustWindowRectEx(&winRect, winStyle, false, winExStyle);
+		OutsideWidth = winRect.right - winRect.left;
+		OutsideHeight = winRect.bottom - winRect.top;
+		insertAfter = HWND_NOTOPMOST;
+	} else {
+		OutsideWidth = Width;
+		OutsideHeight = Height;
+		insertAfter = HWND_TOP;
+	}
+	SetWindowPos( fWindowHndl, insertAfter, 0, 0, OutsideWidth, OutsideHeight, flags );
+}
 
 void WriteBool(hsStream *stream, char *name, hsBool on )
 {

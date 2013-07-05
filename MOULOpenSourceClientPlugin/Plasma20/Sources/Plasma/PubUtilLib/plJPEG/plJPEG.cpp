@@ -288,7 +288,7 @@ plMipmap	*plJPEG::IRead( hsStream *inStream )
 #else
 		while( cinfo.output_scanline < cinfo.output_height )
 		{
-			UInt8 *startp = newMipmap->GetAddr8( 0, cinfo.output_scanline );
+			UInt8 *startp = (UInt8*)newMipmap->GetAddr32( 0, cinfo.output_scanline );
 			(void) jpeg_read_scanlines( &cinfo, &startp, 1 );
 		}
 #endif
@@ -328,11 +328,25 @@ plMipmap*	plJPEG::ReadFromFile( const char *fileName )
 plMipmap*	plJPEG::ReadFromFile( const wchar *fileName )
 {
 	// we use a stream because the IJL can't handle unicode
-	hsUNIXStream out;
-	if (!out.Open(fileName, L"rb"))
+	hsRAMStream tempstream;
+	hsUNIXStream in;
+	if (!in.Open(fileName, L"rb"))
 		return false;
-	plMipmap* ret = IRead(&out);
-	out.Close();
+
+	// The stream reader for JPEGs expects a 32-bit size at the start,
+	// so insert that into the stream before passing it on
+	in.FastFwd();
+	UInt32 fsize = in.GetPosition();
+	UInt8 *tempbuffer = TRACKED_NEW UInt8[fsize];
+	in.Rewind();
+	in.Read(fsize, tempbuffer);
+	tempstream.WriteSwap32(fsize);
+	tempstream.Write(fsize, tempbuffer);
+	delete [] tempbuffer;
+	tempstream.Rewind();
+
+	plMipmap* ret = IRead(&tempstream);
+	in.Close();
 	return ret;
 }
 
@@ -419,7 +433,7 @@ hsBool	plJPEG::IWrite( plMipmap *source, hsStream *outStream )
 		jcProps.jquality = fWriteQuality;
 #else
 		cinfo.jpeg_width = source->GetWidth(); // default
-		cinfo.jpeg_width = source->GetHeight(); // default
+		cinfo.jpeg_height = source->GetHeight(); // default
 		cinfo.jpeg_color_space = JCS_YCbCr; // default
 		// not sure how to set 4:1:1 but supposedly it's the default
 		jpeg_set_quality( &cinfo, fWriteQuality, TRUE );
@@ -439,7 +453,7 @@ hsBool	plJPEG::IWrite( plMipmap *source, hsStream *outStream )
 #else
 		while( cinfo.next_scanline < cinfo.image_height )
 		{
-			UInt8 *startp = source->GetAddr8( 0, cinfo.next_scanline );
+			UInt8 *startp = (UInt8*)source->GetAddr32( 0, cinfo.next_scanline );
 			(void) jpeg_write_scanlines( &cinfo, &startp, 1 );
 		}
 		jpeg_finish_compress( &cinfo );
@@ -487,10 +501,23 @@ hsBool	plJPEG::WriteToFile( const char *fileName, plMipmap *sourceData )
 hsBool	plJPEG::WriteToFile( const wchar *fileName, plMipmap *sourceData )
 {
 	// we use a stream because the IJL can't handle unicode
+	hsRAMStream tempstream;
 	hsUNIXStream out;
 	if (!out.Open(fileName, L"wb"))
 		return false;
-	hsBool ret = IWrite(sourceData, &out);
+	hsBool ret = IWrite(sourceData, &tempstream);
+	if (ret)
+	{
+		// The stream writer for JPEGs prepends a 32-bit size,
+		// so remove that from the stream before saving to a file
+		tempstream.Rewind();
+		UInt32 fsize = tempstream.ReadSwap32();
+		UInt8 *tempbuffer = TRACKED_NEW UInt8[fsize];
+		tempstream.Read(fsize, tempbuffer);
+		out.Write(fsize, tempbuffer);
+
+		delete [] tempbuffer;
+	}
 	out.Close();
 	return ret;
 }

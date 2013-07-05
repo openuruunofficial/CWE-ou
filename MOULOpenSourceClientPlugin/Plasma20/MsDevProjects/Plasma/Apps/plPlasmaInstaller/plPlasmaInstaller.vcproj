@@ -22,7 +22,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -39,11 +39,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zlib.lib comctl32.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="zlib.lib comctl32.lib odbc32.lib odbccp32.lib libeay32.lib rpcrt4.lib ws2_32.lib"
 				OutputFile="Release/PlasmaInstaller.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib"
+				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib"
 				ProgramDatabaseFile=".\Release/PlasmaInstaller.pdb"
 				SubSystem="2"
 				TargetMachine="1"/>
@@ -89,7 +89,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib,..\..\..\..\Sources\Plasma\PubUtilLib\inc,..\..\..\..\..\StaticSDKs\XPlatform\zlib,..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -153,6 +153,9 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\ioapi.c">
+			</File>
 			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plPlasmaInstaller\main.cpp">
 				<FileConfiguration
@@ -254,7 +257,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\SRC\contrib\minizip\unzip.c">
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\unzip.c">
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
@@ -278,6 +281,9 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl">
 			<File
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\ioapi.h">
+			</File>
+			<File
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plPlasmaInstaller\plInstallerReg.h">
 			</File>
 			<File
@@ -290,7 +296,7 @@
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plPlasmaInstaller\plUnzip.h">
 			</File>
 			<File
-				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\SRC\contrib\minizip\unzip.h">
+				RelativePath="..\..\..\..\..\StaticSDKs\XPlatform\zlib\contrib\minizip\unzip.h">
 			</File>
 		</Filter>
 		<Filter

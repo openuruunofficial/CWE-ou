@@ -196,7 +196,7 @@ plScalarTimeScale::~plScalarTimeScale()
 {
 }
 
-plScalarTimeScale::IsStoppedAt(double time)
+hsBool plScalarTimeScale::IsStoppedAt(double time)
 {
 	return fTimeSource->IsStoppedAt(time);
 }

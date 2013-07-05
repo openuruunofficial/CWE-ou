@@ -21,7 +21,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib;..\..\..\..\Sources\Plasma\NucleusLib\inc;..\..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc;..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil;..\..\..\..\Sources\Plasma\PubUtilLib\plHttpServer"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib;..\..\..\..\Sources\Plasma\NucleusLib\inc;..\..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\..\..\StaticSDKs\XPlatform\zlib;..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil;..\..\..\..\Sources\Plasma\PubUtilLib\plHttpServer;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -38,7 +38,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib winmm.lib zlib.lib libcrypto.a dxerr8.lib comctl32.lib odbc32.lib odbccp32.lib wininet.lib Rpcrt4.lib"
+				AdditionalDependencies="ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib winmm.lib zlib.lib libeay32.lib dxerr8.lib comctl32.lib odbc32.lib odbccp32.lib wininet.lib Rpcrt4.lib"
 				OutputFile="Debug/ParableUpdate.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
@@ -89,7 +89,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib;..\..\..\..\Sources\Plasma\NucleusLib\inc;..\..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\..\..\StaticSDKs\XPlatform\zlib\inc;..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil;..\..\..\..\Sources\Plasma\PubUtilLib\plHttpServer"
+				AdditionalIncludeDirectories="..\..\..\..\Sources\Plasma\CoreLib;..\..\..\..\Sources\Plasma\NucleusLib\inc;..\..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\..\..\StaticSDKs\XPlatform\zlib;..\..\..\..\Sources\AssetMan\Libs\jvCoreUtil;..\..\..\..\Sources\Plasma\PubUtilLib\plHttpServer;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -106,7 +106,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ogg_static.lib vorbis_static.lib vorbisfile_static.lib winmm.lib zlib.lib libcrypto.a dxerr8.lib comctl32.lib odbc32.lib odbccp32.lib wininet.lib Rpcrt4.lib"
+				AdditionalDependencies="ogg_static.lib vorbis_static.lib vorbisfile_static.lib winmm.lib zlib.lib libeay32.lib dxerr8.lib comctl32.lib odbc32.lib odbccp32.lib wininet.lib Rpcrt4.lib"
 				OutputFile="Release/ParableUpdate.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"

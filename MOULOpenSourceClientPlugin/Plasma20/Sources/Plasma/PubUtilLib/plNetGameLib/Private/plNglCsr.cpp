@@ -187,7 +187,7 @@ static CliCsConn * GetConnIncRef_CS (const char tag[]) {
 
 //============================================================================
 static CliCsConn * GetConnIncRef (const char tag[]) {
-	ref(GetConnIncRef);
+	REF(GetConnIncRef);
 	
     CliCsConn * conn;
     s_critsect.Enter();
@@ -420,7 +420,7 @@ static void AsyncLookupCallback (
 	unsigned			addrCount,
 	const NetAddress	addrs[]
 ) {
-	ref(name);
+	REF(name);
 
 	if (!addrCount) {
 		ReportNetError(kNetProtocolCli2Auth, kNetErrNameLookupFailed);
@@ -697,7 +697,7 @@ bool LoginRequestTrans::Recv (
     const byte  msg[],
     unsigned    bytes
 ) {
-	ref(bytes);
+	REF(bytes);
 	
 	const Csr2Cli_LoginReply & reply = *(const Csr2Cli_LoginReply *) msg;
 	
