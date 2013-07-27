@@ -752,7 +752,7 @@ public:
 
 		if(strncmp("SampleCmd",c->GetName(), 9) != 0)
 		{
-			fprintf(fFile, "<P><I>%s </I><BR>%s </P>\n",c->GetSignature(),
+			fprintf(fFile, "<p><em>%s </em><br />%s </p>\n",c->GetSignature(),
 					c->GetHelp());
 		}
 	}
@@ -760,10 +760,11 @@ public:
 	{
 	//	if(g->GetFirstCommand() != nil)
 		{
-			fprintf(fFile, "<P><B><H%s>Command %sGroup %s </B></H2></P>\n",
+			fprintf(fFile, "<p><strong><h%s>Command %sGroup %s </strong></h%s></p>\n",
 				(depth > 0) ? "3" : "2",
 				(depth > 0) ? "Sub" :"" ,
-				g->GetName());
+				g->GetName(),
+				(depth > 0) ? "3" : "2");
 		}
 		return true;
 	}
@@ -781,7 +782,7 @@ public:
 
 		if(strncmp("SampleCmd",c->GetName(), 9) != 0)
 		{
-				fprintf(fFile, "<I>%s.%s </I> - %s <BR>\n",fGrpName,c->GetSignature(),
+				fprintf(fFile, "<em>%s.%s </em> - %s <br />\n",fGrpName,c->GetSignature(),
 						c->GetHelp());
 		}
 	}
@@ -789,11 +790,14 @@ public:
 	{
 	//	if(g->GetFirstCommand() != nil)
 		{
-			fprintf(fFile, "<BR>\n");
+			fprintf(fFile, "<br />\n");
 			if(depth <1)
 				strcpy(fGrpName, g->GetName());
 			else 
 			{
+				pfConsoleCmdGroup *parentGrp;
+				parentGrp = g->GetParent();  
+				strcpy(fGrpName, parentGrp->GetName());
 				strcat(fGrpName,".");
 				strcat(fGrpName,g->GetName());
 			}
@@ -822,7 +826,7 @@ PF_CONSOLE_CMD( Console, CreateDocumentation, "string fileName",
 	}
 	
 
-	fprintf(f, "<CENTER> <H2> Console Commands for Plasma 2.0 Client </H2> <I>Built %s on %s.</I></CENTER><BR>", 
+	fprintf(f, "<h2 style=\"text-align: center;\"> Console Commands for Plasma 2.0 Client </h2> <em style=\"display: block; text-align: center;\">Built %s on %s.</em><br />", 
 		pnBuildDates::fBuildTime, pnBuildDates::fBuildDate );
 
 	DocGenIterator iter(f);
@@ -852,7 +856,7 @@ PF_CONSOLE_CMD( Console, CreateBriefDocumentation, "string fileName",
 		return;
 	}
 
-	fprintf(f, "<CENTER> <H3> Console Commands for Plasma 2.0 Client </H3> <I>Built %s on %s.</I></CENTER><BR>", 
+	fprintf(f, "<h2 style=\"text-align: center;\"> Console Commands for Plasma 2.0 Client </h2> <em style=\"display: block; text-align: center;\">Built %s on %s.</em><br />", 
 		pnBuildDates::fBuildTime, pnBuildDates::fBuildDate );
 	BriefDocGenIterator iter(f);
 	group = pfConsoleCmdGroup::GetBaseGroup();
@@ -6997,38 +7001,6 @@ PF_CONSOLE_CMD( KI,								// Group name
 
 PF_CONSOLE_GROUP( Python ) // Defines a main command group
 
-PF_CONSOLE_CMD( Python,							// Group name
-				RunFile,							// Function name
-				"string filename",					// Params
-				"Run the specified Python file program" )		// Help string
-{
-	// now evaluate this mess they made
-	PyObject* mymod = PythonInterface::FindModule("__main__");
-	// make sure the filename doesn't have the .py extension (import doesn't need it)
-	char importname[200];
-	int i;
-	for (i=0; i<199; i++ )
-	{
-		char ch = ((const char*)params[0])[i];
-		// if we are at the end of the string or at a dot, truncate here
-		if ( ch == '.' || ch == 0 )
-			break;
-		else
-			importname[i] = ((const char*)params[0])[i];
-	}
-	importname[i] = 0;
-
-	// create the line to execute the file
-	char runline[256];
-	sprintf(runline,"import %s", importname);
-	PythonInterface::RunString(runline,mymod);
-	std::string output;
-	// get the messages
-	PythonInterface::getOutputAndReset(&output);
-	PrintString(output.c_str());
-}
-
-
 #include "../pfPython/cyMisc.h"
 
 PF_CONSOLE_CMD( Python,							// Group name
@@ -7070,16 +7042,18 @@ PF_CONSOLE_CMD( Python,
 				"string functions, ...",	// Params
 				"Run a cheat command" )
 {
-	const char* extraParms = "";
+	std::string extraParms;
 	if (numParams > 1)
-		extraParms = params[1];
-	// now evaluate this mess they made
-	PyObject* mymod = PythonInterface::FindModule("__main__");
+	{
+		extraParms = "(";
+		extraParms.append(params[1]);
+		extraParms.append(",)");
+	}
+	else
+		extraParms = "()";
 
-	// create the line to execute the file
-	char runline[256];
-	sprintf(runline,"import xCheat;xCheat.%s('%s')", (const char*)params[0],extraParms);
-	PythonInterface::RunString(runline,mymod);
+	PythonInterface::RunFunctionSafe("xCheat", params[0], extraParms.c_str());
+
 	std::string output;
 	// get the messages
 	PythonInterface::getOutputAndReset(&output);

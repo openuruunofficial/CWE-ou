@@ -291,12 +291,12 @@ template<class T>
 class TArrayCopyBits {
 public:
     inline static void Assign (T * dest, const T source[], unsigned count);
-    inline static void Construct (T * dest) { ref(dest); }
-    inline static void Construct (T * dest, unsigned count) { ref(dest); ref(count); }
+    inline static void Construct (T * dest) { REF(dest); }
+    inline static void Construct (T * dest, unsigned count) { REF(dest); REF(count); }
     inline static void CopyConstruct (T * dest, const T & source);
     inline static void CopyConstruct (T * dest, const T source[], unsigned count);
-    inline static void Destruct (T * dest) { ref(dest); }
-    inline static void Destruct (T * dest, unsigned count) { ref(dest); ref(count); }
+    inline static void Destruct (T * dest) { REF(dest); }
+    inline static void Destruct (T * dest, unsigned count) { REF(dest); REF(count); }
 };
 
 //===========================================================================
@@ -378,14 +378,14 @@ void TArrayCopyObject<T>::CopyConstruct (T * dest, const T source[], unsigned co
 //===========================================================================
 template<class T>
 void TArrayCopyObject<T>::Destruct (T * dest) {
-    ref(dest);
+    REF(dest);
     dest->~T();
 }
 
 //===========================================================================
 template<class T>
 void TArrayCopyObject<T>::Destruct (T * dest, unsigned count) {
-    ref(dest);
+    REF(dest);
     for (unsigned loop = count; loop--; )
         dest[loop].~T();
 }

@@ -79,8 +79,8 @@ AUTO_INIT_FUNC(hsExeErrorInit) {
 //============================================================================
 static void DoAssert (int line, const char file[], const char msg[]) {
 
-    ref(line);
-    ref(file);
+    REF(line);
+    REF(file);
 
     ErrorMinimizeAppWindow();
 
@@ -155,8 +155,7 @@ void ErrorMinimizeAppWindow () {
         // If the application's topmost window is a fullscreen
         // popup window, minimize it before displaying an error
         HWND appWindow = GetActiveWindow();
-        if ( ((GetWindowLong(appWindow, GWL_STYLE) & WS_POPUP) != 0) &&
-            ((GetWindowLong(appWindow, GWL_EXSTYLE) & WS_EX_TOPMOST) != 0) )
+        if ( ((GetWindowLong(appWindow, GWL_STYLE) & WS_POPUP) != 0) )
             SetWindowPos(
                 appWindow,
                 HWND_NOTOPMOST,
@@ -252,8 +251,8 @@ void DebugMsgV (const char fmt[], va_list args) {
 
 #else
 
-    ref(fmt);
-    ref(args);
+    REF(fmt);
+    REF(args);
 
 #endif
 }
@@ -269,7 +268,7 @@ void __cdecl DebugMsg (const char fmt[], ...) {
 
 #else
 
-    ref(fmt);
+    REF(fmt);
 
 #endif
 }

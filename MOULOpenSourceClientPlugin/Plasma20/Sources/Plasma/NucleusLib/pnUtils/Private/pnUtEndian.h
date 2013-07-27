@@ -90,8 +90,8 @@ inline void EndianConvert (
     word *      array, 
     unsigned    count
 ) {
-    ref(array); 
-    ref(count); 
+    REF(array); 
+    REF(count); 
     return; 
 }
 
@@ -100,8 +100,8 @@ inline void EndianConvert (
     dword *     array, 
     unsigned    count
 ) {
-    ref(array); 
-    ref(count); 
+    REF(array); 
+    REF(count); 
     return; 
 }
 
@@ -110,8 +110,8 @@ inline void EndianConvert (
     qword *     array, 
     unsigned    count
 ) {
-    ref(array); 
-    ref(count); 
+    REF(array); 
+    REF(count); 
     return; 
 }
 
@@ -121,9 +121,9 @@ inline void EndianConvert (
     unsigned    elemCount,
     unsigned    elemBytes
 ) {
-    ref(data);
-    ref(elemCount);
-    ref(elemBytes);
+    REF(data);
+    REF(elemCount);
+    REF(elemBytes);
     return;
 }
 

@@ -412,7 +412,7 @@ static void AsyncLookupCallback (
 	unsigned			addrCount,
 	const NetAddress	addrs[]
 ) {
-	ref(name);
+	REF(name);
 	
 	ConnectParam * cp = (ConnectParam *)param;
 

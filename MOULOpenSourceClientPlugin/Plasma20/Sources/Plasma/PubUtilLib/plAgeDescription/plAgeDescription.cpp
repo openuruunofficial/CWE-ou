@@ -218,12 +218,12 @@ void	plAgeDescription::SetAgeNameFromPath( const char *path )
 	}
 
 	// Construct our name from the path
-	char *pathSep1 = strrchr( path, '\\' );
-	char *pathSep2 = strrchr( path, '/' );
+	const char *pathSep1 = strrchr( path, '\\' );
+	const char *pathSep2 = strrchr( path, '/' );
 	if( pathSep2 > pathSep1 )
 		pathSep1 = pathSep2;
 	if( pathSep1 == nil )
-		pathSep1 = (char *)path;
+		pathSep1 = path;
 	else
 		pathSep1++;	// Get past the actual character we found
 

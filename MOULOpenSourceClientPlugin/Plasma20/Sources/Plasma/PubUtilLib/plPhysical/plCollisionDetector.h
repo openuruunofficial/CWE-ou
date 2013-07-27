@@ -45,13 +45,15 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #include "plDetectorModifier.h"
 #include "hsGeometry3.h"
-#include <list.h>
+#include <list>
 #include <set>
 class plMessage;
 class plCameraMsg;
 class plArmatureMod;
 class plActivatorMsg;
 class plEvalMsg;
+
+#define USE_PHYSX_COLLISION_FLUTTER_WORKAROUND
 
 class plCollisionDetector : public plDetectorModifier
 {
@@ -90,33 +92,25 @@ public:
 // sub type for object-in-volume detectors
 class plObjectInVolumeDetector : public plCollisionDetector
 {
-public:
+protected:
 	class plCollisionBookKeepingInfo
 	{
-		friend plObjectInVolumeDetector;
-		public:
-			plCollisionBookKeepingInfo(plKey& hit)
-			{
-				hitter=hit;
-				enters=0;
-				exits=0;
-			}
-			~plCollisionBookKeepingInfo()
-			{
-				hitter=nil;
-			}
-		protected:
-			plKey hitter;
-			int enters,exits;
-			bool fSubStepCurState;
+	public:
+		plCollisionBookKeepingInfo(plKey& key, bool entering)
+			: fHitter(key), fEntering(entering) { }
+
+		plKey fHitter;
+#ifdef USE_PHYSX_COLLISION_FLUTTER_WORKAROUND
+		UInt32 fLastStep;
+#endif // USE_PHYSX_COLLISION_FLUTTER_WORKAROUND
+		bool fEntering;
 	};
-protected:
-	virtual void ITrigger(plKey hitter, bool entering, bool immediate=false);
-	//virtual void ISendSavedTriggerMsgs();
+
+	virtual void ITrigger(plKey hitter, bool entering);
+	virtual void ISendTriggerMsg(plKey hitter, bool entering);
+	virtual void IRegisterForEval();
 	virtual void IHandleEval(plEvalMsg* pEval);
 	bool	fWaitingForEval;
-	
-	plActivatorMsg* fSavedActivatorMsg;
 	
 	typedef std::list<plCollisionBookKeepingInfo*> bookKeepingList;
 	bookKeepingList fCollisionList;
@@ -126,12 +120,12 @@ protected:
 public:
 	
 	plObjectInVolumeDetector()
-	{
-		fWaitingForEval=false;fSavedActivatorMsg=nil;
-		
-	}
-	plObjectInVolumeDetector(Int8 i){fType = i;fWaitingForEval=false;fSavedActivatorMsg=nil;}
-	virtual ~plObjectInVolumeDetector(){;}
+		: plCollisionDetector(), fWaitingForEval(false) { }
+
+	plObjectInVolumeDetector(Int8 i)
+		: plCollisionDetector(), fWaitingForEval(false) { fType = i; }
+
+	virtual ~plObjectInVolumeDetector() { }
 	
 	virtual hsBool MsgReceive(plMessage* msg);
 
@@ -178,18 +172,19 @@ class plCameraRegionDetector : public plObjectInVolumeDetector
 {
 protected:
 	hsTArray<plCameraMsg*>	fMessages;
-	bool	fIsInside;
-	bool	fSavingSendMsg;
-	bool	fSavedMsgEnterFlag;
-	int		fNumEvals;
-	int		fLastEnterEval;
-	int		fLastExitEval;
 
-	virtual void ITrigger(plKey hitter, bool entering, bool immediate=false);
-	virtual void ISendSavedTriggerMsgs();
+#ifdef USE_PHYSX_COLLISION_FLUTTER_WORKAROUND
+	UInt32  fLastStep;
+#endif // USE_PHYSX_COLLISION_FLUTTER_WORKAROUND
+	bool    fIsInside;
+	bool    fEntering;
+
+	virtual void ISendTriggerMsg();
 	virtual void IHandleEval(plEvalMsg* pEval);
 public:
-	plCameraRegionDetector(){ fIsInside = false; fSavingSendMsg = false; }
+	plCameraRegionDetector()
+		: plObjectInVolumeDetector(), fIsInside(false) { }
+
 	~plCameraRegionDetector();
 
 	virtual hsBool MsgReceive(plMessage* msg);

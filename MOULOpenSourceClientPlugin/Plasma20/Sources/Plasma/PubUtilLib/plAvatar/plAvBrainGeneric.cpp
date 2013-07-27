@@ -39,7 +39,6 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
       Mead, WA   99021
 
 *==LICENSE==*/
-#include "plAvCallbackAction.h"		// havok-contaminated file: must go first
 
 // singular
 #include "plAvBrainGeneric.h"
@@ -94,7 +93,6 @@ plAvBrainGeneric::plAvBrainGeneric()
   fFadeIn(0.0f),
   fFadeOut(0.0f),
   fMoveMode(kMoveRelative),
-  fCallbackAction(nil),
   fBodyUsage(plAGAnim::kBodyUnknown)
 {
 }
@@ -122,7 +120,6 @@ plAvBrainGeneric::plAvBrainGeneric(plAnimStageVec *stages,
   fFadeIn(fadeIn),
   fFadeOut(fadeOut),
   fMoveMode(moveMode),
-  fCallbackAction(nil),
   fBodyUsage(plAGAnim::kBodyUnknown)
 {
 }
@@ -141,7 +138,6 @@ plAvBrainGeneric::plAvBrainGeneric(UInt32 exitFlags, float fadeIn, float fadeOut
   fFadeIn(fadeIn),
   fFadeOut(fadeOut),
   fMoveMode(moveMode),
-  fCallbackAction(nil),
   fBodyUsage(plAGAnim::kBodyUnknown)
 {
 	
@@ -169,12 +165,6 @@ plAvBrainGeneric::~plAvBrainGeneric()
 void plAvBrainGeneric::Activate(plArmatureModBase *avMod)
 {
 	plArmatureBrain::Activate(avMod);
-
-	if ((GetType() == kEmote || GetType() == kAFK || GetType() == kSitOnGround) && fAvMod->IsLocalAvatar())
-	{
-		plInputIfaceMgrMsg* msg = TRACKED_NEW plInputIfaceMgrMsg(plInputIfaceMgrMsg::kDisableClickables );
-		plgDispatch::MsgSend(msg);
-	}
 
 	int numStages = fStages->size();
 	if (!numStages)
@@ -315,12 +305,6 @@ void plAvBrainGeneric::Deactivate()
 	}
 		
 	plArmatureBrain::Deactivate();
-
-	if ((GetType() == kEmote || GetType() == kAFK || GetType() == kSitOnGround) && fAvMod->IsLocalAvatar())
-	{
-		plInputIfaceMgrMsg* msg = TRACKED_NEW plInputIfaceMgrMsg(plInputIfaceMgrMsg::kEnableClickables );
-		plgDispatch::MsgSend(msg);
-	}
 }
 
 // GETRECIPIENT

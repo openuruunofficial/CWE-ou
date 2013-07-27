@@ -56,8 +56,6 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "plDebugText.h"
 #include "plPlates.h"
 
-#include "../Apps/plClient/res/resource.h"
-
 #include "hsTimer.h"
 
 
@@ -86,7 +84,7 @@ void	plDTProgressMgr::Activate()
 	{
 		plPlateManager::Instance().CreatePlate(&fStaticTextPlate);
 
-		fStaticTextPlate->CreateFromJPEGResource(MAKEINTRESOURCE(plProgressMgr::GetStaticTextID(fCurrentStaticText)), 0);
+		fStaticTextPlate->CreateFromResource(plProgressMgr::GetStaticTextID(fCurrentStaticText));
 		fStaticTextPlate->SetVisible(true);
 		fStaticTextPlate->SetOpacity(1.0f);
 		fStaticTextPlate->SetSize(2 * 0.192f, 2 * 0.041f, true);
@@ -97,7 +95,7 @@ void	plDTProgressMgr::Activate()
 	{
 		plPlateManager::Instance().CreatePlate( &fActivePlate );
 
-		fActivePlate->CreateFromJPEGResource( MAKEINTRESOURCE( plProgressMgr::GetLoadingFrameID(fCurrentImage) ), 0 );
+		fActivePlate->CreateFromResource(plProgressMgr::GetLoadingFrameID(fCurrentImage));
 		fActivePlate->SetVisible(true);
 		fActivePlate->SetOpacity(1.0f);
 		fActivePlate->SetSize(0.6, 0.6, true);
@@ -159,7 +157,7 @@ void	plDTProgressMgr::Draw( plPipeline *p )
 
 			fLastDraw = currentMs;
 
-			fActivePlate->ReloadFromJPEGResource(MAKEINTRESOURCE(plProgressMgr::GetInstance()->GetLoadingFrameID(fCurrentImage)), 0);
+			fActivePlate->ReloadFromResource(plProgressMgr::GetLoadingFrameID(fCurrentImage));
 			fActivePlate->SetVisible(true);
 			fActivePlate->SetOpacity(1.0f);
 			fActivePlate->SetSize(0.6, 0.6, true);

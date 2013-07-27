@@ -47,11 +47,10 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../pnKeyedObject/plKey.h"
 
 class plArmatureMod;
-class plAntiGravAction;
 class plControlEventMsg;
 class plLOSRequestMsg;
 class plSwimRegionInterface;
-class plSwimmingController;
+class plSwimStrategy;
 class plAvBrainSwim : public plArmatureBrain
 {
 public:
@@ -73,7 +72,7 @@ public:
 	bool IsSwimming();
 	hsScalar GetSurfaceDistance() { return fSurfaceDistance; }
 
-	plSwimmingController *fCallbackAction;
+	plSwimStrategy *fSwimStrategy;
 	static const hsScalar kMinSwimDepth;
 	
 protected:
@@ -86,8 +85,6 @@ protected:
 	hsBool IProcessBehaviors(double time, float elapsed);
 
 	virtual hsBool IInitAnimations();
-	bool IAttachAction();
-	bool IDetachAction();
 	void IProbeSurface();
 	hsBool IHandleControlMsg(plControlEventMsg* msg);
 	float IGetTargetZ();

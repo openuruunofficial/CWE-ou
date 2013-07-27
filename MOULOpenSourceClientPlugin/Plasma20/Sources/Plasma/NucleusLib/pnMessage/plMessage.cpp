@@ -51,6 +51,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "plgDispatch.h"
 #include "hsBitVector.h"
 #include <algorithm>
+#include <iterator>
 
 plMessage::plMessage()
 :	fSender(nil),

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4fa5b416-f5fc-460b-a42e-3f364879cb1f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b7009340-86f2-435f-a546-3998c1470790}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="SDL">
+      <UniqueIdentifier>{dbf1c833-4ccb-476d-8707-eda2ead94272}</UniqueIdentifier>
+      <Extensions>sdl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plSDLMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plSDLParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plStateChangeNotifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plStateDataRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plStateDescriptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plStateVariable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plVarDescriptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plSDL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plSDLCreatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\plSDLDescriptor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\animation.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\avatar.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\cloneMessage.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\clothing.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\morph.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\particle.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\physical.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\responder.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\sound.sdl">
+      <Filter>SDL</Filter>
+    </None>
+    <None Include="..\..\..\..\Sources\Plasma\PubUtilLib\plSDL\SDL\xregion.sdl">
+      <Filter>SDL</Filter>
+    </None>
+  </ItemGroup>
+</Project>

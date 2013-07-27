@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{75d0ad1f-e5c7-41d5-91c9-ce447d462962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Win32">
+      <UniqueIdentifier>{14e0f26a-580f-4711-a908-0eb43402cd59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Unix">
+      <UniqueIdentifier>{43607192-4daf-4d55-8cf6-b1cf4d213193}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Intern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Private\pnUteTime.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Private\pnUteTls.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Private\Win32\pnUteW32Time.cpp">
+      <Filter>Private\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Sources\Plasma\NucleusLib\pnUtilsExe\Private\Unix\pnUteUxTime.cpp">
+      <Filter>Private\Unix</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -54,9 +54,11 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "hsStream.h"
 #include "hsUtils.h"
 #include "plClient.h"
+#include "../plClientResMgr/plClientResMgr.h"
 #include "../plNetClient/plNetClientMgr.h"
 #include "../plNetClient/plNetLinkingMgr.h"
 #include "../plInputCore/plInputManager.h"
+#include "../plInputCore/plInputDevice.h"
 #include "../plUnifiedTime/plUnifiedTime.h"
 #include "plPipeline.h"
 #include "../plResMgr/plResManager.h"
@@ -431,34 +433,48 @@ void DebugMsgF(const char* format, ...);
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {	
 	static bool gDragging = false;
-	static UInt32 keyState=0;
+	static UInt8 mouse_down = 0;
 
     // Handle messages
     switch (message) {		
-		case WM_KEYDOWN :
-		case WM_LBUTTONDOWN	:
-		case WM_RBUTTONDOWN :
-		case WM_LBUTTONDBLCLK :		// The left mouse button was double-clicked. 
-		case WM_MBUTTONDBLCLK :		// The middle mouse button was double-clicked. 
-		case WM_MBUTTONDOWN :		// The middle mouse button was pressed. 
-		case WM_RBUTTONDBLCLK :		// The right mouse button was double-clicked. 
+		case WM_LBUTTONDOWN:
+		case WM_RBUTTONDOWN:
+		case WM_LBUTTONDBLCLK:
+		case WM_MBUTTONDBLCLK:
+		case WM_MBUTTONDOWN:
+		case WM_RBUTTONDBLCLK:
+			// Ensure we don't leave the client area during clicks
+			if (!(mouse_down++))
+				SetCapture(hWnd);
+			// fall through to old case
+		case WM_KEYDOWN:
 			// If they did anything but move the mouse, quit any intro movie playing.
+			if (gClient)
 			{
-				if( gClient )
-					gClient->SetQuitIntro(true);
-			}
-			// Fall through to other events
-		case WM_KEYUP :
-		case WM_LBUTTONUP :
-		case WM_RBUTTONUP :
-		case WM_MBUTTONUP :			// The middle mouse button was released. 
-		case WM_MOUSEMOVE :
-		case 0x020A:				// fuc&ing windows b.s...
-			{
-				if (gClient && gClient->WindowActive() && gClient->GetInputManager())
-				{
+				gClient->SetQuitIntro(true);
+
+				// normal input processing
+				if (gClient->WindowActive() && gClient->GetInputManager())
 					gClient->GetInputManager()->HandleWin32ControlEvent(message, wParam, lParam, hWnd);
-				}
+			}
+			break;
+		case WM_LBUTTONUP:
+		case WM_RBUTTONUP:
+		case WM_MBUTTONUP:
+			// Stop hogging the cursor
+			if (!(--mouse_down))
+				ReleaseCapture();
+			// fall through to input processing
+		case WM_MOUSEWHEEL:
+		case WM_KEYUP:
+		   if (gClient && gClient->WindowActive() && gClient->GetInputManager())
+			   gClient->GetInputManager()->HandleWin32ControlEvent(message, wParam, lParam, hWnd);
+			break;
+
+		case WM_MOUSEMOVE:
+			{
+				if (gClient && gClient->GetInputManager())
+					gClient->GetInputManager()->HandleWin32ControlEvent(message, wParam, lParam, hWnd);
 			}
 			break;
 
@@ -497,6 +513,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
 			break;
 
+		case WM_SETCURSOR:
+			{
+				static bool winCursor = true;
+				if (LOWORD(lParam) == HTCLIENT)
+				{
+					if (winCursor)
+					{
+						winCursor = false;
+						ShowCursor(FALSE);
+						plMouseDevice::ShowCursor();
+					}
+				}
+				else
+				{
+					if (!winCursor)
+					{
+						winCursor = true;
+						ShowCursor(TRUE);
+						plMouseDevice::HideCursor();
+					}
+				}
+				return TRUE;
+			}
+			break;
+
         case WM_ACTIVATE:
 			{
 				bool active = (LOWORD(wParam) == WA_ACTIVE || LOWORD(wParam) == WA_CLICKACTIVE);
@@ -508,28 +549,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 					(LOWORD(wParam) == WA_CLICKACTIVE) ? "true" : "false");
 
 				if (gClient && !minimized && !gClient->GetDone())
-				{
-					if (LOWORD(wParam) == WA_CLICKACTIVE)
-					{
-						// See if they've clicked on the frame, in which case they just want to
-						// move, not activate, us.
-						POINT pt;
-						GetCursorPos(&pt);
-						ScreenToClient(hWnd, &pt);
-
-						RECT rect;
-						GetClientRect(hWnd, &rect);
-
-						if( (pt.x < rect.left)
-							||(pt.x >= rect.right)
-							||(pt.y < rect.top)
-							||(pt.y >= rect.bottom) )
-						{
-							active = false;
-						}
-					}
 					gClient->WindowActivate(active);
-				}
 				else
 				{
 					gPendingActivate = true;
@@ -774,6 +794,14 @@ bool	InitClient( HWND hWnd )
 	plResManager *resMgr = TRACKED_NEW plResManager;
 	resMgr->SetDataPath("dat");
 	hsgResMgr::Init(resMgr);
+
+	if(!plFileUtils::FileExists("resource.dat"))
+	{
+		hsMessageBox("Required file 'resource.dat' not found.", "Error", hsMessageBoxNormal);
+		return false;
+	}
+	plClientResMgr::Instance().ILoadResources("resource.dat");
+
 	gClient = TRACKED_NEW plClient;
 	if( gClient == nil )
 		return false;
@@ -785,11 +813,6 @@ bool	InitClient( HWND hWnd )
 
 #ifdef DETACH_EXE
 	hInstance = ((LPCREATESTRUCT) lParam)->hInstance;
-#endif
-	// If in fullscreen mode, get rid of the window borders.  Note: this won't take
-	// effect until the next SetWindowPos call
-
-#ifdef DETACH_EXE
 
 	// This Function loads the EXE into Virtual memory...supposedly
     HRESULT hr = DetachFromMedium(hInstance, DMDFM_ALWAYS | DMDFM_ALLPAGES);
@@ -799,34 +822,7 @@ bool	InitClient( HWND hWnd )
 		gClient->SetDone(true);
 	else
 	{
-		if( gClient->GetPipeline()->IsFullScreen() )
-		{
-			SetWindowLong(hWnd, GWL_STYLE, WS_POPUP);
-			SetWindowLong(hWnd, GWL_EXSTYLE, WS_EX_TOPMOST);
-            SetWindowPos(hWnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-			gWinBorderDX = gWinBorderDY = gWinMenuDY = 0;
-		}
-		else {
-            SetWindowLong(hWnd, GWL_STYLE, WS_OVERLAPPED | WS_CAPTION);
-            SetWindowPos(hWnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-		}
-
-		int goodWidth = gClient->GetPipeline()->Width() + gWinBorderDX * 2;
-		int goodHeight = gClient->GetPipeline()->Height() + gWinBorderDY * 2 + gWinMenuDY;
-
-		SetWindowPos(
-			hWnd,
-			nil,
-			0,
-			0,
-			goodWidth,
-			goodHeight,
-			SWP_NOCOPYBITS 
-				| SWP_NOMOVE
-				| SWP_NOOWNERZORDER
-				| SWP_NOZORDER
-				| SWP_FRAMECHANGED
-		);
+		gClient->ResizeDisplayDevice(gClient->GetPipeline()->Width(), gClient->GetPipeline()->Height(), !gClient->GetPipeline()->IsFullScreen());
 	}
 	
 	if( gPendingActivate )
@@ -1290,7 +1286,7 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 {
 	static ShaDigest namePassHash;
 	static LoginDialogParam* loginParam;
-	static showAuthFailed = false;
+	static bool showAuthFailed = false;
 
 	switch( uMsg )
 	{
@@ -1970,11 +1966,11 @@ bool IsExpired()
 		void* desc = nil;
 		if (VerQueryValue(data, "\\StringFileInfo\\040904B0\\FileDescription", &desc, &descLen))
 		{
-			char* buildDateStart = strstr((const char*)desc, " - Built ");
+			const char* buildDateStart = strstr((const char*)desc, " - Built ");
 			if (buildDateStart)
 			{
 				buildDateStart += strlen(" - Built ");
-				char* buildDateEnd = strstr(buildDateStart, " at");
+				const char* buildDateEnd = strstr(buildDateStart, " at");
 				if (buildDateEnd)
 				{
 					int len = buildDateEnd-buildDateStart;
