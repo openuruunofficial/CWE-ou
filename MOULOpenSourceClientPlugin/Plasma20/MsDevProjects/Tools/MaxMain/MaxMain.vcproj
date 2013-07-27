@@ -155,6 +155,9 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 		</Configuration>
 	</Configurations>
 	<References>
+		<ProjectReference
+			ReferencedProjectIdentifier="{17A0AA3A-8445-4C66-FE58-0A5C222CC474}"
+			Name="plClientResMgr"/>
 	</References>
 	<Files>
 		<Filter
