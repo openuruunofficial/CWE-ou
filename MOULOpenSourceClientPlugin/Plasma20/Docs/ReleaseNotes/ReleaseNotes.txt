@@ -1,31 +1,18 @@
 Welcome to MYST Online:UruLive!
 .
 .
+Thanks to all the fan contributors!
 .
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
+Release notes for build 918
+- Fixed Console documentation
+- Allow clickables while sitting or AFK
+- Fixed various JPEG issues
+- Free the cursor
+- Fixed improper calculated initial window size
+- Improved cursors
+- Removed broken share from Sharper's Office link
+- Fixed GreatZero stain glass to be random
+- Avatar physics updated
+- Fix pellet points stealing
+- Bink removed
+- Fixed remote code exec with Python.Cheat and RunFile

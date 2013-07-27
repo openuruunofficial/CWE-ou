@@ -399,7 +399,7 @@ xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..
 			Name="Text"
 			Filter="*.txt">
 			<File
-				RelativePath="..\..\..\..\Docs\ReleaseNotes.txt">
+				RelativePath="..\..\..\..\Docs\ReleaseNotes\ReleaseNotes.txt">
 			</File>
 		</Filter>
 		<Filter
