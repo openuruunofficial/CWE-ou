@@ -46,6 +46,11 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 //																			//
 //////////////////////////////////////////////////////////////////////////////
 
+
+#ifdef EAX_SDK_AVAILABLE
+# pragma message("==>Compiling with EAX_SDK")
+#endif // EAX_SDK_AVAILABLE
+
 #include "hsTypes.h"
 #include "hsThread.h"
 #ifndef EAX_SDK_AVAILABLE
