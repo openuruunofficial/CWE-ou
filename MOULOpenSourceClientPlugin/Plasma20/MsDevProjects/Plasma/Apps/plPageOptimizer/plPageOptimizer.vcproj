@@ -87,7 +87,7 @@
 				OutputFile="$(OutDir)/plPageOptimizer.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\dx9.0c\lib;..\..\..\..\SDKs\XPlatform\ODE\lib\win32;&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs&quot;;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;&quot;..\..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;&quot;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;&quot;../../../../../StaticSDKs/XPlatform/jpeg-8c-rgba&quot;"
-				IgnoreDefaultLibraryNames="libc.lib,libci.lib"
+				IgnoreDefaultLibraryNames="libc.lib,libci.lib,libcmt.lib"
 				GenerateDebugInformation="TRUE"
 				SubSystem="1"
 				OptimizeReferences="2"
