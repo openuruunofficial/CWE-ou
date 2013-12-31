@@ -78,7 +78,9 @@ class plFontCache;
 class plClientMsg;
 class plLocation;
 class plMovieMsg;
+#ifdef USE_BINK_SDK
 class plBinkPlayer;
+#endif
 class plPreloaderMsg;
 class plNetCommAuthMsg;
 class plAgeLoaded2Msg;
@@ -150,7 +152,9 @@ protected:
 	int						fQuality;
 
 	hsBool					fQuitIntro;
+#ifdef USE_BINK_SDK
 	hsTArray<plBinkPlayer*>	fMovies;
+#endif
 
 	hsBool					fPatchGlobalAges;
 
@@ -191,10 +195,12 @@ protected:
 	void					IProcessRenderRequests(hsTArray<plRenderRequest*>& reqs);
 	void					IAddRenderRequest(plRenderRequest* req);
 
+#ifdef USE_BINK_SDK
 	hsBool					IPlayIntroBink(const char* movieName, hsScalar endDelay, hsScalar posX, hsScalar posY, hsScalar scaleX, hsScalar scaleY, hsScalar volume = 1.0);
 	hsBool					IHandleMovieMsg(plMovieMsg* mov);
 	void					IKillMovies();
 	void					IServiceMovies();
+#endif // USE_BINK_SDK
 
 	void	IStartProgress( const char *title, hsScalar len );
 	void	IIncProgress( hsScalar byHowMuch, const char *text );
