@@ -166,7 +166,7 @@ void LogMsgV (ELogSeverity severity, const wchar format[], va_list args) {
 }
 
 //============================================================================
-#ifdef HS_DEBUGGING
+//#ifdef HS_DEBUGGING
 void LogMsgDebug (const char  format[], ...) {
     ASSERT(format);
 
@@ -175,10 +175,10 @@ void LogMsgDebug (const char  format[], ...) {
     LogMsgV(kLogDebug, format, args);
     va_end(args);
 }
-#endif
+//#endif
 
 //============================================================================
-#ifdef HS_DEBUGGING
+//#ifdef HS_DEBUGGING
 void LogMsgDebug (const wchar format[], ...) {
     ASSERT(format);
 
@@ -187,4 +187,4 @@ void LogMsgDebug (const wchar format[], ...) {
     LogMsgV(kLogDebug, format, args);
     va_end(args);
 }
-#endif
+//#endif

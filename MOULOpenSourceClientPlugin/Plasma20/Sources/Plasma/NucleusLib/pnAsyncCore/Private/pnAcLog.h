@@ -114,14 +114,14 @@ void LogUnregisterHandler (FLogHandler callback);
 *
 ***/
 
-#ifdef HS_DEBUGGING
+//#ifdef HS_DEBUGGING
 
     void LogMsgDebug (const char  format[], ...);
     void LogMsgDebug (const wchar format[], ...);
 
-#else
-
-    inline void LogMsgDebug (const char  *, ...) { }
-    inline void LogMsgDebug (const wchar *, ...) { }
-
-#endif
+//#else
+//
+//    inline void LogMsgDebug (const char  *, ...) { }
+//    inline void LogMsgDebug (const wchar *, ...) { }
+//
+//#endif
