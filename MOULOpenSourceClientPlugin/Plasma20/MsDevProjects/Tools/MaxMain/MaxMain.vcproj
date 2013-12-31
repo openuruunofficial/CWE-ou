@@ -21,7 +21,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
+				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -39,7 +39,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libcrypto.a comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib  OpenAL32.lib libpngd.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libeay32.lib comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib  OpenAL32.lib libpngd.lib"
 				OutputFile="Release/PlasmaMax.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
@@ -93,7 +93,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
+				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -110,7 +110,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libcrypto.a comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib libpngd.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libeay32.lib comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib libpngd.lib"
 				OutputFile="Debug/PlasmaMax_dbg.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"

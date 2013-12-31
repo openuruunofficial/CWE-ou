@@ -19,7 +19,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				StringPooling="TRUE"
 				MinimalRebuild="FALSE"
@@ -62,7 +62,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -104,7 +104,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -147,7 +147,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				StringPooling="TRUE"
 				MinimalRebuild="FALSE"

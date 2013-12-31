@@ -38,7 +38,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib Rpcrt4.lib"
 				OutputFile=".\Debug/plResBrowser.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
@@ -107,7 +107,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib Rpcrt4.lib"
 				OutputFile=".\Release/plResBrowser.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"

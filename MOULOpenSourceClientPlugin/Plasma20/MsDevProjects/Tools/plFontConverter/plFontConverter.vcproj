@@ -38,7 +38,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a freetype214_D.lib libjpeg.lib Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib freetype214_D.lib libjpeg.lib Rpcrt4.lib"
 				OutputFile=".\Debug/plFontConverter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
@@ -106,7 +106,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a freetype214.lib libjpeg.lib Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib freetype214.lib libjpeg.lib Rpcrt4.lib"
 				OutputFile=".\Release/plFontConverter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"

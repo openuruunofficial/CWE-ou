@@ -19,7 +19,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="FALSE"
 				BasicRuntimeChecks="3"
@@ -61,7 +61,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="2"
 				ForceConformanceInForLoopScope="TRUE"
