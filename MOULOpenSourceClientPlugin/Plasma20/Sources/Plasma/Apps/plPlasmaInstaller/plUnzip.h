@@ -43,7 +43,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #define plUnzip_h_inc
 
 #include "hsTypes.h"
-#include "../src/contrib/minizip/unzip.h"
+#include "contrib/minizip/unzip.h"
 
 class plUnzip
 {
