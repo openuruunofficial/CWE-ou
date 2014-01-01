@@ -49,6 +49,13 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #ifdef EAX_SDK_AVAILABLE
 # pragma message("==>Compiling with EAX_SDK")
+#if defined(_MSC_VER) && _MSC_VER < 1400
+// name EAX libraries here rather than in the projects so that we don't try to
+// link them unless EAX_SDK_AVAILABLE (avoids the need for separate projects
+// or configurations for the cases with/without EAX)
+#pragma comment(lib, "eax.lib")
+#pragma comment(lib, "eaxguid.lib")
+#endif // _MSC_VER < 1400
 #endif // EAX_SDK_AVAILABLE
 
 #include "hsTypes.h"

@@ -39,7 +39,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib ksproxy.lib strmiids.lib eax.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib eaxguid.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpngd.lib"
+				AdditionalDependencies="winhttp.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib ksproxy.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpngd.lib"
 				OutputFile="Debug/plClient_dbg.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
@@ -124,7 +124,7 @@ xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib eax.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib eaxguid.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpng.lib"
+				AdditionalDependencies="winhttp.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpng.lib"
 				OutputFile=".\Release/plClient.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
