@@ -22,7 +22,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL;EAX_SDK_AVAILABLE"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
@@ -94,7 +94,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL;EAX_SDK_AVAILABLE"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				ForceConformanceInForLoopScope="FALSE"
@@ -211,7 +211,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 						Name="VCCLCompilerTool"
 						Optimization="2"
 						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit);EAX_SDK_AVAILABLE"/>
+						PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit)"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Win32">
@@ -219,7 +219,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 						Name="VCCLCompilerTool"
 						Optimization="0"
 						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit);EAX_SDK_AVAILABLE"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit)"
 						BasicRuntimeChecks="3"/>
 				</FileConfiguration>
 			</File>
