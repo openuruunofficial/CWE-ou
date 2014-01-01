@@ -39,11 +39,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib Rpcrt4.lib largeint.lib OpenAL32.lib libpngd.lib binkw32.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib d3dx9.lib dinput8.lib dsound.lib DxErr9.lib dxguid.lib wmstub.lib wmvcore.lib ijl15l.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib Rpcrt4.lib largeint.lib OpenAL32.lib libpngd.lib binkw32.lib"
 				OutputFile="Release/PlasmaMax.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
 				IgnoreDefaultLibraryNames="libc.lib,libci.lib,libcmt.lib"
 				ModuleDefinitionFile="..\..\..\Sources\Tools\MaxMain\main.def"
 				GenerateDebugInformation="FALSE"
@@ -110,11 +110,11 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib libpngd.lib binkw32.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib d3dx9.lib dinput8.lib dsound.lib DxErr9.lib dxguid.lib wmstub.lib wmvcore.lib ijl15l.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib libpngd.lib binkw32.lib"
 				OutputFile="Debug/PlasmaMax_dbg.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\PhysX\lib\Win32;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\PhysX\lib\Win32;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
 				IgnoreDefaultLibraryNames="libcd.lib,libc.lib,libci.lib,libcid.lib,libcmt.lib,libcmtd.lib"
 				ModuleDefinitionFile="..\..\..\Sources\Tools\MaxMain\main.def"
 				GenerateDebugInformation="TRUE"
@@ -897,25 +897,6 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 				</File>
 				<File
 					RelativePath="..\..\..\..\StaticSDKs\Win32\Max7sdk\lib\Paramblk2.lib">
-				</File>
-			</Filter>
-			<Filter
-				Name="DX9"
-				Filter="">
-				<File
-					RelativePath="..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\d3dx9.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dinput8.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dsound.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\DxErr9.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dxguid.lib">
 				</File>
 			</Filter>
 			<Filter

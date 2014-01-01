@@ -39,11 +39,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib ksproxy.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpngd.lib"
+				AdditionalDependencies="winhttp.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib ksproxy.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib d3dx9.lib dinput8.lib dplayx.lib dsound.lib DxErr9.lib dxguid.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpngd.lib"
 				OutputFile="Debug/plClient_dbg.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;&quot;..\..\..\..\..\StaticSDKs\Win32\speex-1.0.1\win32\libspeex\Release&quot;;..\..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;&quot;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\dx9.0csdk\lib;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;&quot;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;&quot;..\..\..\..\..\StaticSDKs\Win32\speex-1.0.1\win32\libspeex\Release&quot;;..\..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;&quot;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;&quot;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib;..\..\..\..\..\StaticSDKs\XPlatform\png\lib"
 				IgnoreDefaultLibraryNames="libc.lib,libcd.lib,libci.lib,libcid.lib,libcmtd.lib,libcmt.lib"
 				GenerateDebugInformation="TRUE"
 				AssemblyDebug="1"
@@ -124,11 +124,11 @@ xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpng.lib"
+				AdditionalDependencies="winhttp.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib wininet.lib vfw32.lib winmm.lib libjpeg.lib libeay32.lib ws2_32.lib version.lib odbc32.lib odbccp32.lib d3dx9.lib dinput8.lib dplayx.lib dsound.lib DxErr9.lib dxguid.lib libspeex.lib Rpcrt4.lib largeint.lib Iphlpapi.lib OpenAL32.lib libpng.lib"
 				OutputFile=".\Release/plClient.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;&quot;..\..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;&quot;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib;&quot;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\..\StaticSDKs\Win32\EAX\lib"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;&quot;..\..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib;..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\x86;..\..\..\..\..\StaticSDKs\Win32\PhysX\lib\win32;&quot;..\..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib;&quot;..\..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\..\StaticSDKs\Win32\EAX\lib"
 				IgnoreDefaultLibraryNames="libc.lib,libci.lib,libcmt.lib"
 				GenerateDebugInformation="TRUE"
 				AssemblyDebug="1"
@@ -415,28 +415,6 @@ xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
 			</File>
-			<Filter
-				Name="DX9"
-				Filter="">
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\d3dx9.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dinput8.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dplayx.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dsound.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\DxErr9.lib">
-				</File>
-				<File
-					RelativePath="..\..\..\..\..\StaticSDKs\Win32\DX9.0c\Lib\dxguid.lib">
-				</File>
-			</Filter>
 			<Filter
 				Name="PhysX"
 				Filter="">
