@@ -39,18 +39,8 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
       Mead, WA   99021
 
 *==LICENSE==*/
-#include "../pfCharacter/pfCharacterCreatable.h"
-#include "../pfCamera/pfCameraCreatable.h"
-#include "../pfAnimation/pfAnimationCreatable.h"
-#include "../pfConditional/plConditionalObjectCreatable.h"
-//#include "../pfConsole/pfConsoleCreatable.h"
-#include "../pfSurface/pfSurfaceCreatable.h"
-#include "../pfMessage/pfMessageCreatable.h"
-#include "../pfAudio/pfAudioCreatable.h"
-#include "../pfPython/pfPythonCreatable.h"
-#include "../pfGameGUIMgr/pfGameGUIMgrCreatable.h"
+
 #ifdef PLASMA_CCR_RELEASE
-#include "../pfCCR/plCCRCreatable.h"
+#error Adjust this to where the real pyCCRMgrGlue2.cpp lives and submit a pull request!
+#include "pyCCRMgrGlue2Real.cpp"
 #endif // PLASMA_CCR_RELEASE
-#include "../pfJournalBook/pfJournalBookCreatable.h"
-#include "../pfGameMgr/pfGameMgrCreatables.h"

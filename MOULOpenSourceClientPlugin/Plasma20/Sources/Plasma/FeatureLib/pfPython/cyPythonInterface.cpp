@@ -129,8 +129,10 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 // audio setting stuff
 #include "pyAudioControl.h"
 
+#ifdef PLASMA_CCR_RELEASE
 //CCR stufff
 #include "pyCCRMgr.h"
+#endif // PLASMA_CCR_RELEASE
 
 // spawn point def
 #include "pySpawnPointInfo.h"

@@ -39,18 +39,34 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
       Mead, WA   99021
 
 *==LICENSE==*/
-#include "../pfCharacter/pfCharacterCreatable.h"
-#include "../pfCamera/pfCameraCreatable.h"
-#include "../pfAnimation/pfAnimationCreatable.h"
-#include "../pfConditional/plConditionalObjectCreatable.h"
-//#include "../pfConsole/pfConsoleCreatable.h"
-#include "../pfSurface/pfSurfaceCreatable.h"
-#include "../pfMessage/pfMessageCreatable.h"
-#include "../pfAudio/pfAudioCreatable.h"
-#include "../pfPython/pfPythonCreatable.h"
-#include "../pfGameGUIMgr/pfGameGUIMgrCreatable.h"
-#ifdef PLASMA_CCR_RELEASE
-#include "../pfCCR/plCCRCreatable.h"
-#endif // PLASMA_CCR_RELEASE
-#include "../pfJournalBook/pfJournalBookCreatable.h"
-#include "../pfGameMgr/pfGameMgrCreatables.h"
+#ifndef plCCRMgr_h
+#define plCCRMgr_h
+
+//
+// Implementation for CCR commands
+//
+
+#include "hsTypes.h"
+
+// Error constants and conversion are outside of the CCR_RELEASE define,
+// So that non-CCR code can report CCR errors, and the plCCRMgr can
+// share this code.
+namespace plCCRError
+{
+	enum Errors
+	{
+		kError			= hsFail,
+		kNotAuthorized	= -2,
+		kNilLocalAvatar	= -3,
+		kCCRAlreadyAllocated = -4,
+		kNetworkingIsDisabled = -5,
+		kCantFindPlayer	= -6,
+		kInvalidLevel	= -7,
+		kPlayerNotInAge = -8,
+		kVaultTimedOut	= -9,
+		kVaultFetchFailed = -10,
+		kAuthTimedOut	= -11		
+	};
+}
+
+#endif	// plCCRMgr_h

@@ -65,7 +65,9 @@ pfConsoleCmdGroup::pfConsoleCmdGroup( char *name, char *parent )
 	DummyJunior();
 	DummyNet();
 	DummyAvatar();
+#ifdef PLASMA_CCR_RELEASE
 	DummyCCR();
+#endif // PLASMA_CCR_RELEASE
 
 	fNext = nil;
 	fPrevPtr = nil;
