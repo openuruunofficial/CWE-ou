@@ -52,7 +52,9 @@
 				TypeLibraryName=".\Debug/plFileSecure.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copy to Tools directory"
+				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -113,7 +115,9 @@
 				TypeLibraryName=".\Release/plFileSecure.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copy to Tools directory"
+				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
