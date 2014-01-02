@@ -21,8 +21,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
+				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL;EAX_SDK_AVAILABLE"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
@@ -39,11 +39,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libcrypto.a comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib  OpenAL32.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib OpenAL32.lib libpngd.lib binkw32.lib"
 				OutputFile="Release/PlasmaMax.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\STATICSDKS\Win32\ijl\lib;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
 				IgnoreDefaultLibraryNames="libc.lib,libci.lib,libcmt.lib"
 				ModuleDefinitionFile="..\..\..\Sources\Tools\MaxMain\main.def"
 				GenerateDebugInformation="FALSE"
@@ -93,8 +93,8 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL"
+				AdditionalIncludeDirectories="&quot;../../../SDKs/XPlatform/Cypython-2.3.3/pyconfig_static&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/Include&quot;;&quot;../../../SDKs/XPlatform/Cypython-2.3.3/PC&quot;;..\..\..\sdks\win32\hawkvoice\lib;..\..\..\..\StaticSDKs\win32\max7sdk\include;../../../Sources/Plasma/NucleusLib/inc;..\..\..\Sources\Plasma\FeatureLib\inc;..\..\..\Sources\Plasma\PubUtilLib\inc;..\..\..\Sources\Plasma\CoreLib;../../../Sources/Tools/MaxAss;../../../../StaticSDKs/XPlatform/STLport/stlport;../../../../StaticSDKs/Win32/dx9.0c/include;../../../../StaticSDKs/Win32/PhysX/Physics/include;../../../../StaticSDKs/Win32/PhysX/PhysXLoader/include;../../../../StaticSDKs/Win32/PhysX/Cooking/include;../../../../StaticSDKs/Win32/PhysX/Foundation/include;../../../../StaticSDKs/Win32/PhysX/NxCharacter/include;../../../../StaticSDKs/Win32/OpenSSL/include"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;MS_NO_COREDLL;EAX_SDK_AVAILABLE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				ForceConformanceInForLoopScope="FALSE"
@@ -110,11 +110,11 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libcrypto.a comsupp.lib binkw32.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib"
+				AdditionalDependencies="Iphlpapi.lib oldnames.lib ogg_static_d.lib vorbis_static_d.lib vorbisfile_static_d.lib strmiids.lib libeay32.lib comsupp.lib comctl32.lib winmm.lib vfw32.lib ws2_32.lib wininet.lib shlwapi.lib odbc32.lib odbccp32.lib wmstub.lib wmvcore.lib ijl15l.lib eaxguid.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib manipsys.lib paramblk2.lib gup.lib libspeex.lib eax.lib Rpcrt4.lib largeint.lib OpenAL32.lib PhysXLoader.lib NxExtensions.lib libpngd.lib binkw32.lib"
 				OutputFile="Debug/PlasmaMax_dbg.gup"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;..\..\..\..\STATICSDKS\Win32\ijl\lib;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\PhysX\lib\Win32"
+				AdditionalLibraryDirectories="&quot;..\..\..\..\StaticSDKs\XPlatform\expat-1.95.7\StaticLibs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\STATICSDKS\XPLATFORM\STLPORT\lib;..\..\..\..\StaticSDKs\Win32\WMSDK\lib;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;;..\..\..\..\StaticSDKs\Win32\eax\lib;..\..\..\..\StaticSDKs\win32\max7sdk\lib;..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;&quot;..\..\..\..\StaticSDKs\Win32\speex-1.0.1\Win32\libspeex\Release&quot;;..\..\..\..\StaticSDKs\Win32\Bink\lib;..\..\..\..\StaticSDKs\Win32\dx8.1sdk\lib;&quot;..\..\..\..\StaticSDKs\Win32\OpenAL 1.1 with EFX SDK\libs\Win32&quot;;..\..\..\..\StaticSDKs\Win32\PhysX\lib\Win32;..\..\..\..\StaticSDKs\XPlatform\png\lib;..\..\..\..\StaticSDKs\Win32\IJL\lib"
 				IgnoreDefaultLibraryNames="libcd.lib,libc.lib,libci.lib,libcid.lib,libcmt.lib,libcmtd.lib"
 				ModuleDefinitionFile="..\..\..\Sources\Tools\MaxMain\main.def"
 				GenerateDebugInformation="TRUE"
@@ -155,6 +155,9 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 		</Configuration>
 	</Configurations>
 	<References>
+		<ProjectReference
+			ReferencedProjectIdentifier="{17A0AA3A-8445-4C66-FE58-0A5C222CC474}"
+			Name="plClientResMgr"/>
 	</References>
 	<Files>
 		<Filter
@@ -208,7 +211,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 						Name="VCCLCompilerTool"
 						Optimization="2"
 						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit)"/>
+						PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit);EAX_SDK_AVAILABLE"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Win32">
@@ -216,7 +219,7 @@ copy &quot;$(TargetPath)&quot; &quot;$(maxr7dir)&quot;\plugins
 						Name="VCCLCompilerTool"
 						Optimization="0"
 						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit)"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;MAXPLUGINCODE;$(NoInherit);EAX_SDK_AVAILABLE"
 						BasicRuntimeChecks="3"/>
 				</FileConfiguration>
 			</File>

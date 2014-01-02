@@ -3,7 +3,6 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="plFileEncrypt"
-	ProjectGUID="{728CE37F-B032-45D1-B3B5-EF94D4B8A919}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -52,9 +51,7 @@
 				TypeLibraryName=".\Debug/plFileEncrypt.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Copy to Tools directory"
-				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -115,9 +112,7 @@
 				TypeLibraryName=".\Release/plFileEncrypt.tlb"
 				HeaderFileName=""/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Copy to Tools directory"
-				CommandLine="xcopy     /Y     &quot;$(TargetPath)&quot;      ..\..\..\..\tools\"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool

@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="pfCCR"
-	ProjectGUID="{1599855E-CC20-4C3A-A382-5290C40BE08E}"
+	Name="plPluginJPEG"
+	ProjectGUID="{FEB4D52D-8D4E-4520-A490-ADE06159B650}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -22,8 +22,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/PythonLib/Cypython/Include;../../../../Sources/Plasma/PythonLib/Cypython/PC"
-				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
+				AdditionalIncludeDirectories="../../../../../StaticSDKs/XPlatform/jpeg-8c-rgba;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib"
+				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;IJL_SDK_AVAILABLE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				ForceConformanceInForLoopScope="TRUE"
@@ -39,7 +39,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\Debug\pfCCR.lib"
+				OutputFile=".\Debug\plPluginJPEG.lib"
 				SuppressStartupBanner="TRUE"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -74,8 +74,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/FeatureLib/inc;../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/PythonLib/Cypython/Include;../../../../Sources/Plasma/PythonLib/Cypython/PC"
-				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib/inc;../../../../Sources/Plasma/PubUtilLib/inc;../../../../Sources/Plasma/CoreLib;&quot;../../../../../StaticSDKs/XPlatform/jpeg-8c-rgba&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;IJL_SDK_AVAILABLE"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="TRUE"
@@ -92,7 +92,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile=".\Release\pfCCR.lib"
+				OutputFile=".\Release\plPluginJPEG.lib"
 				SuppressStartupBanner="TRUE"/>
 			<Tool
 				Name="VCMIDLTool"/>
@@ -123,27 +123,7 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfCCR\plCCRMgr.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfCCR\plCCRVault.cpp">
+				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plJPEG\plJPEG.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -167,13 +147,7 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl">
 			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfCCR\plCCRCreatable.h">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfCCR\plCCRMgr.h">
-			</File>
-			<File
-				RelativePath="..\..\..\..\Sources\Plasma\FeatureLib\pfCCR\plCCRVault.h">
+				RelativePath="..\..\..\..\Sources\Plasma\PubUtilLib\plJPEG\plJPEG.h">
 			</File>
 		</Filter>
 	</Files>

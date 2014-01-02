@@ -20,7 +20,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				MinimalRebuild="FALSE"
@@ -35,7 +35,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd.lib winmm.lib libcrypto.a comctl32.lib"
+				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd.lib winmm.lib libeay32.lib comctl32.lib"
 				OutputFile="$(OutDir)/UruLauncher.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib"
@@ -72,7 +72,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/PlatformSDK/Include;../../../../../StaticSDKs/Win32/OpenSSL/include"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -86,7 +86,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib.lib winmm.lib libeay32.lib winhttp.lib comctl32.lib ogg_static.lib vorbis_static.lib vorbisfile_static.lib"
+				AdditionalDependencies="Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib.lib winmm.lib libeay32.lib comctl32.lib"
 				OutputFile="$(OutDir)/UruLauncher.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib"
@@ -127,7 +127,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/PlatformSDK/Include"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/PlatformSDK/Include;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -141,7 +141,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib_srv.lib winmm.lib libcrypto.a comctl32.lib libogg.lib libvorbis.lib libvorbisfile.lib"
+				AdditionalDependencies="winhttp.lib Iphlpapi.lib rpcrt4.lib ws2_32.lib zlib_srv.lib winmm.lib libeay32.lib comctl32.lib libogg.lib libvorbis.lib libvorbisfile.lib"
 				OutputFile="$(OutDir)/UruLauncher.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib"
@@ -181,7 +181,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/PlatformSDK/Include"
+				AdditionalIncludeDirectories="../../../../Sources/Plasma/NucleusLib;../../../../Sources/Plasma/PubUtilLib;../../../../Sources/Plasma/CoreLib;../../../../Sources/Plasma/NucleusLib/inc;../../../../../StaticSDKs/Win32/PlatformSDK/Include;../../../../../StaticSDKs/Win32/OpenSSL/include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				MinimalRebuild="FALSE"
@@ -196,7 +196,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winhttp.lib Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd_srv.lib winmm.lib libcrypto.a comctl32.lib libogg_d.lib libvorbis_d.lib libvorbisfile_d.lib"
+				AdditionalDependencies="winhttp.lib Iphlpapi.lib rpcrt4.lib ws2_32.lib zlibd_srv.lib winmm.lib libeay32.lib comctl32.lib libogg_d.lib libvorbis_d.lib libvorbisfile_d.lib"
 				OutputFile="$(OutDir)/UruLauncher.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;..\..\..\..\..\StaticSDKs\XPlatform\zlib\lib;..\..\..\..\..\StaticSDKs\Win32\oggvorbis\lib;..\..\..\..\..\StaticSDKs\Win32\PlatformSDK\Lib"

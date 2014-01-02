@@ -528,8 +528,10 @@ class pfJournalBook : public hsKeyedObject
 		// Renders one (1) page into the given DTMap
 		void	IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppressRendering = false );
 
+#ifdef USE_BINK_SDK
 		// moves the movie layers from one material onto another
 		void	IMoveMovies( hsGMaterial *source, hsGMaterial *dest);
+#endif
 
 		// Starting at the given chunk, works backwards to determine the full set of current
 		// font properties at that point, or assigns defaults if none were specified
@@ -570,9 +572,11 @@ class pfJournalBook : public hsKeyedObject
 		void	IDrawMipmap( pfEsHTMLChunk *chunk, UInt16 x, UInt16 y, plMipmap *mip, plDynamicTextMap *dtMap, UInt32 whichDTMap, hsBool dontRender );
 		
 		// Movie functions
+#ifdef USE_BINK_SDK
 		loadedMovie			*IMovieAlreadyLoaded(pfEsHTMLChunk *chunk);
 		loadedMovie			*IGetMovieByIndex(UInt8 index);
 		plLayerBink			*IMakeMovieLayer(pfEsHTMLChunk *chunk, UInt16 x, UInt16 y, plMipmap *baseMipmap, UInt32 whichDTMap, hsBool dontRender);
+#endif
 
 		// Cover functions
 		plLayerInterface	*IMakeBaseLayer(plMipmap *image);

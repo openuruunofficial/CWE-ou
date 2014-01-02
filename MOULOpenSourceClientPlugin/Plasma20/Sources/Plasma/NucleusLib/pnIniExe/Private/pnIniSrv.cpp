@@ -56,7 +56,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 *
 ***/
 
-const unsigned			CLASS_C_SUBNET_MASK		= 0xFFFFFF00;
+const unsigned			CLASS_C_SUBNET_MASK		= 0xFFFF0000;
 const NetAddressNode	LOOPBACK_ADDRESS_NODE	= 0x7F000001;
 
 

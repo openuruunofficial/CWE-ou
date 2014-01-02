@@ -78,7 +78,9 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../plSurface/plLayer.h"
 #include "../plSurface/hsGMaterial.h"
 #include "../plAgeLoader/plAgeLoader.h"
+#ifdef USE_BINK_SDK
 #include "../pfSurface/plLayerBink.h"
+#endif
 
 // So we can do image searches in our local age
 #include "../plNetClient/plNetClientMgr.h"
@@ -1000,8 +1002,10 @@ void pfBookData::IFinishTriggeredFlip(hsBool wasBackwards)
 		if (fCurrBook)
 		{
 			fCurrBook->IRenderPage(fCurrBook->fCurrentPage, pfJournalDlgProc::kTagLeftDTMap);
+#ifdef USE_BINK_SDK
 			// move the videos over
 			fCurrBook->IMoveMovies(PageMaterial(kTurnFrontPage),PageMaterial(kRightPage));
+#endif // USE_BINK_SDK
 		}
 	}
 	else
@@ -1022,8 +1026,10 @@ void pfBookData::IFinishTriggeredFlip(hsBool wasBackwards)
 		if (fCurrBook)
 		{
 			fCurrBook->IRenderPage(fCurrBook->fCurrentPage + 1, pfJournalDlgProc::kTagRightDTMap);
+#ifdef USE_BINK_SDK
 			// move the videos over
 			fCurrBook->IMoveMovies(PageMaterial(kTurnBackPage),PageMaterial(kLeftPage));
+#endif // USE_BINK_SDK
 		}
 	}
 
@@ -1324,6 +1330,7 @@ void	pfJournalBook::Show( hsBool startOpened /*= false */)
 					if (decal != nil)
 						layers.Append(IMakeDecalLayer(fCoverDecals[i],decal,mip));
 				}
+#ifdef USE_BINK_SDK
 				else
 				{
 					// it's a cover movie, not a decal, so we make a layer, thinking it's at 0,0 and a left map (which gives us the results we want)
@@ -1335,6 +1342,7 @@ void	pfJournalBook::Show( hsBool startOpened /*= false */)
 					layers.Append(plLayerInterface::ConvertNoRef(movieLayer));
 					fVisibleLinks.Reset(); // remove any links that the make movie layer might have added, since a cover movie can't link
 				}
+#endif
 			}
 			ISetDecalLayers(cover,layers);
 		}
@@ -1394,6 +1402,7 @@ void	pfJournalBook::Hide( void )
 			// purge the dynaTextMaps, we're done with them for now
 			IPurgeDynaTextMaps();
 			// nuke the movies so they don't stay in memory (they're big!)
+#ifdef USE_BINK_SDK
 			int i;
 			for( i = 0; i < fLoadedMovies.GetCount(); i++ )
 			{
@@ -1402,6 +1411,7 @@ void	pfJournalBook::Hide( void )
 				delete fLoadedMovies[ i ];
 			}
 			fLoadedMovies.Reset();
+#endif  // USE_BINK_SDK
 		}
 	}
 
@@ -1548,8 +1558,10 @@ void	pfJournalBook::NextPage( void )
 			if( turnFront->GetDeviceRef() != nil )
 				turnFront->GetDeviceRef()->SetDirty( true );
 		}
+#ifdef USE_BINK_SDK
 		// copy the videos over
 		IMoveMovies( fBookGUIs[fCurBookGUI]->PageMaterial(pfBookData::kRightPage), fBookGUIs[fCurBookGUI]->PageMaterial(pfBookData::kTurnFrontPage) );
+#endif // USE_BINK_SDK
 		IRenderPage( fCurrentPage, pfJournalDlgProc::kTagTurnBackDTMap );
 
 		// This will fire a callback when it's done that'll let us continue the setup
@@ -1616,8 +1628,10 @@ void	pfJournalBook::PreviousPage( void )
 			if( turnBack->GetDeviceRef() != nil )
 				turnBack->GetDeviceRef()->SetDirty( true );
 		}
+#ifdef USE_BINK_SDK
 		// copy the videos over
 		IMoveMovies( fBookGUIs[fCurBookGUI]->PageMaterial(pfBookData::kLeftPage), fBookGUIs[fCurBookGUI]->PageMaterial(pfBookData::kTurnBackPage) );
+#endif // USE_BINK_SDK
 		IRenderPage( fCurrentPage + 1, pfJournalDlgProc::kTagTurnFrontDTMap );
 
 		// This will fire a callback when it's done that'll let us continue the setup
@@ -2475,6 +2489,7 @@ void	pfJournalBook::IFreeSource( void )
 		delete fCoverDecals[ i ];
 	fCoverDecals.Reset();
 
+#ifdef USE_BINK_SDK
 	for( i = 0; i < fLoadedMovies.GetCount(); i++ )
 	{
 		plLayerBink *movie = fLoadedMovies[ i ]->movieLayer;
@@ -2482,6 +2497,7 @@ void	pfJournalBook::IFreeSource( void )
 		delete fLoadedMovies[ i ];
 	}
 	fLoadedMovies.Reset();
+#endif  // USE_BINK_SDK
 }
 
 //// IGetMipmapKey ///////////////////////////////////////////////////////////
@@ -2584,6 +2600,7 @@ void	pfJournalBook::IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppress
 	else if (whichDTMap == pfJournalDlgProc::kTagTurnBackDTMap)
 		material = fBookGUIs[fCurBookGUI]->PageMaterial(pfBookData::kTurnBackPage);
 
+#ifdef USE_BINK_SDK
 	if (material)
 	{
 		// clear any exiting layers (movies) from the material
@@ -2599,6 +2616,7 @@ void	pfJournalBook::IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppress
 			}
 		}
 	}
+#endif // USE_BINK_SDK
 
 	hsAssert(page < fPageStarts.GetCount() || page > fLastPage, "UnInitialized page start!");
 	if( page <= fLastPage 
@@ -2786,6 +2804,7 @@ void	pfJournalBook::IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppress
 					break;
 
 				case pfEsHTMLChunk::kMovie:
+#ifdef USE_BINK_SDK
 					movieAlreadyLoaded = (IMovieAlreadyLoaded(chunk) != nil); // have we already cached it?
 					plLayerBink *movieLayer = IMakeMovieLayer(chunk, x, y, (plMipmap*)dtMap, whichDTMap, suppressRendering);
 					if (movieLayer)
@@ -2826,6 +2845,7 @@ void	pfJournalBook::IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppress
 						if (material && !suppressRendering)
 							material->AddLayerViaNotify(movieLayer);
 					}
+#endif // USE_BINK_SDK
 					break;
 			}
 		}
@@ -2850,6 +2870,7 @@ void	pfJournalBook::IRenderPage( UInt32 page, UInt32 whichDTMap, hsBool suppress
 
 //// IMoveMovies /////////////////////////////////////////////////////////////
 
+#ifdef USE_BINK_SDK
 void	pfJournalBook::IMoveMovies( hsGMaterial *source, hsGMaterial *dest )
 {
 	hsTArray<plLayerBink*> moviesOnPage;
@@ -2886,6 +2907,7 @@ void	pfJournalBook::IMoveMovies( hsGMaterial *source, hsGMaterial *dest )
 		}
 	}
 }
+#endif  // USE_BINK_SDK
 
 //// IDrawMipmap /////////////////////////////////////////////////////////////
 
@@ -2983,6 +3005,7 @@ void	pfJournalBook::IDrawMipmap( pfEsHTMLChunk *chunk, UInt16 x, UInt16 y, plMip
 	delete copy;
 }
 
+#ifdef USE_BINK_SDK
 pfJournalBook::loadedMovie *pfJournalBook::IMovieAlreadyLoaded(pfEsHTMLChunk *chunk)
 {
 	int i;
@@ -2993,15 +3016,19 @@ pfJournalBook::loadedMovie *pfJournalBook::IMovieAlreadyLoaded(pfEsHTMLChunk *ch
 	}
 	return nil;
 }
+#endif // USE_BINK_SDK
 
 plKey pfJournalBook::GetMovie(UInt8 index)
 {
+#ifdef USE_BINK_SDK
 	loadedMovie *movie = IGetMovieByIndex(index);
 	if (movie)
 		return movie->movieLayer->GetKey();
+#endif // USE_BINK_SDK
 	return plKey(nil);
 }
 
+#ifdef USE_BINK_SDK
 pfJournalBook::loadedMovie *pfJournalBook::IGetMovieByIndex(UInt8 index)
 {
 	int i;
@@ -3012,7 +3039,9 @@ pfJournalBook::loadedMovie *pfJournalBook::IGetMovieByIndex(UInt8 index)
 	}
 	return nil;
 }
+#endif // USE_BINK_SDK
 
+#ifdef USE_BINK_SDK
 plLayerBink *pfJournalBook::IMakeMovieLayer(pfEsHTMLChunk *chunk, UInt16 x, UInt16 y, plMipmap *baseMipmap, UInt32 whichDTMap, hsBool dontRender)
 {
 	// see if it's already loaded
@@ -3175,6 +3204,7 @@ plLayerBink *pfJournalBook::IMakeMovieLayer(pfEsHTMLChunk *chunk, UInt16 x, UInt
 
 	return movieLayer;
 }
+#endif  // USE_BINK_SDK
 
 plLayerInterface *pfJournalBook::IMakeBaseLayer(plMipmap *image)
 {

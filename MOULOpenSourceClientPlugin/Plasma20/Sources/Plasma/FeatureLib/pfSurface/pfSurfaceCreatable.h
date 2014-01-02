@@ -49,9 +49,11 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 REGISTER_NONCREATABLE( plLayerMovie );
 
+#ifdef USE_BINK_SDK
 #include "plLayerBink.h"
 
 REGISTER_CREATABLE( plLayerBink );
+#endif
 
 #include "plLayerAVI.h"
 

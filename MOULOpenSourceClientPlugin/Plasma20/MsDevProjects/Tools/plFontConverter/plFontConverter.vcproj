@@ -38,11 +38,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a freetype214_D.lib ijl15l.lib Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib freetype214_D.lib libjpeg.lib Rpcrt4.lib"
 				OutputFile=".\Debug/plFontConverter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="..\..\..\..\StaticSDKs\Win32\OpenSSL\lib,../../../../StaticSDKs/Win32/freetype-2.1.4/objs,..\..\..\..\StaticSDKs\Win32\IJL\lib"
+				AdditionalLibraryDirectories="..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;&quot;../../../../StaticSDKs/Win32/freetype-2.1.4/objs&quot;;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;"
 				IgnoreDefaultLibraryNames="libc.lib"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile=".\Debug/plFontConverter.pdb"
@@ -106,11 +106,11 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libcrypto.a freetype214.lib ijl15l.lib Rpcrt4.lib"
+				AdditionalDependencies="ws2_32.lib wininet.lib winmm.lib odbc32.lib odbccp32.lib comctl32.lib Shlwapi.lib libeay32.lib freetype214.lib libjpeg.lib Rpcrt4.lib"
 				OutputFile=".\Release/plFontConverter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="..\..\..\..\StaticSDKs\Win32\OpenSSL\lib,../../../../StaticSDKs/Win32/freetype-2.1.4/objs,..\..\..\..\StaticSDKs\Win32\IJL\lib"
+				AdditionalLibraryDirectories="..\..\..\..\StaticSDKs\Win32\OpenSSL\lib;&quot;../../../../StaticSDKs/Win32/freetype-2.1.4/objs&quot;;&quot;..\..\..\..\StaticSDKs\XPlatform\jpeg-8c-rgba&quot;"
 				IgnoreDefaultLibraryNames="libc.lib"
 				ProgramDatabaseFile=".\Release/plFontConverter.pdb"
 				SubSystem="2"
