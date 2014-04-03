@@ -197,9 +197,9 @@ void	pfGUIEditBoxMod::IUpdate( void )
 			oldCursorPos = cursorPos;
 			cursorPos -= (Int16)fScrollPos;
 
-			if( 4 + cursorPos > fDynTextMap->GetVisibleWidth() - 18 )
+			if( 4 + cursorPos > fDynTextMap->GetVisibleWidth() - 4 - 2 )
 			{
-				fScrollPos += ( 4 + cursorPos ) - ( fDynTextMap->GetVisibleWidth() - 18 );
+				fScrollPos += ( 4 + cursorPos ) - ( fDynTextMap->GetVisibleWidth() - 4 - 2 );
 			}
 			else if( 4 + cursorPos < 4 )
 			{

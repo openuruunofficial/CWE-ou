@@ -517,6 +517,7 @@ void	plDynamicTextMap::DrawString( UInt16 x, UInt16 y, const wchar_t *text )
 
 	SetJustify( fJustify );
 	fCurrFont->SetRenderFlag( plFont::kRenderWrap | plFont::kRenderClip, false );
+	fCurrFont->SetRenderClipRect( 0, 0, fVisWidth, fVisHeight );
 	fCurrFont->SetRenderColor( fFontColor.ToARGB32() );
 	fCurrFont->SetRenderFlag( plFont::kRenderIntoAlpha, fFontBlockRGB );
 	fCurrFont->RenderString( this, x, y, text );
