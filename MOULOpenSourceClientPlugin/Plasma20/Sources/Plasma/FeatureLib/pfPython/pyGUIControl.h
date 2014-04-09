@@ -121,12 +121,14 @@ public:
 	virtual PyObject*	GetBackColor(); // returns pyColor
 	virtual PyObject*	GetBackSelColor(); // returns pyColor
 	virtual UInt32		GetFontSize();
+	virtual UInt8		GetFontFlags();
 	// set color scheme
 	virtual void		SetForeColor( hsScalar r, hsScalar g, hsScalar b, hsScalar a );
 	virtual void		SetSelColor( hsScalar r, hsScalar g, hsScalar b, hsScalar a );
 	virtual void		SetBackColor( hsScalar r, hsScalar g, hsScalar b, hsScalar a );
 	virtual void		SetBackSelColor( hsScalar r, hsScalar g, hsScalar b, hsScalar a );
 	virtual void		SetFontSize(UInt32 fontsize);
+	virtual void		SetFontFlags(UInt8 fontflags);
 
 };
 

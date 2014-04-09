@@ -88,10 +88,9 @@ public:
 	virtual void	SetForeColor( pyColor& color );
 	virtual void	SetBackColor( pyColor& color );
 	virtual void	SetJustify( UInt8 justify );
-	virtual void	SetFontFlags(UInt8 fontflags);
+	
 	virtual UInt8	GetJustify();
 	virtual PyObject* GetForeColor(); // returns pyColor
-	virtual UInt8 GetFontFlags();
 };
 
 #endif // _pyGUIControlTextBox_h_
