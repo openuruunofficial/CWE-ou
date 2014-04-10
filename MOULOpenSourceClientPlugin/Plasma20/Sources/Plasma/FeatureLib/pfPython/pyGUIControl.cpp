@@ -455,6 +455,7 @@ void pyGUIControl::SetFontFlags(UInt8 fontFlags)
 		{
 			pfGUIColorScheme* colorscheme = pdmod->GetColorScheme();
 			colorscheme->fFontFlags = fontFlags;
+			pdmod->UpdateColorScheme();
 		}
 	}
 }
