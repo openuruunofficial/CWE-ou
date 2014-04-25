@@ -278,7 +278,7 @@ PyObject* pyGUIControl::GetOwnerDlg( void )
 }
 
 	// get color schemes
-PyObject* pyGUIControl::GetForeColor()
+PyObject* pyGUIControl::GetForeColor() const
 {
 	if ( fGCkey )
 	{
@@ -292,7 +292,7 @@ PyObject* pyGUIControl::GetForeColor()
 	PYTHON_RETURN_NONE;
 }
 
-PyObject* pyGUIControl::GetSelColor()
+PyObject* pyGUIControl::GetSelColor() const
 {
 	if ( fGCkey )
 	{
@@ -306,7 +306,7 @@ PyObject* pyGUIControl::GetSelColor()
 	PYTHON_RETURN_NONE;
 }
 
-PyObject* pyGUIControl::GetBackColor()
+PyObject* pyGUIControl::GetBackColor() const
 {
 	if ( fGCkey )
 	{
@@ -320,7 +320,7 @@ PyObject* pyGUIControl::GetBackColor()
 	PYTHON_RETURN_NONE;
 }
 
-PyObject* pyGUIControl::GetBackSelColor()
+PyObject* pyGUIControl::GetBackSelColor() const
 {
 	if ( fGCkey )
 	{
@@ -334,7 +334,7 @@ PyObject* pyGUIControl::GetBackSelColor()
 	PYTHON_RETURN_NONE;
 }
 
-UInt32 pyGUIControl::GetFontSize()
+UInt32 pyGUIControl::GetFontSize() const
 {
 	if ( fGCkey )
 	{
@@ -460,7 +460,7 @@ void pyGUIControl::SetFontFlags(UInt8 fontFlags)
 	}
 }
 
-UInt8 pyGUIControl::GetFontFlags()
+UInt8 pyGUIControl::GetFontFlags() const
 {
 	if (fGCkey)
 	{
