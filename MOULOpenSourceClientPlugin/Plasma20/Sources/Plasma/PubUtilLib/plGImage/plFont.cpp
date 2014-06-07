@@ -1119,6 +1119,8 @@ void	plFont::IRenderChar8To32AlphaPremShadow( const plFont::plCharacter &c )
 		xstart = -2;
 
 	srcA = (UInt8)(( fRenderInfo.fColor >> 24 ) & 0x000000ff);
+	if (srcA == 0)
+		return;
 	srcR = (UInt8)(( fRenderInfo.fColor >> 16 ) & 0x000000ff);
 	srcG = (UInt8)(( fRenderInfo.fColor >> 8  ) & 0x000000ff);
 	srcB = (UInt8)(( fRenderInfo.fColor       ) & 0x000000ff);
@@ -1160,7 +1162,10 @@ void	plFont::IRenderChar8To32AlphaPremShadow( const plFont::plCharacter &c )
 				sa = clamp;
 			UInt32 a = IGetCharPixel(c, x, y);
 			if (srcA != 0xff)
+			{
 				a = (srcA * a + 127) / 255;
+				sa = (srcA * sa + 127) / 255;
+			}
 			UInt32 ta = a + sa - ((a*sa + 127) / 255);
 			if (ta > (destPtr[ x ] >> 24))
 				destPtr[ x ] = ( ta << 24 ) | (((srcR * a + 127) / 255) << 16) |
