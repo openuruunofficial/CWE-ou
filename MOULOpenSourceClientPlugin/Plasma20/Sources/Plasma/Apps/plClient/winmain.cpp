@@ -1250,20 +1250,24 @@ void StatusCallback(void *param)
 					{
 						static char data[256] = {0};
 						DWORD bytesRead;
-						WinHttpSendRequest( 
-							hRequest, 
-							WINHTTP_NO_ADDITIONAL_HEADERS,
-							0,
-							WINHTTP_NO_REQUEST_DATA,
-							0,
-							0,
-							0
-						);
-						WinHttpReceiveResponse(hRequest, 0);
-						WinHttpReadData(hRequest, data, 255, &bytesRead);
-						data[bytesRead] = 0;
-						if(bytesRead)
+						if(
+							WinHttpSendRequest( 
+								hRequest, 
+								WINHTTP_NO_ADDITIONAL_HEADERS,
+								0,
+								WINHTTP_NO_REQUEST_DATA,
+								0,
+								0,
+								0
+							)
+							&& WinHttpReceiveResponse(hRequest, 0)
+							&& WinHttpReadData(hRequest, data, 255, &bytesRead)
+							&& bytesRead
+						)
+						{
+							data[bytesRead] = 0;
 							PostMessage(hwnd, WM_USER_SETSTATUSMSG, 0, (LPARAM) data);
+						}
 					}
 				}
 			}
