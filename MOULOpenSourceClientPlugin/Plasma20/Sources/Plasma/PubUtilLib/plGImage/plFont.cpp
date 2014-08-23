@@ -867,7 +867,7 @@ void	plFont::IRenderChar8To32( const plFont::plCharacter &c )
 	// difference, especially since the dest pixels that we end up overlapping
 	// should already be in the cache. If it does, time to upgrade the font
 	// format (again)
-	thisWidth = fWidth;// + (Int32)c.fRightKern;
+	thisWidth = (Int16)fWidth;// + (Int32)c.fRightKern;
 	if( thisWidth >= fRenderInfo.fMaxWidth )
 		thisWidth = fRenderInfo.fMaxWidth;
 
@@ -941,7 +941,7 @@ void	plFont::IRenderChar8To32FullAlpha( const plFont::plCharacter &c )
 	// difference, especially since the dest pixels that we end up overlapping
 	// should already be in the cache. If it does, time to upgrade the font
 	// format (again)
-	thisWidth = fWidth;// + (Int32)c.fRightKern;
+	thisWidth = (Int16)fWidth;// + (Int32)c.fRightKern;
 	if( thisWidth >= fRenderInfo.fMaxWidth )
 		thisWidth = fRenderInfo.fMaxWidth;
 
@@ -992,7 +992,7 @@ void	plFont::IRenderChar8To32Alpha( const plFont::plCharacter &c )
 	// difference, especially since the dest pixels that we end up overlapping
 	// should already be in the cache. If it does, time to upgrade the font
 	// format (again)
-	thisWidth = fWidth;// + (Int32)c.fRightKern;
+	thisWidth = (Int16)fWidth;// + (Int32)c.fRightKern;
 	if( thisWidth >= fRenderInfo.fMaxWidth )
 		thisWidth = fRenderInfo.fMaxWidth;
 
@@ -1052,7 +1052,7 @@ void	plFont::IRenderChar8To32AlphaPremultiplied( const plFont::plCharacter &c )
 	// difference, especially since the dest pixels that we end up overlapping
 	// should already be in the cache. If it does, time to upgrade the font
 	// format (again)
-	thisWidth = fWidth;// + (Int32)c.fRightKern;
+	thisWidth = (Int16)fWidth;// + (Int32)c.fRightKern;
 	if( thisWidth >= fRenderInfo.fMaxWidth )
 		thisWidth = fRenderInfo.fMaxWidth;
 
@@ -1110,7 +1110,7 @@ void	plFont::IRenderChar8To32AlphaPremShadow( const plFont::plCharacter &c )
 	// difference, especially since the dest pixels that we end up overlapping
 	// should already be in the cache. If it does, time to upgrade the font
 	// format (again)
-	thisWidth = fWidth + 2;// + (Int32)c.fRightKern;
+	thisWidth = (Int16)fWidth + 2;// + (Int32)c.fRightKern;
 	if( thisWidth >= fRenderInfo.fMaxWidth )
 		thisWidth = fRenderInfo.fMaxWidth;
 
