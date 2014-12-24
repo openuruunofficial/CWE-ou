@@ -2476,25 +2476,30 @@ bool VaultAddOwnedAgeSpawnPoint (const Uuid & ageInstId, const plSpawnPointInfo 
 bool VaultSetOwnedAgePublicAndWait (const plAgeInfoStruct * info, bool publicOrNot) {
 	if (RelVaultNode * rvnLink = VaultGetOwnedAgeLinkIncRef(info)) {
 		if (RelVaultNode * rvnInfo = rvnLink->GetChildNodeIncRef(plVault::kNodeType_AgeInfo, 1)) {
-			NetCliAuthSetAgePublic(rvnInfo->nodeId, publicOrNot);
-
-			VaultAgeInfoNode access(rvnInfo);
-			char ageName[MAX_PATH];
-			StrToAnsi(ageName, access.ageFilename, arrsize(ageName));
-			
-			plVaultNotifyMsg * msg = NEWZERO(plVaultNotifyMsg);
-			if (publicOrNot)
-				msg->SetType(plVaultNotifyMsg::kPublicAgeCreated);
-			else
-				msg->SetType(plVaultNotifyMsg::kPublicAgeRemoved);
-			msg->SetResultCode(true);
-			msg->GetArgs()->AddString(plNetCommon::VaultTaskArgs::kAgeFilename, ageName);
-			msg->Send();
-			
+			VaultSetAgePublicAndWait(rvnInfo, publicOrNot);
 			rvnInfo->DecRef();
 		}
 		rvnLink->DecRef();
 	}
+	return true;
+}
+
+//============================================================================
+bool VaultSetAgePublicAndWait (NetVaultNode * ageInfoNode, bool publicOrNot) {
+	NetCliAuthSetAgePublic(ageInfoNode->nodeId, publicOrNot);
+
+	VaultAgeInfoNode access(ageInfoNode);
+	char ageName[MAX_PATH];
+	StrToAnsi(ageName, access.ageFilename, arrsize(ageName));
+	
+	plVaultNotifyMsg * msg = NEWZERO(plVaultNotifyMsg);
+	if (publicOrNot)
+		msg->SetType(plVaultNotifyMsg::kPublicAgeCreated);
+	else
+		msg->SetType(plVaultNotifyMsg::kPublicAgeRemoved);
+	msg->SetResultCode(true);
+	msg->GetArgs()->AddString(plNetCommon::VaultTaskArgs::kAgeFilename, ageName);
+	msg->Send();
 	return true;
 }
 
