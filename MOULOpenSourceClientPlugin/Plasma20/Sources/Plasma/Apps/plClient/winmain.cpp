@@ -2158,8 +2158,8 @@ void GetCryptKey(UInt32* cryptKey, unsigned numElements)
 							continue;		// next i
 					}
 					delete pDevDesc;
-					CloseHandle(hDevice);
 				}
+				CloseHandle(hDevice);
 			}
 
 			DWORD volSerialNum = 0;
