@@ -114,9 +114,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #include "../plStatusLog/plStatusLog.h"
 #include "../plProgressMgr/plProgressMgr.h"
 #include "../plPipeline/plDTProgressMgr.h"
-#ifdef USE_BINK_SDK
 #include "../plPipeline/plBinkPlayer.h"
-#endif
 #include "../plMessage/plMovieMsg.h"
 
 #include "../plSDL/plSDL.h"
@@ -271,10 +269,8 @@ hsBool plClient::Shutdown()
 	// Let the resmanager know we're going to be shutting down.
 	hsgResMgr::ResMgr()->BeginShutdown();
 
-#ifdef USE_BINK_SDK
 	// Must kill off all movies before shutting down audio.
 	IKillMovies();
-#endif
 
 	plgAudioSys::Activate(false);
 #ifdef USE_BINK_SDK
@@ -822,13 +818,11 @@ hsBool plClient::MsgReceive(plMessage* msg)
 		}
 		return true;
 	}
-#ifdef USE_BINK_SDK
 	plMovieMsg* mov = plMovieMsg::ConvertNoRef(msg);
 	if( mov )
 	{
 		return IHandleMovieMsg(mov);
 	}
-#endif // USE_BINK_SDK
 
 	plLinkEffectsTriggerMsg* linkFX = plLinkEffectsTriggerMsg::ConvertNoRef(msg);
 	if (linkFX)
@@ -875,7 +869,6 @@ hsBool plClient::MsgReceive(plMessage* msg)
 	return hsKeyedObject::MsgReceive(msg);
 }
 
-#ifdef USE_BINK_SDK
 //============================================================================
 hsBool plClient::IHandleMovieMsg(plMovieMsg* mov)
 {
@@ -956,7 +949,6 @@ hsBool plClient::IHandleMovieMsg(plMovieMsg* mov)
 
 	return true;
 }
-#endif // USE_BINK_SDK
 
 int plClient::IFindRoomByLoc(const plLocation& loc)
 {
@@ -1529,8 +1521,8 @@ hsBool plClient::StartInit()
 	//if( GetDone() ) return false;
 	IPlayIntroBink("avi/intro1.bik", 0.f, 0.f, 0.f, 1.f, 1.f, 0.75);
 	if( GetDone() ) return false;
-	plgDispatch::Dispatch()->RegisterForExactType(plMovieMsg::Index(), GetKey());
 #endif // USE_BINK_SDK
+	plgDispatch::Dispatch()->RegisterForExactType(plMovieMsg::Index(), GetKey());
 
 	//
 	// Init Net before loading things
@@ -1936,11 +1928,9 @@ hsBool plClient::IDraw()
 		IProcessPostRenderRequests();
 	plProfile_EndTiming(PostRender);
 
-#ifdef USE_BINK_SDK
 	plProfile_BeginTiming(Movies);
 	IServiceMovies();
 	plProfile_EndTiming(Movies);
-#endif // USE_BINK_SDK
 
 #ifndef PLASMA_EXTERNAL_RELEASE
 	plProfile_BeginTiming(Console);
@@ -1971,7 +1961,6 @@ hsBool plClient::IDraw()
 	return false;
 }
 
-#ifdef USE_BINK_SDK
 void plClient::IServiceMovies()
 {
 	int i;
@@ -1986,9 +1975,7 @@ void plClient::IServiceMovies()
 		}
 	}
 }
-#endif // USE_BINK_SDK
 
-#ifdef USE_BINK_SDK
 void plClient::IKillMovies()
 {
 	int i;
@@ -1996,7 +1983,6 @@ void plClient::IKillMovies()
 		delete fMovies[i];
 	fMovies.Reset();
 }
-#endif // USE_BINK_SDK
 
 #ifdef USE_BINK_SDK
 hsBool plClient::IPlayIntroBink(const char* movieName, hsScalar endDelay, hsScalar posX, hsScalar posY, hsScalar scaleX, hsScalar scaleY, hsScalar volume /* = 1.0 */)
