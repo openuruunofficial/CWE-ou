@@ -51,14 +51,25 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #include "../pnMessage/plMessage.h"
 
+class plPipeline;
+
 class plDeviceRecreateMsg : public plMessage
 {
+	plPipeline* fPipe;
+
 public:
-	plDeviceRecreateMsg() : plMessage( nil, nil, nil ) { SetBCastFlag( kBCastByExactType ); }
+	plDeviceRecreateMsg(plPipeline* pipe=nil)
+		: plMessage(nil, nil, nil), fPipe(pipe)
+	{
+		SetBCastFlag(kBCastByExactType);
+	}
+
 	~plDeviceRecreateMsg() {}
 
 	CLASSNAME_REGISTER( plDeviceRecreateMsg );
 	GETINTERFACE_ANY( plDeviceRecreateMsg, plMessage );
+
+	plPipeline* Pipeline() const { return fPipe; }
 
 	// IO
 	void Read(hsStream* stream, hsResMgr* mgr)	{ plMessage::IMsgRead( stream, mgr ); }

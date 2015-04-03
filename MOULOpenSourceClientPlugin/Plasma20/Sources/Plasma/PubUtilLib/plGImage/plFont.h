@@ -116,6 +116,8 @@ class plFont : public hsKeyedObject
 												// value between the renderColor and the destColor and
 												// leave the alpha as-is
 												// This flag has no effect on monochrome fonts
+			kRenderAlphaPremultiplied = 0x00001000, // Destination has color values premultiplied by alpha
+			kRenderShadow             = 0x00002000, // Render text shadows
 		};
 
 		enum Flags
@@ -231,7 +233,15 @@ class plFont : public hsKeyedObject
 		void	IRenderChar8To32( const plCharacter &c );
 		void	IRenderChar8To32Alpha( const plCharacter &c );
 		void	IRenderChar8To32FullAlpha( const plCharacter &c );
+		void	IRenderChar8To32AlphaPremultiplied( const plCharacter &c );
+		void	IRenderChar8To32AlphaPremShadow( const plCharacter &c );
 		void	IRenderCharNull( const plCharacter &c );
+
+		UInt32 IGetCharPixel( const plCharacter &c, Int32 x, Int32 y )
+		{
+			// only for 8-bit characters
+			return (x < 0 || y < 0 || (UInt32)x >= fWidth || (UInt32)y >= c.fHeight) ? 0 : *(fBMapData + c.fBitmapOff + y*fWidth + x);
+		}
 
 	public:
 

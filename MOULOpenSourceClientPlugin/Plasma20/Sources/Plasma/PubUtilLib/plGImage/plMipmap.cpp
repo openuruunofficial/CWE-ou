@@ -1745,6 +1745,18 @@ void	plMipmap::Composite( plMipmap *source, UInt16 x, UInt16 y, plMipmap::Compos
 			for( pY = (UInt16)srcHeight; pY > 0; pY-- )
 			{
 				memcpy( dstPtr, srcPtr, srcRowBytesToCopy );
+				if( options->fFlags & kDestPremultiplied )
+				{
+					// multiply color values by alpha
+					for( pX = 0; pX < srcWidth; pX++ )
+					{
+						srcAlpha = ((dstPtr[ pX ] >> 24) & 0x000000ff);
+						dstPtr[ pX ] = ( srcAlpha << 24 )
+							| (((((dstPtr[ pX ] >> 16) & 0xff)*srcAlpha + 127)/255) << 16)
+							| (((((dstPtr[ pX ] >>	8) & 0xff)*srcAlpha + 127)/255) <<	8)
+							| (((((dstPtr[ pX ]      ) & 0xff)*srcAlpha + 127)/255)      );
+					}
+				}
 				dstPtr += dstRowBytes >> 2;
 				srcPtr += srcRowBytes >> 2;
 			}
@@ -1776,7 +1788,15 @@ void	plMipmap::Composite( plMipmap *source, UInt16 x, UInt16 y, plMipmap::Compos
 				{
 					srcAlpha = options->fOpacity * ( ( srcPtr[ pX ] >> 16 ) & 0x0000ff00 ) / 255 / 256;
 					if( srcAlpha != 0 )
-						dstPtr[ pX ] = ( srcPtr[ pX ] & 0x00ffffff ) | ( srcAlpha << 24 );
+					{
+						if( options->fFlags & kDestPremultiplied )
+							dstPtr[ pX ] = ( srcAlpha << 24 )
+								| (((((srcPtr[ pX ] >> 16) & 0xff)*srcAlpha + 127)/255) << 16)
+								| (((((srcPtr[ pX ] >>	8) & 0xff)*srcAlpha + 127)/255) <<	8)
+								| (((((srcPtr[ pX ]      ) & 0xff)*srcAlpha + 127)/255)      );
+						else
+							dstPtr[ pX ] = ( srcPtr[ pX ] & 0x00ffffff ) | ( srcAlpha << 24 );
+					}
 				}
 				dstPtr += dstRowBytes >> 2;
 				srcPtr += srcRowBytes >> 2;

@@ -180,6 +180,10 @@ hsBool	pfGUIListBoxMod::MsgReceive( plMessage *msg )
 
 void	pfGUIListBoxMod::IPostSetUpDynTextMap( void )
 {
+	pfGUIColorScheme *scheme = GetColorScheme();
+	fDynTextMap->SetFont( scheme->fFontFace, scheme->fFontSize, scheme->fFontFlags, 
+							!HasFlag( kXparentBgnd ));
+
 	ICalcWrapStarts();
 	ICalcScrollRange();
 	fReadyToRoll = true;

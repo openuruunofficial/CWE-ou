@@ -102,8 +102,6 @@ class pfGUITextBoxMod : public pfGUIControlMod
 		void	SetLocalizationPath(const wchar_t* path);
 		void	SetLocalizationPath(const char* path);
 		void	SetUseLocalizationPath(bool use);
-
-		virtual void	UpdateColorScheme() { IPostSetUpDynTextMap(); IUpdate(); }
 };
 
 #endif // _pfGUITextBoxMod_h
