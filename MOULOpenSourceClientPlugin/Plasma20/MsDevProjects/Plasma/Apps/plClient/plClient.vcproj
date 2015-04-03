@@ -354,6 +354,9 @@ xcopy /Y ..\..\..\..\Sources\Plasma\Apps\plClient\external\resource.dat ..\..\..
 				RelativePath="..\..\..\..\Sources\Plasma\Apps\plClient\plClientUpdateFormat.h">
 			</File>
 			<File
+				RelativePath="..\..\..\..\Sources\Plasma\Apps\PlClient\loginfix.h">
+			</File>
+			<File
 				RelativePath="..\..\..\..\Sources\Tools\MaxSceneViewer\plPluginClient.h">
 			</File>
 		</Filter>

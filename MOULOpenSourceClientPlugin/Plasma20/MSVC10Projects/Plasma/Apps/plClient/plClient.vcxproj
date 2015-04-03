@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug_Internal|Win32">
@@ -403,6 +403,7 @@
     <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\PlClient\plClient.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plClient\plClientCreatable.h" />
     <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\resource.h" />
+    <ClInclude Include="..\..\..\..\Sources\Plasma\Apps\plClient\loginfix.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Sources\Plasma\Apps\plClient\res\banner.bmp" />

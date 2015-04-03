@@ -76,6 +76,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 
 #include <shellapi.h>
 #include "WinHttp.h"
+#include "loginfix.h"
 //
 // Defines
 //
@@ -92,6 +93,7 @@ You can contact Cyan Worlds, Inc. by email legal@cyan.com
 #else
 	#define STATUS_PATH L"support.cyanworlds.com"
 #endif
+
 
 //
 // Globals
@@ -200,6 +202,8 @@ struct LoginDialogParam {
 
 bool AuthenticateNetClientComm(ENetError* result, HWND parentWnd);
 bool IsExpired();
+bool GetDisksProperty(HANDLE hDevice, PSTORAGE_DEVICE_DESCRIPTOR pDevDesc);
+void GetOldCryptKey(UInt32* cryptKey, unsigned size);
 void GetCryptKey(UInt32* cryptKey, unsigned size);
 static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHash, bool remember_password,
 								  bool fromGT);
@@ -1155,10 +1159,15 @@ static void LoadUserPass (const wchar *accountName, char *username, ShaDigest *p
 			UInt32 cryptKey[4];
 			ZeroMemory(cryptKey, sizeof(cryptKey));
 			GetCryptKey(cryptKey, arrsize(cryptKey));
+			UInt32 cryptKeyOld[4];	// The old cryptKey stuff
+			ZeroMemory(cryptKeyOld, sizeof(cryptKeyOld));
+			GetOldCryptKey(cryptKeyOld, arrsize(cryptKeyOld));
 
 			char* temp;
 	*pRemember = false;
 	username[0] = '\0';
+	bool	cryptKeyOk = false;
+	bool	cryptKeyOldOk = false;
 
 	if (!fromGT)
 			{
@@ -1186,6 +1195,42 @@ static void LoadUserPass (const wchar *accountName, char *username, ShaDigest *p
 						{
 					StrCopy(username, temp, kMaxAccountNameLength);
 							delete temp;
+							cryptKeyOk = true;
+						}
+						else
+							username[0] = '\0';
+
+						*pRemember = stream->Readbool();
+
+						if (*pRemember)
+						{
+							stream->Read(sizeof(pNamePassHash->data), pNamePassHash->data);
+							*pFocus = IDOK;
+						}
+						else
+							*pFocus = IDC_URULOGIN_PASSWORD;
+					}
+
+					stream->Close();
+					delete stream;
+				}
+				if (!cryptKeyOk)	// Try the old cryptKey
+				{
+					hsStream* stream = plEncryptedStream::OpenEncryptedFile(fileAndPath, true, cryptKeyOld);
+					if (stream && !stream->AtEnd())
+					{
+						UInt32 savedKey[4];
+						stream->Read(sizeof(savedKey), savedKey);
+
+						if (memcmp(cryptKeyOld, savedKey, sizeof(savedKey)) == 0)
+						{
+							temp = stream->ReadSafeString();
+
+							if (temp)
+							{
+								StrCopy(username, temp, kMaxAccountNameLength);
+								delete temp;
+								cryptKeyOldOk = true;
 						}
 						else
 							username[0] = '\0';
@@ -1203,6 +1248,21 @@ static void LoadUserPass (const wchar *accountName, char *username, ShaDigest *p
 
 					stream->Close();
 					delete stream;
+					}	// Done trying the old cryptKey
+				}
+				if (cryptKeyOldOk)  // We need to re-write the login.dat file
+		    {
+					hsStream* stream = plEncryptedStream::OpenEncryptedFileWrite(fileAndPath, cryptKey);
+					if (stream)
+					{
+						stream->Write(sizeof(cryptKey), cryptKey);
+						stream->WriteSafeString(username);
+						stream->Writebool(*pRemember);
+						if (*pRemember)
+							stream->Write(sizeof(pNamePassHash->data), pNamePassHash->data);
+						stream->Close();
+						delete stream;
+					}
 				}
 			}
 			else
@@ -2021,7 +2081,7 @@ bool IsExpired()
 	return expired;
 }
 
-void GetCryptKey(UInt32* cryptKey, unsigned numElements)
+void GetOldCryptKey(UInt32* cryptKey, unsigned numElements)
 {
 	char volName[] = "C:\\";
 	int index = 0;
@@ -2050,5 +2110,101 @@ void GetCryptKey(UInt32* cryptKey, unsigned numElements)
 			index = (++index) % numElements;
 		}
 	}
+}
+
+void GetCryptKey(UInt32* cryptKey, unsigned numElements)
+{
+	char volName[] = "C:\\";
+	char volID[] = "\\\\.\\C:";	// Need the drive ID in \\.\C: format for CreateFile()
+	int index = 0;
+	DWORD logicalDrives = GetLogicalDrives();
+	PSTORAGE_DEVICE_DESCRIPTOR pDevDesc;
+
+	for (int i = 2; i < 26; ++i) // Drives A: B: prove nothing
+	{
+		if (logicalDrives & (1 << i))
+		{
+			volName[0] = ('A' + i);  // Previous base drive letter of C: was incorrect
+
+			UINT driveType = GetDriveType(
+			volName			//LPCTSTR lpRootPathName
+			);
+
+			if (driveType != DRIVE_FIXED)
+			{
+				continue;		// next i
+			}
+
+			// We've got "Fixed" drive but still need to check
+			// that it's not a USB (i.e. removable) drive.
+			HANDLE hDevice;
+			volID[4] = 'A' + i;
+			hDevice = CreateFile(
+				volID,
+				GENERIC_READ,
+				FILE_SHARE_READ | FILE_SHARE_WRITE,
+				NULL,
+				OPEN_EXISTING,
+				NULL,
+				NULL
+			);
+
+			if (hDevice != INVALID_HANDLE_VALUE)
+			{
+				pDevDesc = (PSTORAGE_DEVICE_DESCRIPTOR)new BYTE[sizeof(STORAGE_DEVICE_DESCRIPTOR) + 512 - 1];
+				if(pDevDesc != NULL)
+				{
+					pDevDesc->Size = sizeof(STORAGE_DEVICE_DESCRIPTOR) + 512 - 1;
+
+					if (GetDisksProperty(hDevice, pDevDesc))
+					{
+						if (pDevDesc->BusType == BusTypeUsb) // This is the ‘Check Point’!!! ;-)
+							continue;		// next i
+					}
+					delete pDevDesc;
+				}
+				CloseHandle(hDevice);
+			}
+
+			DWORD volSerialNum = 0;
+			BOOL result = GetVolumeInformation(
+				volName,		//LPCTSTR lpRootPathName,
+				NULL,			//LPTSTR lpVolumeNameBuffer,
+				0,				//DWORD nVolumeNameSize,
+				&volSerialNum,	//LPDWORD lpVolumeSerialNumber,
+				NULL,			//LPDWORD lpMaximumComponentLength,
+				NULL,			//LPDWORD lpFileSystemFlags,
+				NULL,			//LPTSTR lpFileSystemNameBuffer,
+				0				//DWORD nFileSystemNameSize
+			);
+
+			if (!result)
+				continue;		// next i
+
+			cryptKey[index] = (cryptKey[index] ^ volSerialNum);
+			index = (++index) % numElements;
+		}
+	}
+}
+
+bool GetDisksProperty(HANDLE hDevice, PSTORAGE_DEVICE_DESCRIPTOR pDevDesc)
+{
+      STORAGE_PROPERTY_QUERY  Query;  // input param for query
+      DWORD dwOutBytes;               // IOCTL output length
+      BOOL bResult;                   // IOCTL return val
+
+      // specify the query type
+      Query.PropertyId = StorageDeviceProperty;
+      Query.QueryType = PropertyStandardQuery;
+
+      // Query using IOCTL_STORAGE_QUERY_PROPERTY
+      bResult = ::DeviceIoControl(hDevice,            // device handle
+              IOCTL_STORAGE_QUERY_PROPERTY,           // info of device property
+              &Query, sizeof(STORAGE_PROPERTY_QUERY), // input data buffer
+              pDevDesc, pDevDesc->Size,               // output data buffer
+              &dwOutBytes,                            // out's length
+              (LPOVERLAPPED)NULL);
+
+      return bResult;
 }
 
