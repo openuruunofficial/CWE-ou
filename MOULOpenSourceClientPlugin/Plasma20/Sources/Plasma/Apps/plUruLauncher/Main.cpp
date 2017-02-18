@@ -668,7 +668,7 @@ static void HttpRequestGet(HINTERNET hConnect)
 	const wchar *path = BuildTypeServerStatusPath(); 
 	HINTERNET hRequest = 0;
 	char data[256] = {0};
-	DWORD bytesRead;
+	DWORD bytesRead = 0;
 	
 	hRequest = WinHttpOpenRequest(
 		hConnect, 
@@ -693,9 +693,11 @@ static void HttpRequestGet(HINTERNET hConnect)
 		if(b)
 		{
 			DWORD err = GetLastError();
-			WinHttpReceiveResponse(hRequest, 0);
-			WinHttpReadData(hRequest, data, arrsize(data)-1, &bytesRead);
-			data[bytesRead] = 0;
+			if (WinHttpReceiveResponse(hRequest, 0)
+				&& WinHttpReadData(hRequest, data, arrsize(data) - 1, &bytesRead))
+			{
+				data[bytesRead] = 0;
+			}
 		}
 	}
 	if(bytesRead)
