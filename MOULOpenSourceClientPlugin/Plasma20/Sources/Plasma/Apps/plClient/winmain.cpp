@@ -1097,28 +1097,7 @@ static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHa
 	if (StrCmp(password, FAKE_PASS_STRING) != 0)
 	{
 		StrToUnicode(wpassword, password, arrsize(wpassword));
-
-		wchar domain[15];
-		PathSplitEmail(wusername, nil, 0, domain, arrsize(domain), nil, 0, nil, 0, 0);
-
-		if (StrLen(domain) == 0 || StrCmpI(domain, L"gametap") == 0) {
-			CryptDigest(
-				kCryptSha1,
-				pNamePassHash,
-				StrLen(password) * sizeof(password[0]),
-				password
-				);
-
-			if (IsMachineLittleEndian()) {
-				pNamePassHash->data[0] = ToBigEndian(pNamePassHash->data[0]);
-				pNamePassHash->data[1] = ToBigEndian(pNamePassHash->data[1]);
-				pNamePassHash->data[2] = ToBigEndian(pNamePassHash->data[2]);
-				pNamePassHash->data[3] = ToBigEndian(pNamePassHash->data[3]);
-				pNamePassHash->data[4] = ToBigEndian(pNamePassHash->data[4]);
-			}
-		}
-		else
-			CryptHashPassword(wusername, wpassword, pNamePassHash);
+		CryptHashPassword(wusername, wpassword, pNamePassHash);
 	}
 
 	NetCommSetAccountUsernamePassword(wusername, *pNamePassHash);
