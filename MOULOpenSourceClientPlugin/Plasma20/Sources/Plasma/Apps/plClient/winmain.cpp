@@ -206,7 +206,7 @@ bool GetDisksProperty(HANDLE hDevice, PSTORAGE_DEVICE_DESCRIPTOR pDevDesc);
 void GetOldCryptKey(UInt32* cryptKey, unsigned size);
 void GetCryptKey(UInt32* cryptKey, unsigned size);
 static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHash, bool remember_password,
-								  bool fromGT);
+								  int whichHash);
 static void LoadUserPass (const wchar *accountName, char *username, ShaDigest *pNamePassHash, bool *pRemember,
 								  bool fromGT, int *pFocus);
 static void AuthFailedStrings (ENetError authError, bool fromGT,
@@ -322,11 +322,25 @@ static bool TGRunLoginDialog (const wchar *accountName, bool fromGT)
 		if (Remember[0] == 'y')
 		  bRemember = true;
 
-		SaveUserPass (Username, Password, &NamePassHash, bRemember, fromGT);
-
-		// Do login & see if it failed
+		// cycle through the hash types until we find one that matches or errors out
+		int whichHash = 1;
 		ENetError auth;
-		bool cancelled = AuthenticateNetClientComm(&auth, NULL);
+		bool cancelled;
+		while (whichHash >= 0 )
+		{
+			SaveUserPass (Username, Password, &NamePassHash, bRemember, whichHash);
+
+			// Do login & see if it failed
+			cancelled = AuthenticateNetClientComm(&auth, NULL);
+			// if the password was successful then go to the end processing
+			if (IS_NET_SUCCESS(auth) && !cancelled)
+				break;
+			// if it was cancelled or any error other than wrong password then go to end processing
+			if (cancelled || auth != kNetErrAuthenticationFailed)
+				break;
+			// otherwise try then next Hash type
+			whichHash--;
+		}
 
 		if (IS_NET_SUCCESS (auth) && !cancelled)
 			break;
@@ -1081,7 +1095,7 @@ BOOL CALLBACK UruTOSDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM l
 }
 
 static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHash, bool remember_password,
-						  bool fromGT)
+						  int whichHash)
 {
 	UInt32 cryptKey[4];
 	ZeroMemory(cryptKey, sizeof(cryptKey));
@@ -1097,7 +1111,30 @@ static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHa
 	if (StrCmp(password, FAKE_PASS_STRING) != 0)
 	{
 		StrToUnicode(wpassword, password, arrsize(wpassword));
-		CryptHashPassword(wusername, wpassword, pNamePassHash);
+
+		switch( whichHash )
+		{
+			case 1:
+				CryptDigest(
+					kCryptSha1,
+					pNamePassHash,
+					StrLen(password) * sizeof(password[0]),
+					password
+					);
+
+				if (IsMachineLittleEndian()) {
+					pNamePassHash->data[0] = ToBigEndian(pNamePassHash->data[0]);
+					pNamePassHash->data[1] = ToBigEndian(pNamePassHash->data[1]);
+					pNamePassHash->data[2] = ToBigEndian(pNamePassHash->data[2]);
+					pNamePassHash->data[3] = ToBigEndian(pNamePassHash->data[3]);
+					pNamePassHash->data[4] = ToBigEndian(pNamePassHash->data[4]);
+				}
+				break;
+
+			default:
+				CryptHashPassword(wusername, wpassword, pNamePassHash);
+				break;
+		}
 	}
 
 	NetCommSetAccountUsernamePassword(wusername, *pNamePassHash);
@@ -1106,28 +1143,26 @@ static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHa
 	else
 		NetCommSetAuthTokenAndOS(nil, L"win");
 
-	if (!fromGT) {
-		wchar fileAndPath[MAX_PATH];
-		PathGetInitDirectory(fileAndPath, arrsize(fileAndPath));
-		PathAddFilename(fileAndPath, fileAndPath, L"login.dat", arrsize(fileAndPath));
+	wchar fileAndPath[MAX_PATH];
+	PathGetInitDirectory(fileAndPath, arrsize(fileAndPath));
+	PathAddFilename(fileAndPath, fileAndPath, L"login.dat", arrsize(fileAndPath));
 #ifndef PLASMA_EXTERNAL_RELEASE
-		// internal builds can use the local init directory
-		wchar localFileAndPath[MAX_PATH];
-		StrCopy(localFileAndPath, L"init\\login.dat", arrsize(localFileAndPath));
-		if (PathDoesFileExist(localFileAndPath))
-			StrCopy(fileAndPath, localFileAndPath, arrsize(localFileAndPath));
+	// internal builds can use the local init directory
+	wchar localFileAndPath[MAX_PATH];
+	StrCopy(localFileAndPath, L"init\\login.dat", arrsize(localFileAndPath));
+	if (PathDoesFileExist(localFileAndPath))
+		StrCopy(fileAndPath, localFileAndPath, arrsize(localFileAndPath));
 #endif
-		hsStream* stream = plEncryptedStream::OpenEncryptedFileWrite(fileAndPath, cryptKey);
-		if (stream)
-		{
-			stream->Write(sizeof(cryptKey), cryptKey);
-			stream->WriteSafeString(username);
-			stream->Writebool(remember_password);
-			if (remember_password)
-				stream->Write(sizeof(pNamePassHash->data), pNamePassHash->data);
-			stream->Close();
-			delete stream;
-		}
+	hsStream* stream = plEncryptedStream::OpenEncryptedFileWrite(fileAndPath, cryptKey);
+	if (stream)
+	{
+		stream->Write(sizeof(cryptKey), cryptKey);
+		stream->WriteSafeString(username);
+		stream->Writebool(remember_password);
+		if (remember_password)
+			stream->Write(sizeof(pNamePassHash->data), pNamePassHash->data);
+		stream->Close();
+		delete stream;
 	}
 }
 
@@ -1418,11 +1453,25 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 					GetDlgItemText(hwndDlg, IDC_URULOGIN_PASSWORD, password, kMaxPasswordLength);
 					remember_password = (IsDlgButtonChecked(hwndDlg, IDC_URULOGIN_REMEMBERPASS) == BST_CHECKED);
 
-					SaveUserPass (username, password, &namePassHash, remember_password, loginParam->fromGT);
-
+					// cycle through the hash types until we find one that matches or errors out
+					int whichHash = 1;
 					LoginDialogParam loginParam;
-					MemSet(&loginParam, 0, sizeof(loginParam));
-					bool cancelled = AuthenticateNetClientComm(&loginParam.authError, hwndDlg);
+					bool cancelled;
+					while (whichHash >= 0 )
+					{
+						SaveUserPass (username, password, &namePassHash, remember_password, whichHash);
+
+						MemSet(&loginParam, 0, sizeof(loginParam));
+						cancelled = AuthenticateNetClientComm(&loginParam.authError, hwndDlg);
+						// if the password was successful then go to the end processing
+						if (IS_NET_SUCCESS(loginParam.authError) && !cancelled)
+							break;
+						// if it was cancelled or any error other than wrong password then go to end processing
+						if (cancelled || loginParam.authError != kNetErrAuthenticationFailed)
+							break;
+						// otherwise try then next Hash type
+						whichHash--;
+					}
 
 					if (IS_NET_SUCCESS(loginParam.authError) && !cancelled)
 						EndDialog(hwndDlg, ok);
