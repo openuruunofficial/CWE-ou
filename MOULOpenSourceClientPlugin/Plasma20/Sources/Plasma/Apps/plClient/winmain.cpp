@@ -200,6 +200,18 @@ struct LoginDialogParam {
 	wchar		accountName[kMaxAccountNameLength];
 };
 
+// List of hash styles we are going to test against the server
+//  ... this method of trying multiple hashes against the server has risks of being more compromised than just testing one hash.
+//  ... So, if you know your unique client is only going to connect to your server then it would be wise to limit the testing to one hash.
+//  ... Which can be done simply by setting FIRST_PASSWORD_HASH and LAST_PASSWORD_HASH to the hash that you use.
+enum
+{
+	kPasswordHashSHA0,
+	kPasswordHashSHA1
+};
+static const int FIRST_PASSWORD_HASH = kPasswordHashSHA1;
+static const int LAST_PASSWORD_HASH = kPasswordHashSHA0;
+
 bool AuthenticateNetClientComm(ENetError* result, HWND parentWnd);
 bool IsExpired();
 bool GetDisksProperty(HANDLE hDevice, PSTORAGE_DEVICE_DESCRIPTOR pDevDesc);
@@ -323,10 +335,9 @@ static bool TGRunLoginDialog (const wchar *accountName, bool fromGT)
 		  bRemember = true;
 
 		// cycle through the hash types until we find one that matches or errors out
-		int whichHash = 1;
 		ENetError auth;
 		bool cancelled;
-		while (whichHash >= 0 )
+		for (int whichHash=FIRST_PASSWORD_HASH; whichHash >= LAST_PASSWORD_HASH; whichHash-- )
 		{
 			SaveUserPass (Username, Password, &NamePassHash, bRemember, whichHash);
 
@@ -338,8 +349,6 @@ static bool TGRunLoginDialog (const wchar *accountName, bool fromGT)
 			// if it was cancelled or any error other than wrong password then go to end processing
 			if (cancelled || auth != kNetErrAuthenticationFailed)
 				break;
-			// otherwise try then next Hash type
-			whichHash--;
 		}
 
 		if (IS_NET_SUCCESS (auth) && !cancelled)
@@ -947,18 +956,6 @@ void DebugMsgF(const char* format, ...)
 #endif
 }
 
-static bool IsMachineLittleEndian() {
-   int i = 1;
-   char *p = (char *) &i;
-   if (p[0] == 1) // Lowest address contains the least significant byte
-      return true;
-   else
-      return false;
-}
-
-inline static dword ToBigEndian (dword value) {
-	return ((value) << 24) | ((value & 0x0000ff00) << 8) | ((value & 0x00ff0000) >> 8) | ((value) >> 24);
-}
 
 static void AuthFailedStrings (ENetError authError, bool fromGT,
 										 const char **ppStr1, const char **ppStr2,
@@ -1114,7 +1111,7 @@ static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHa
 
 		switch( whichHash )
 		{
-			case 1:
+			case kPasswordHashSHA1:
 				CryptDigest(
 					kCryptSha1,
 					pNamePassHash,
@@ -1122,15 +1119,16 @@ static void SaveUserPass (char *username, char *password, ShaDigest *pNamePassHa
 					password
 					);
 
-				if (IsMachineLittleEndian()) {
-					pNamePassHash->data[0] = ToBigEndian(pNamePassHash->data[0]);
-					pNamePassHash->data[1] = ToBigEndian(pNamePassHash->data[1]);
-					pNamePassHash->data[2] = ToBigEndian(pNamePassHash->data[2]);
-					pNamePassHash->data[3] = ToBigEndian(pNamePassHash->data[3]);
-					pNamePassHash->data[4] = ToBigEndian(pNamePassHash->data[4]);
-				}
+				// switch the endianness of the hash to big endian
+				// NOTE: this is legacy from GameTap days to match GameTap's endianness
+				pNamePassHash->data[0] = hsUNSWAP32(pNamePassHash->data[0]);
+				pNamePassHash->data[1] = hsUNSWAP32(pNamePassHash->data[1]);
+				pNamePassHash->data[2] = hsUNSWAP32(pNamePassHash->data[2]);
+				pNamePassHash->data[3] = hsUNSWAP32(pNamePassHash->data[3]);
+				pNamePassHash->data[4] = hsUNSWAP32(pNamePassHash->data[4]);
 				break;
 
+			case kPasswordHashSHA0:
 			default:
 				CryptHashPassword(wusername, wpassword, pNamePassHash);
 				break;
@@ -1454,10 +1452,9 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 					remember_password = (IsDlgButtonChecked(hwndDlg, IDC_URULOGIN_REMEMBERPASS) == BST_CHECKED);
 
 					// cycle through the hash types until we find one that matches or errors out
-					int whichHash = 1;
 					LoginDialogParam loginParam;
 					bool cancelled;
-					while (whichHash >= 0 )
+					for (int whichHash=FIRST_PASSWORD_HASH; whichHash >= LAST_PASSWORD_HASH; whichHash-- )
 					{
 						SaveUserPass (username, password, &namePassHash, remember_password, whichHash);
 
@@ -1469,8 +1466,6 @@ BOOL CALLBACK UruLoginDialogProc( HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM
 						// if it was cancelled or any error other than wrong password then go to end processing
 						if (cancelled || loginParam.authError != kNetErrAuthenticationFailed)
 							break;
-						// otherwise try then next Hash type
-						whichHash--;
 					}
 
 					if (IS_NET_SUCCESS(loginParam.authError) && !cancelled)
